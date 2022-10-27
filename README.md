@@ -1,1 +1,3 @@
-# fid-sdk
+# FTSDK
+
+A description of this package.

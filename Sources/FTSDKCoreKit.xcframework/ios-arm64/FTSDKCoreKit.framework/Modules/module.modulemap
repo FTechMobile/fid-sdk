@@ -1,0 +1,11 @@
+framework module FTSDKCoreKit {
+  umbrella header "FTSDKCoreKit.h"
+
+  export *
+  module * { export * }
+}
+
+module FTSDKCoreKit.Swift {
+  header "FTSDKCoreKit-Swift.h"
+  requires objc
+}

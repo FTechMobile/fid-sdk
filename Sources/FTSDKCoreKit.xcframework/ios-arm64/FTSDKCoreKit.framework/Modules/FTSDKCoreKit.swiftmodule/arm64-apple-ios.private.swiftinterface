@@ -1,0 +1,3379 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
+// swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FTSDKCoreKit
+// swift-module-flags-ignorable: -enable-bare-slash-regex
+import AVFoundation
+import AVKit
+import AdSupport
+import AuthenticationServices
+import CommonCrypto
+import Contacts
+import CoreData
+import CoreGraphics
+import CoreServices
+import CoreTelephony
+import CryptoKit
+@_exported import FTSDKCoreKit
+import Foundation
+import LocalAuthentication
+import MobileCoreServices
+import ObjectiveC
+import Photos
+import SafariServices
+import Security
+import StoreKit
+import Swift
+import SystemConfiguration
+import UIKit.UIDevice
+import UIKit
+import WebKit
+import _Concurrency
+import _StringProcessing
+import os
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class PhoneNumberTextField : FTSDKCoreKit.NoSelectionTextField, UIKit.UITextFieldDelegate {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @objc @_Concurrency.MainActor(unsafe) public func textFieldDidChange(_ textField: FTSDKCoreKit.PhoneNumberTextField?)
+  @_Concurrency.MainActor(unsafe) @objc public func textFieldShouldBeginEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc public func textFieldShouldEndEditing(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc public func textFieldShouldClear(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc public func textFieldShouldReturn(_ textField: UIKit.UITextField) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc public func textFieldDidBeginEditing(_ textField: UIKit.UITextField)
+  @_Concurrency.MainActor(unsafe) @objc public func textField(_ textField: UIKit.UITextField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @objc deinit
+}
+@objc public protocol FTSDKPurchaseDelegate {
+  @objc func didPurchaseSuccess(transacion: FTSDKCoreKit.FTSDKTransaction)
+  @objc func didPurchaseFailed(error: FTSDKCoreKit.FTSDKError)
+}
+public protocol FTSDKCommandProtocol {
+}
+@objc public protocol FTSDKTheme {
+  @objc var mainColor: Swift.String { get set }
+  @objc var mainGradientStartColor: Swift.String { get set }
+  @objc var mainGradientEndColor: Swift.String { get set }
+  @objc var mainBackgroundColor: Swift.String { get set }
+  @objc var textPrimaryColor: Swift.String { get set }
+  @objc var textPrimarySecondaryColor: Swift.String { get set }
+  @objc var textHintColor: Swift.String { get set }
+  @objc var textLinkColor: Swift.String { get set }
+  @objc var textBoxBorderColor: Swift.String { get set }
+  @objc var buttonBackgroundDisableColor: Swift.String { get set }
+  @objc var buttonBackgroundEnableColor: Swift.String { get set }
+  @objc var buttonBorderColor: Swift.String { get set }
+  @objc var buttonTextColor: Swift.String { get set }
+  @objc var buttonTextDisableColor: Swift.String { get set }
+  @objc var buttonTextEnableColor: Swift.String { get set }
+  @objc var validMessageLabelColor: Swift.String { get set }
+  @objc var inValidMessageLabelColor: Swift.String { get set }
+  @objc var checkedBoxColor: Swift.String { get set }
+  @objc var timeRemainLabel: Swift.String { get set }
+  @objc var secondRemainLabel: Swift.String { get set }
+}
+final public class FTSDKLocalizationService {
+  public init(baseLanguage: FTSDKCoreKit.FTSDKLanguage)
+  final public func availableLanguages(_ excludeBase: Swift.Bool = false) -> [FTSDKCoreKit.FTSDKLanguage]
+  final public func currentLanguage() -> FTSDKCoreKit.FTSDKLanguage
+  final public func setCurrentLanguage(_ language: FTSDKCoreKit.FTSDKLanguage)
+  final public func defaultLanguage(usePreferredLocalizations: Swift.Bool = false) -> FTSDKCoreKit.FTSDKLanguage
+  final public func resetCurrentLanguageToDefault(usePreferredLocalizations: Swift.Bool = true)
+  final public func displayNameForLanguage(_ language: FTSDKCoreKit.FTSDKLanguage, useLocalName: Swift.Bool = false) -> Swift.String
+  @objc deinit
+}
+extension FTSDKCoreKit.FTSDKLocalizationService {
+  public static let shared: FTSDKCoreKit.FTSDKLocalizationService
+}
+extension Foundation.NSNotification.Name {
+  public static let localizationServiceDidChangeCurrentLanguage: Foundation.Notification.Name
+}
+public protocol FTSDKTrackerValueProtocol {
+  var rawValue: Swift.String { get }
+}
+extension Swift.String : FTSDKCoreKit.FTSDKTrackerValueProtocol {
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FTSDKPresenter<V> : FTSDKCoreKit.MVPComponentPresenter<V>, FTSDKCoreKit.RequestBagCompatible, FTSDKCoreKit.FTSDKUseCaseBagCompatible where V : FTSDKCoreKit.FTSDKViewProtocol {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var title: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) public var requestBag: [FTSDKCoreKit.CancellableRequest?]
+  @_Concurrency.MainActor(unsafe) public var useCaseBag: [FTSDKCoreKit.FTSDKUseCaseable?]
+  @_Concurrency.MainActor(unsafe) public var tracker: FTSDKCoreKit.FTSDKTrackerProtocol?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var shouldAutorotate: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var preferredStatusBarStyle: UIKit.UIStatusBarStyle {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) override open func presenterDidReady()
+  @_Concurrency.MainActor(unsafe) override open func presenterDidRelease()
+  @_Concurrency.MainActor(unsafe) override open func onBackPress()
+  @_Concurrency.MainActor(unsafe) override open func showLoading()
+  @_Concurrency.MainActor(unsafe) override open func hideLoading()
+  @_Concurrency.MainActor(unsafe) override open func loadNibView()
+  @_Concurrency.MainActor(unsafe) override open func installContentView()
+  @_Concurrency.MainActor(unsafe) open func installTracker()
+  @_Concurrency.MainActor(unsafe) public func dismissAll()
+  @_Concurrency.MainActor(unsafe) public func popTo(viewControllerType: UIKit.UIViewController.Type)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension UIKit.UIColor {
+  convenience public init(hex: Swift.String, alpha: CoreFoundation.CGFloat = 1.0)
+  convenience public init(r: Swift.Int, g: Swift.Int, b: Swift.Int, a: CoreFoundation.CGFloat = 1.0)
+  public var rgba: (red: CoreFoundation.CGFloat, green: CoreFoundation.CGFloat, blue: CoreFoundation.CGFloat, alpha: CoreFoundation.CGFloat) {
+    get
+  }
+  public var alpha: CoreFoundation.CGFloat {
+    get
+  }
+  public func lighter(by percentage: CoreFoundation.CGFloat = 30.0) -> UIKit.UIColor?
+  public func darker(by percentage: CoreFoundation.CGFloat = 30.0) -> UIKit.UIColor?
+  public func adjust(by percentage: CoreFoundation.CGFloat = 30.0) -> UIKit.UIColor?
+}
+public struct ValidationRuleOTPCodeError : FTSDKCoreKit.ValidationError {
+  public init()
+  public var message: Swift.String
+}
+public struct ValidationRuleOTPCode : FTSDKCoreKit.ValidationRule {
+  public var error: FTSDKCoreKit.ValidationError
+  public init(error: FTSDKCoreKit.ValidationError = ValidationRuleOTPCodeError())
+  public func validate(input: Swift.String?) -> Swift.Bool
+  public typealias InputType = Swift.String
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FTSDKBaseCollectionReusableView : UIKit.UICollectionReusableView {
+  @_Concurrency.MainActor(unsafe) public static var reuseIdentifier: Swift.String {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public static var nib: UIKit.UINib {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FTSDKBaseTableView : UIKit.UITableView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect, style: UIKit.UITableView.Style)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension UIKit.UITableView {
+  @_Concurrency.MainActor(unsafe) public func registerNib(for cellClass: FTSDKCoreKit.FTSDKBaseTableViewCell.Type)
+  @_Concurrency.MainActor(unsafe) public func registerNib(for cellClass: FTSDKCoreKit.FTSDKBaseTableViewCell.Type, reuseId: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func registerClass(for cellClass: FTSDKCoreKit.FTSDKBaseTableViewCell.Type)
+  @_Concurrency.MainActor(unsafe) public func registerClass(for cellClass: FTSDKCoreKit.FTSDKBaseTableViewCell.Type, reuseId: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func registerNibs<T>(for cellClasses: [T.Type]) where T : FTSDKCoreKit.FTSDKBaseTableViewCell
+  @_Concurrency.MainActor(unsafe) public func dequeueReusableCell<T>(type: T.Type, withIdentifier identifier: Swift.String? = nil, for indexPath: Foundation.IndexPath) -> T where T : FTSDKCoreKit.FTSDKBaseTableViewCell
+  @_Concurrency.MainActor(unsafe) public func insertRows(_ rows: [Swift.Int], inSection section: Swift.Int, animated: Swift.Bool = true)
+  @_Concurrency.MainActor(unsafe) public func deleteRow(_ row: Swift.Int, inSection section: Swift.Int, animated: Swift.Bool = true)
+  @_Concurrency.MainActor(unsafe) public func deleteRows(_ rows: [Swift.Int], inSection section: Swift.Int, animated: Swift.Bool = true)
+  @_Concurrency.MainActor(unsafe) public func reloadRow(_ row: Swift.Int, inSection section: Swift.Int, animated: Swift.Bool = true)
+  @_Concurrency.MainActor(unsafe) public func reloadRows(_ rows: [Swift.Int], inSection section: Swift.Int, animated: Swift.Bool = true)
+  @_Concurrency.MainActor(unsafe) public func batchUpdates(_ updates: (UIKit.UITableView) -> Swift.Void, completion: ((Swift.Bool) -> Swift.Void)? = nil)
+}
+public protocol Validatable {
+  func validate<Rule>(rule: Rule) -> FTSDKCoreKit.ValidationResult where Self == Rule.InputType, Rule : FTSDKCoreKit.ValidationRule
+  func validate(rules: FTSDKCoreKit.ValidationRuleSet<Self>) -> FTSDKCoreKit.ValidationResult
+}
+extension FTSDKCoreKit.Validatable {
+  public func validate<R>(rule: R) -> FTSDKCoreKit.ValidationResult where Self == R.InputType, R : FTSDKCoreKit.ValidationRule
+  public func validate(rules: FTSDKCoreKit.ValidationRuleSet<Self>) -> FTSDKCoreKit.ValidationResult
+}
+extension Swift.String : FTSDKCoreKit.Validatable {
+}
+extension Swift.Int : FTSDKCoreKit.Validatable {
+}
+extension Swift.Double : FTSDKCoreKit.Validatable {
+}
+extension Swift.Float : FTSDKCoreKit.Validatable {
+}
+extension Swift.Array : FTSDKCoreKit.Validatable {
+}
+extension Foundation.Date : FTSDKCoreKit.Validatable {
+}
+open class APIService<T> where T : FTSDKCoreKit.HTTPClient {
+  final public let client: T
+  required public init(client: T)
+  @discardableResult
+  public func dataTask<T>(method: FTSDKCoreKit.HTTPMethod, path: Swift.String, headers: [Swift.String : Swift.String]? = nil, params: FTSDKCoreKit.ParametersType? = nil, decoding: FTSDKCoreKit.HTTPDecoding.Factory = HTTPDecoding.Factory(), completion: ((Swift.Result<T, Swift.Error>) -> Swift.Void)?, completionWithResponse: ((Swift.Result<T, Swift.Error>, Foundation.URLResponse?) -> Swift.Void)? = nil) -> FTSDKCoreKit.CancellableRequest? where T : Swift.Decodable
+  @discardableResult
+  public func dataTask<R, T>(method: FTSDKCoreKit.HTTPMethod, path: Swift.String, headers: [Swift.String : Swift.String]? = nil, params: FTSDKCoreKit.ParametersType? = nil, sendingData: R?, encoding: FTSDKCoreKit.HTTPEncoding.Factory = HTTPEncoding.Factory(), decoding: FTSDKCoreKit.HTTPDecoding.Factory = HTTPDecoding.Factory(), completion: ((Swift.Result<T, Swift.Error>) -> Swift.Void)?, completionWithResponse: ((Swift.Result<T, Swift.Error>, Foundation.URLResponse?) -> Swift.Void)? = nil) -> FTSDKCoreKit.CancellableRequest? where R : Swift.Encodable, T : Swift.Decodable
+  @discardableResult
+  public func multipartDataTask<R>(method: FTSDKCoreKit.HTTPMethod, path: Swift.String, headers: [Swift.String : Swift.String]? = nil, params: FTSDKCoreKit.ParametersType? = nil, multiparts: [FTSDKCoreKit.MultipartFormDataType]?, decoding: FTSDKCoreKit.HTTPDecoding.Factory = HTTPDecoding.Factory(), completion: ((Swift.Result<R, Swift.Error>) -> Swift.Void)?, completionWithResponse: ((Swift.Result<R, Swift.Error>, Foundation.URLResponse?) -> Swift.Void)? = nil) -> FTSDKCoreKit.CancellableRequest? where R : Swift.Decodable
+  @discardableResult
+  public func urlEncodeDataTask<R>(method: FTSDKCoreKit.HTTPMethod, path: Swift.String, headers: [Swift.String : Swift.String]? = nil, params: FTSDKCoreKit.ParametersType? = nil, builder: FTSDKCoreKit.URLEncodedBuilder, decoding: FTSDKCoreKit.HTTPDecoding.Factory = HTTPDecoding.Factory(), completion: ((Swift.Result<R, Swift.Error>) -> Swift.Void)?, completionWithResponse: ((Swift.Result<R, Swift.Error>, Foundation.URLResponse?) -> Swift.Void)? = nil) -> FTSDKCoreKit.CancellableRequest? where R : Swift.Decodable
+  open func getEndpoint() -> FTSDKCoreKit.APIEndpoint?
+  open func getDefaultHeaders() -> [Swift.String : Swift.String]
+  open func getDefaultParams() -> FTSDKCoreKit.ParametersType
+  @objc deinit
+}
+public protocol APIEndpoint {
+  var scheme: Swift.String { get }
+  var components: (host: Swift.String, basePath: Swift.String) { get }
+  var port: Swift.Int? { get }
+}
+public struct ValidationRulePhoneNumberError : FTSDKCoreKit.ValidationError {
+  public init()
+  public var message: Swift.String
+}
+public struct ValidationRulePhoneNumber : FTSDKCoreKit.ValidationRule {
+  public var error: FTSDKCoreKit.ValidationError
+  public init(error: FTSDKCoreKit.ValidationError = ValidationRulePhoneNumberError())
+  public func validate(input: Swift.String?) -> Swift.Bool
+  public typealias InputType = Swift.String
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FTSDKBaseCollectionView : UIKit.UICollectionView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect, collectionViewLayout layout: UIKit.UICollectionViewLayout)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+extension UIKit.UICollectionView {
+  @_Concurrency.MainActor(unsafe) public func registerCell<T>(type cellType: T.Type) where T : FTSDKCoreKit.FTSDKBaseCollectionViewCell
+  @_Concurrency.MainActor(unsafe) public func registerClass(for cellClass: FTSDKCoreKit.FTSDKBaseCollectionViewCell.Type)
+  @_Concurrency.MainActor(unsafe) public func registerClass(for cellClass: FTSDKCoreKit.FTSDKBaseCollectionViewCell.Type, reuseId: Swift.String)
+  @_Concurrency.MainActor(unsafe) public func registerHeaderView<T>(type cellType: T.Type) where T : FTSDKCoreKit.FTSDKBaseCollectionReusableView
+  @_Concurrency.MainActor(unsafe) public func registerFooterView<T>(type cellType: T.Type) where T : FTSDKCoreKit.FTSDKBaseCollectionReusableView
+  @_Concurrency.MainActor(unsafe) public func registerHeaderViewClass<T>(type cellType: T.Type) where T : FTSDKCoreKit.FTSDKBaseCollectionReusableView
+  @_Concurrency.MainActor(unsafe) public func registerFooterViewClass<T>(type cellType: T.Type) where T : FTSDKCoreKit.FTSDKBaseCollectionReusableView
+  @_Concurrency.MainActor(unsafe) public func dequeueReusableCell<T>(type: T.Type, withIdentifier identifier: Swift.String? = nil, for indexPath: Foundation.IndexPath) -> T where T : FTSDKCoreKit.FTSDKBaseCollectionViewCell
+  @_Concurrency.MainActor(unsafe) public func dequeueReusableSupplementaryView<T>(ofKind: Swift.String, type: T.Type, withIdentifier identifier: Swift.String? = nil, for indexPath: Foundation.IndexPath) -> T where T : FTSDKCoreKit.FTSDKBaseCollectionReusableView
+}
+@objc @objcMembers public class FTSDKPackageData : ObjectiveC.NSObject, Swift.Codable {
+  public var amount: Swift.Double?
+  @objc public var gameCode: Swift.String?
+  @objc public var osType: Swift.String?
+  @objc public var imageUrl: Swift.String?
+  @objc public var packageName: Swift.String?
+  @objc public var packageDetail: Swift.String?
+  @objc public var inGamePackageId: Swift.String?
+  @objc public var storePackageId: Swift.String?
+  @objc public var displayCurrency: Swift.String?
+  required public init(from decoder: Swift.Decoder) throws
+  public func encode(to encoder: Swift.Encoder) throws
+  @objc public func getAmount() -> Foundation.NSNumber
+  @objc public static func listJSON(_ list: [FTSDKCoreKit.FTSDKPackageData]) -> Swift.String?
+  @objc deinit
+}
+public struct MultipartFormDataChars {
+}
+public struct MultipartFormDataMimeType {
+}
+public protocol MultipartFormDataType {
+  func getData(boundary: Swift.String) -> Foundation.Data
+}
+public struct MultipartFormData : FTSDKCoreKit.MultipartFormDataType {
+  public enum Provider {
+    case string(Swift.String)
+    case data(Foundation.Data)
+    case file(Foundation.URL)
+  }
+  public init(provider: FTSDKCoreKit.MultipartFormData.Provider, name: Swift.String, fileName: Swift.String? = nil, mimeType: Swift.String? = nil)
+  public func getData(boundary: Swift.String) -> Foundation.Data
+}
+public protocol MultipartFormDataBuilderType {
+  var boundary: Swift.String { get }
+  func build() -> Foundation.Data
+}
+public class MultipartFormDataBuilder : FTSDKCoreKit.MultipartFormDataBuilderType {
+  public var boundary: Swift.String {
+    get
+    set
+  }
+  public var forms: [FTSDKCoreKit.MultipartFormDataType]
+  public init()
+  @discardableResult
+  public func append(_ formData: FTSDKCoreKit.MultipartFormDataType) -> FTSDKCoreKit.MultipartFormDataBuilder
+  public func build() -> Foundation.Data
+  @objc deinit
+}
+public enum ReachabilityError : Swift.Error {
+  case failedToCreateWithAddress(Darwin.sockaddr, Swift.Int32)
+  case failedToCreateWithHostname(Swift.String, Swift.Int32)
+  case unableToSetCallback(Swift.Int32)
+  case unableToSetDispatchQueue(Swift.Int32)
+  case unableToGetFlags(Swift.Int32)
+}
+extension Foundation.NSNotification.Name {
+  public static let reachabilityChanged: Foundation.Notification.Name
+}
+public class Reachability {
+  public typealias NetworkReachable = (FTSDKCoreKit.Reachability) -> ()
+  public typealias NetworkUnreachable = (FTSDKCoreKit.Reachability) -> ()
+  public enum Connection : Swift.CustomStringConvertible {
+    case unavailable, wifi, cellular
+    public var description: Swift.String {
+      get
+    }
+    public static func == (a: FTSDKCoreKit.Reachability.Connection, b: FTSDKCoreKit.Reachability.Connection) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public var whenReachable: FTSDKCoreKit.Reachability.NetworkReachable?
+  public var whenUnreachable: FTSDKCoreKit.Reachability.NetworkUnreachable?
+  public var allowsCellularConnection: Swift.Bool
+  public var notificationCenter: Foundation.NotificationCenter
+  public var connection: FTSDKCoreKit.Reachability.Connection {
+    get
+  }
+  required public init(reachabilityRef: SystemConfiguration.SCNetworkReachability, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main)
+  convenience public init(hostname: Swift.String, queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
+  convenience public init(queueQoS: Dispatch.DispatchQoS = .default, targetQueue: Dispatch.DispatchQueue? = nil, notificationQueue: Dispatch.DispatchQueue? = .main) throws
+  @objc deinit
+}
+extension FTSDKCoreKit.Reachability {
+  public class func isConnectedToNetwork() -> Swift.Bool
+  public func startNotifier() throws
+  public func stopNotifier()
+  public var isReachable: Swift.Bool {
+    get
+  }
+  public var isReachableViaWWAN: Swift.Bool {
+    get
+  }
+  public var isReachableViaWiFi: Swift.Bool {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+}
+public protocol FTSDKPresenterProtocol : AnyObject {
+  func presenterDidReady()
+  func presenterDidRelease()
+  func presenterWillActive()
+  func presenterDidActive()
+  func presenterWillInactive()
+  func presenterDidInactive()
+  func setMVPView(_ view: FTSDKCoreKit.FTSDKViewProtocol)
+  func executeCommand(_ command: FTSDKCoreKit.FTSDKCommandProtocol)
+}
+public enum FTSDKAuthType : Swift.String {
+  case phone
+  case playNow
+  case google
+  case zalo
+  case facebook
+  case apple
+  case accessToken
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+extension StoreKit.SKProduct {
+  public func localizedPrice() -> Swift.String?
+}
+public let IAP: FTSDKCoreKit.FTSDKIAPHelper
+public typealias ProductIdentifier = Swift.String
+public typealias ProductWithExpireDate = [FTSDKCoreKit.ProductIdentifier : Foundation.Date]
+public typealias ProductsRequestHandler = (_ response: StoreKit.SKProductsResponse?, _ error: FTSDKCoreKit.FTSDKError?) -> ()
+public typealias PurchaseHandler = (_ skTransaction: StoreKit.SKPaymentTransaction?, _ error: FTSDKCoreKit.FTSDKError?) -> ()
+public typealias RestoreHandler = (_ productIdentifiers: Swift.Set<FTSDKCoreKit.ProductIdentifier>, _ error: FTSDKCoreKit.FTSDKError?) -> ()
+public typealias ValidateHandler = (_ statusCode: Swift.Int?, _ products: FTSDKCoreKit.ProductWithExpireDate?, _ json: [Swift.String : Any]?) -> ()
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers public class FTSDKIAPHelper : ObjectiveC.NSObject {
+  public func addObserver()
+  public func removeObserver()
+  @objc deinit
+}
+extension FTSDKCoreKit.FTSDKIAPHelper {
+  public func requestProducts(_ productIdentifiers: Swift.Set<FTSDKCoreKit.ProductIdentifier>, handler: @escaping FTSDKCoreKit.ProductsRequestHandler)
+  public func purchaseProduct(_ productIdentifier: FTSDKCoreKit.ProductIdentifier, handler: @escaping FTSDKCoreKit.PurchaseHandler)
+  public func restorePurchases(_ handler: @escaping FTSDKCoreKit.RestoreHandler)
+  public func validateReceipt(_ password: Swift.String? = nil, handler: @escaping FTSDKCoreKit.ValidateHandler)
+  public var receipt: Swift.String? {
+    get
+  }
+}
+extension FTSDKCoreKit.FTSDKIAPHelper : StoreKit.SKProductsRequestDelegate {
+  @objc dynamic public func productsRequest(_ request: StoreKit.SKProductsRequest, didReceive response: StoreKit.SKProductsResponse)
+  @objc dynamic public func request(_ request: StoreKit.SKRequest, didFailWithError error: Swift.Error)
+}
+extension FTSDKCoreKit.FTSDKIAPHelper : StoreKit.SKPaymentTransactionObserver {
+  @objc dynamic public func paymentQueue(_ queue: StoreKit.SKPaymentQueue, updatedTransactions transactions: [StoreKit.SKPaymentTransaction])
+  @objc dynamic public func paymentQueueRestoreCompletedTransactionsFinished(_ queue: StoreKit.SKPaymentQueue)
+  @objc dynamic public func paymentQueue(_ queue: StoreKit.SKPaymentQueue, restoreCompletedTransactionsFailedWithError error: Swift.Error)
+}
+public enum ReceiptStatus : Swift.Int {
+  case noRecipt
+  case valid
+  case testReceipt
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class FTSDKProfileData : ObjectiveC.NSObject, Swift.Codable {
+  @objc final public let sub: Swift.String?
+  @objc final public let picture: Swift.String?
+  @objc final public let name: Swift.String?
+  @objc final public let email: Swift.String?
+  @objc final public let phoneNumber: Swift.String?
+  @objc final public let preferredUsername: Swift.String?
+  @objc final public let additionalInfo: Swift.String?
+  @objc final public let ekycVerified: Swift.Bool
+  @objc final public let cardInfo: FTSDKCoreKit.FTSDKCardData?
+  public var authTime: Swift.Int64?
+  final public let createdAt: Swift.Int64?
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct ValidationRuleCondition<T> : FTSDKCoreKit.ValidationRule {
+  public let error: FTSDKCoreKit.ValidationError
+  public let condition: (T?) -> Swift.Bool
+  public init(error: FTSDKCoreKit.ValidationError, condition: @escaping ((T?) -> Swift.Bool))
+  public func validate(input: T?) -> Swift.Bool
+  public typealias InputType = T
+}
+@objc @_inheritsConvenienceInitializers @objcMembers @_Concurrency.MainActor(unsafe) open class FTSDKXibView : UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) public var nibName: Swift.String {
+    @objc get
+  }
+  @objc @_Concurrency.MainActor(unsafe) open var containerView: UIKit.UIView {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc @_Concurrency.MainActor(unsafe) open func configViews()
+  @objc @_Concurrency.MainActor(unsafe) open func loadViews()
+  @objc @_Concurrency.MainActor(unsafe) open func bundleView() -> Foundation.Bundle
+  @objc deinit
+}
+extension UIKit.UITextView : FTSDKCoreKit.ValidatableInterfaceElement {
+  @_Concurrency.MainActor(unsafe) public var inputValue: Swift.String? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public func validateOnInputChange(enabled: Swift.Bool)
+  public typealias InputType = Swift.String
+}
+public struct ValidationRulePattern : FTSDKCoreKit.ValidationRule {
+  public let pattern: Swift.String
+  public let error: FTSDKCoreKit.ValidationError
+  public init(pattern: Swift.String, error: FTSDKCoreKit.ValidationError)
+  public init(pattern: FTSDKCoreKit.ValidationPattern, error: FTSDKCoreKit.ValidationError)
+  public func validate(input: Swift.String?) -> Swift.Bool
+  public typealias InputType = Swift.String
+}
+extension UIKit.UIButton {
+  @objc @_Concurrency.MainActor(unsafe) dynamic public func set(title: Swift.String, and color: UIKit.UIColor = .buttonTextColor, with font: UIKit.UIFont = UIFont.defaultMedium(ofSize: .default), for state: UIKit.UIControl.State = .normal)
+  @_Concurrency.MainActor(unsafe) public func setDefaultBorderStyle()
+}
+public enum HTTPStatusCode : Swift.Int, Swift.Error {
+  case `continue`
+  case switchingProtocols
+  case processing
+  case ok
+  case created
+  case accepted
+  case nonAuthoritativeInformation
+  case noContent
+  case resetContent
+  case partialContent
+  case multiStatus
+  case alreadyReported
+  case IMUsed
+  case multipleChoices
+  case movedPermanently
+  case found
+  case seeOther
+  case notModified
+  case useProxy
+  case switchProxy
+  case temporaryRedirect
+  case permenantRedirect
+  case badRequest
+  case unauthorized
+  case paymentRequired
+  case forbidden
+  case notFound
+  case methodNotAllowed
+  case notAcceptable
+  case proxyAuthenticationRequired
+  case requestTimeout
+  case conflict
+  case gone
+  case lengthRequired
+  case preconditionFailed
+  case payloadTooLarge
+  case URITooLong
+  case unsupportedMediaType
+  case rangeNotSatisfiable
+  case expectationFailed
+  case teapot
+  case misdirectedRequest
+  case unprocessableEntity
+  case locked
+  case failedDependency
+  case upgradeRequired
+  case preconditionRequired
+  case tooManyRequests
+  case requestHeaderFieldsTooLarge
+  case noResponse
+  case unavailableForLegalReasons
+  case SSLCertificateError
+  case SSLCertificateRequired
+  case HTTPRequestSentToHTTPSPort
+  case clientClosedRequest
+  case internalServerError
+  case notImplemented
+  case badGateway
+  case serviceUnavailable
+  case gatewayTimeout
+  case HTTPVersionNotSupported
+  case variantAlsoNegotiates
+  case insufficientStorage
+  case loopDetected
+  case notExtended
+  case networkAuthenticationRequired
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc public protocol FTSDKAuthDelegate {
+  @objc optional func didConfigSuccess(_ config: FTSDKCoreKit.ConfigData)
+  @objc optional func didSignInSuccess(_ signIn: FTSDKCoreKit.FTSDKSignIn, didSignInFor user: FTSDKCoreKit.FTSDKUser, withMethod authType: Swift.String)
+  @objc optional func didSignInFail(_ signIn: FTSDKCoreKit.FTSDKSignIn, with error: FTSDKCoreKit.FTSDKError)
+  @objc optional func didSignUpSuccess(_ signIn: FTSDKCoreKit.FTSDKSignIn, didSignInFor user: FTSDKCoreKit.FTSDKUser, withMethod authType: Swift.String)
+  @objc optional func didSignUpFail(_ signIn: FTSDKCoreKit.FTSDKSignIn, with error: FTSDKCoreKit.FTSDKError)
+}
+public struct ValidationLengthCharacterError : FTSDKCoreKit.ValidationError {
+  public init()
+  public var message: Swift.String
+}
+public struct ValidationRuleLengthCharacter : FTSDKCoreKit.ValidationRule {
+  public var error: FTSDKCoreKit.ValidationError
+  public init(error: FTSDKCoreKit.ValidationError = ValidationLengthCharacterError())
+  public func validate(input: Swift.String?) -> Swift.Bool
+  public typealias InputType = Swift.String
+}
+public struct ValidationRuleRequired<T> : FTSDKCoreKit.ValidationRule {
+  public let error: FTSDKCoreKit.ValidationError
+  public init(error: FTSDKCoreKit.ValidationError)
+  public func validate(input: T?) -> Swift.Bool
+  public typealias InputType = T
+}
+public enum FTSDKEmailValidationPattern : FTSDKCoreKit.ValidationPattern {
+  case simple
+  case standard
+  public var pattern: Swift.String {
+    get
+  }
+  public static func == (a: FTSDKCoreKit.FTSDKEmailValidationPattern, b: FTSDKCoreKit.FTSDKEmailValidationPattern) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public class FTSDKAttributedStringBuilder {
+  public init()
+  @discardableResult
+  public func append(_ text: Swift.String?) -> FTSDKCoreKit.FTSDKAttributedStringBuilder
+  @discardableResult
+  public func with(_ color: UIKit.UIColor) -> FTSDKCoreKit.FTSDKAttributedStringBuilder
+  @discardableResult
+  public func with(_ font: UIKit.UIFont) -> FTSDKCoreKit.FTSDKAttributedStringBuilder
+  @discardableResult
+  public func with(_ underLineStyle: UIKit.NSUnderlineStyle) -> FTSDKCoreKit.FTSDKAttributedStringBuilder
+  @discardableResult
+  public func with(_ paragraphStyle: UIKit.NSParagraphStyle) -> FTSDKCoreKit.FTSDKAttributedStringBuilder
+  @discardableResult
+  public func with(_ link: Foundation.URL) -> FTSDKCoreKit.FTSDKAttributedStringBuilder
+  @discardableResult
+  public func with(strikethrough color: UIKit.UIColor, height: CoreFoundation.CGFloat = 1.0) -> FTSDKCoreKit.FTSDKAttributedStringBuilder
+  public func with(_ baselineOffset: CoreFoundation.CGFloat) -> FTSDKCoreKit.FTSDKAttributedStringBuilder
+  public func attributedString() -> Foundation.NSMutableAttributedString
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FTSDKTextField : UIKit.UITextField, FTSDKCoreKit.IFTSDKTextInput {
+  @_Concurrency.MainActor(unsafe) public var onclickedDoneListener: ((FTSDKCoreKit.IFTSDKTextInput) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var onclickedPreviousListener: ((FTSDKCoreKit.IFTSDKTextInput) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var onclickedNextListener: ((FTSDKCoreKit.IFTSDKTextInput) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var shouldPlayInputClicks: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var shouldToolbarUsesTextFieldTintColor: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var toolbarTintColor: UIKit.UIColor?
+  @_Concurrency.MainActor(unsafe) public var shouldShowToolbarPlaceholder: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var keyboardToolbar: FTSDKCoreKit.FTSDKToolbar {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public func addToolbarIfNeed(_ siblings: [UIKit.UIView])
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers final public class FTSDKHeaderDialogController : ObjectiveC.NSObject {
+  @objc public static func showMessage(message: Swift.String?, duration: Foundation.TimeInterval = 0, color: UIKit.UIColor? = nil, textColor: UIKit.UIColor = .white, iconImage: UIKit.UIImage? = nil)
+  @objc public static func hideMessage(animation: Swift.Bool = true)
+  @objc public static func showSuccess(message: Swift.String?, duration: Foundation.TimeInterval = 1.5)
+  @objc public static func showError(message: Swift.String?, duration: Foundation.TimeInterval = 2.5)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension UIKit.UISlider : FTSDKCoreKit.ValidatableInterfaceElement {
+  @_Concurrency.MainActor(unsafe) public var inputValue: Swift.Float? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public func validateOnInputChange(enabled: Swift.Bool)
+  public typealias InputType = Swift.Float
+}
+open class HTTPClient {
+  public init(session: Foundation.URLSession)
+  public var enableGETLogs: Swift.Bool
+  @objc deinit
+}
+public struct ValidationAlphabetError : FTSDKCoreKit.ValidationError {
+  public var message: Swift.String
+}
+public struct ValidationRuleAlphabet : FTSDKCoreKit.ValidationRule {
+  public var error: FTSDKCoreKit.ValidationError
+  public func validate(input: Swift.String?) -> Swift.Bool
+  public typealias InputType = Swift.String
+}
+@objc @objcMembers public class FTSDKFunzyOrderInfo : ObjectiveC.NSObject {
+  @objc public var cooOrderSerial: Swift.String
+  @objc public init(cooOrderSerial: Swift.String)
+  @objc deinit
+}
+@objc @objcMembers public class FTSDKPlayerInfo : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var accountName: Swift.String
+  @objc public var portalCode: Swift.String
+  @objc public var gameCode: Swift.String
+  @objc public var gameServer: Swift.String
+  @objc public var nickName: Swift.String
+  @objc public init(gameServer: Swift.String, nickName: Swift.String)
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public class URLEncodedBuilder {
+  public enum ArrayEncoding {
+    case brackets
+    case noBrackets
+    case indexInBrackets
+    public static func == (a: FTSDKCoreKit.URLEncodedBuilder.ArrayEncoding, b: FTSDKCoreKit.URLEncodedBuilder.ArrayEncoding) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public enum BoolEncoding {
+    case numeric
+    case literal
+    public static func == (a: FTSDKCoreKit.URLEncodedBuilder.BoolEncoding, b: FTSDKCoreKit.URLEncodedBuilder.BoolEncoding) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public init(arrayEncoding: FTSDKCoreKit.URLEncodedBuilder.ArrayEncoding = .brackets, boolEncoding: FTSDKCoreKit.URLEncodedBuilder.BoolEncoding = .numeric)
+  @discardableResult
+  public func append(name: Swift.String, value: Any?) -> FTSDKCoreKit.URLEncodedBuilder
+  public func build() -> Foundation.Data?
+  @objc deinit
+}
+extension UIKit.UIDevice {
+  @objc @_Concurrency.MainActor(unsafe) public static let isPad: Swift.Bool
+  @objc @_Concurrency.MainActor(unsafe) public static let globalSupportedOrientationMask: UIKit.UIInterfaceOrientationMask
+  @objc @_Concurrency.MainActor(unsafe) public static func setOrientation(_ orientation: UIKit.UIDeviceOrientation)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class FTSDKOverlayView : UIKit.UIView {
+  @objc @_Concurrency.MainActor(unsafe) dynamic final public var color: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+public protocol IConverter {
+  associatedtype SourceType
+  associatedtype DestinationType
+  func convert(from sourceType: Self.SourceType) -> Self.DestinationType
+}
+public typealias JSONType = [Swift.String : Any]
+public typealias ParametersType = [Swift.String : Any]
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class GradientColorButton : UIKit.UIButton {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) open var gradientLayer: QuartzCore.CAGradientLayer {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var isEnabled: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func setAttributedTitle(_ title: Foundation.NSAttributedString?, for state: UIKit.UIControl.State)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) public class FTSDKToolbar : UIKit.UIToolbar, UIKit.UIInputViewAudioFeedback {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func sizeThatFits(_ size: CoreFoundation.CGSize) -> CoreFoundation.CGSize
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var tintColor: UIKit.UIColor! {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc public var enableInputClicksWhenVisible: Swift.Bool {
+    @objc get
+  }
+  @objc deinit
+}
+public protocol FTSDK3rdAuthProtocol : AnyObject {
+  var idToken: Swift.String { get }
+  var authToken: Swift.String { get }
+}
+extension FTSDKCoreKit.FTSDKLog {
+  public static let nw: FTSDKCoreKit.FTSDKLog
+}
+public let KeychainAccessErrorDomain: Swift.String
+public enum FTSDKKeychainItemClass {
+  case genericPassword
+  case internetPassword
+}
+public enum FTSDKKeychainProtocolType {
+  case ftp
+  case ftpAccount
+  case http
+  case irc
+  case nntp
+  case pop3
+  case smtp
+  case socks
+  case imap
+  case ldap
+  case appleTalk
+  case afp
+  case telnet
+  case ssh
+  case ftps
+  case https
+  case httpProxy
+  case httpsProxy
+  case ftpProxy
+  case smb
+  case rtsp
+  case rtspProxy
+  case daap
+  case eppc
+  case ipp
+  case nntps
+  case ldaps
+  case telnetS
+  case imaps
+  case ircs
+  case pop3S
+}
+public enum FTSDKKeychainAuthenticationType {
+  case ntlm
+  case msn
+  case dpa
+  case rpa
+  case httpBasic
+  case httpDigest
+  case htmlForm
+  case `default`
+}
+public enum FTSDKKeychainAccessibility {
+  case whenUnlocked
+  case afterFirstUnlock
+  @available(macCatalyst, unavailable)
+  case always
+  @available(iOS 8.0, macOS 10.10, *)
+  case whenPasscodeSetThisDeviceOnly
+  case whenUnlockedThisDeviceOnly
+  case afterFirstUnlockThisDeviceOnly
+  @available(macCatalyst, unavailable)
+  case alwaysThisDeviceOnly
+}
+public enum FTSDKKeychainAuthenticationUI {
+  case allow
+  case fail
+  case skip
+  public static func == (a: FTSDKCoreKit.FTSDKKeychainAuthenticationUI, b: FTSDKCoreKit.FTSDKKeychainAuthenticationUI) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+@available(iOS 9.0, macOS 10.11, *)
+extension FTSDKCoreKit.FTSDKKeychainAuthenticationUI {
+  public var rawValue: Swift.String {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+}
+public struct FTSDKKeychainAuthenticationPolicy : Swift.OptionSet {
+  @available(iOS 8.0, macOS 10.10, watchOS 2.0, tvOS 8.0, *)
+  public static let userPresence: FTSDKCoreKit.FTSDKKeychainAuthenticationPolicy
+  @available(iOS 11.3, macOS 10.13.4, watchOS 4.3, tvOS 11.3, *)
+  public static let biometryAny: FTSDKCoreKit.FTSDKKeychainAuthenticationPolicy
+  @available(iOS, introduced: 9.0, deprecated: 11.3, renamed: "biometryAny")
+  @available(macOS, introduced: 10.12.1, deprecated: 10.13.4, renamed: "biometryAny")
+  @available(watchOS, introduced: 2.0, deprecated: 4.3, renamed: "biometryAny")
+  @available(tvOS, introduced: 9.0, deprecated: 11.3, renamed: "biometryAny")
+  public static let touchIDAny: FTSDKCoreKit.FTSDKKeychainAuthenticationPolicy
+  @available(iOS 11.3, macOS 10.13, watchOS 4.3, tvOS 11.3, *)
+  public static let biometryCurrentSet: FTSDKCoreKit.FTSDKKeychainAuthenticationPolicy
+  @available(iOS, introduced: 9.0, deprecated: 11.3, renamed: "biometryCurrentSet")
+  @available(macOS, introduced: 10.12.1, deprecated: 10.13.4, renamed: "biometryCurrentSet")
+  @available(watchOS, introduced: 2.0, deprecated: 4.3, renamed: "biometryCurrentSet")
+  @available(tvOS, introduced: 9.0, deprecated: 11.3, renamed: "biometryCurrentSet")
+  public static let touchIDCurrentSet: FTSDKCoreKit.FTSDKKeychainAuthenticationPolicy
+  @available(iOS 9.0, macOS 10.11, watchOS 2.0, tvOS 9.0, *)
+  public static let devicePasscode: FTSDKCoreKit.FTSDKKeychainAuthenticationPolicy
+  @available(macOS 10.15, *)
+  @available(iOS, unavailable)
+  @available(watchOS, unavailable)
+  @available(tvOS, unavailable)
+  public static let watch: FTSDKCoreKit.FTSDKKeychainAuthenticationPolicy
+  @available(iOS 9.0, macOS 10.12.1, watchOS 2.0, tvOS 9.0, *)
+  public static let or: FTSDKCoreKit.FTSDKKeychainAuthenticationPolicy
+  @available(iOS 9.0, macOS 10.12.1, watchOS 2.0, tvOS 9.0, *)
+  public static let and: FTSDKCoreKit.FTSDKKeychainAuthenticationPolicy
+  @available(iOS 9.0, macOS 10.12.1, watchOS 2.0, tvOS 9.0, *)
+  public static let privateKeyUsage: FTSDKCoreKit.FTSDKKeychainAuthenticationPolicy
+  @available(iOS 9.0, macOS 10.12.1, watchOS 2.0, tvOS 9.0, *)
+  public static let applicationPassword: FTSDKCoreKit.FTSDKKeychainAuthenticationPolicy
+  public let rawValue: Swift.UInt
+  public init(rawValue: Swift.UInt)
+  public typealias ArrayLiteralElement = FTSDKCoreKit.FTSDKKeychainAuthenticationPolicy
+  public typealias Element = FTSDKCoreKit.FTSDKKeychainAuthenticationPolicy
+  public typealias RawValue = Swift.UInt
+}
+public struct FTSDKKeychainAttributes {
+  public var `class`: Swift.String? {
+    get
+  }
+  public var data: Foundation.Data? {
+    get
+  }
+  public var ref: Foundation.Data? {
+    get
+  }
+  public var persistentRef: Foundation.Data? {
+    get
+  }
+  public var accessible: Swift.String? {
+    get
+  }
+  public var accessControl: Security.SecAccessControl? {
+    get
+  }
+  public var accessGroup: Swift.String? {
+    get
+  }
+  public var synchronizable: Swift.Bool? {
+    get
+  }
+  public var creationDate: Foundation.Date? {
+    get
+  }
+  public var modificationDate: Foundation.Date? {
+    get
+  }
+  public var attributeDescription: Swift.String? {
+    get
+  }
+  public var comment: Swift.String? {
+    get
+  }
+  public var creator: Swift.String? {
+    get
+  }
+  public var type: Swift.String? {
+    get
+  }
+  public var label: Swift.String? {
+    get
+  }
+  public var isInvisible: Swift.Bool? {
+    get
+  }
+  public var isNegative: Swift.Bool? {
+    get
+  }
+  public var account: Swift.String? {
+    get
+  }
+  public var service: Swift.String? {
+    get
+  }
+  public var generic: Foundation.Data? {
+    get
+  }
+  public var securityDomain: Swift.String? {
+    get
+  }
+  public var server: Swift.String? {
+    get
+  }
+  public var `protocol`: Swift.String? {
+    get
+  }
+  public var authenticationType: Swift.String? {
+    get
+  }
+  public var port: Swift.Int? {
+    get
+  }
+  public var path: Swift.String? {
+    get
+  }
+  public subscript(key: Swift.String) -> Any? {
+    get
+  }
+}
+@_hasMissingDesignatedInitializers final public class FTSDKKeychain {
+  final public var itemClass: FTSDKCoreKit.FTSDKKeychainItemClass {
+    get
+  }
+  final public var service: Swift.String {
+    get
+  }
+  final public var accessGroup: Swift.String? {
+    get
+  }
+  final public var server: Foundation.URL {
+    get
+  }
+  final public var protocolType: FTSDKCoreKit.FTSDKKeychainProtocolType {
+    get
+  }
+  final public var authenticationType: FTSDKCoreKit.FTSDKKeychainAuthenticationType {
+    get
+  }
+  final public var accessibility: FTSDKCoreKit.FTSDKKeychainAccessibility {
+    get
+  }
+  @available(iOS 8.0, macOS 10.10, *)
+  @available(watchOS, unavailable)
+  final public var authenticationPolicy: FTSDKCoreKit.FTSDKKeychainAuthenticationPolicy? {
+    get
+  }
+  final public var synchronizable: Swift.Bool {
+    get
+  }
+  final public var label: Swift.String? {
+    get
+  }
+  final public var comment: Swift.String? {
+    get
+  }
+  @available(iOS 8.0, macOS 10.10, *)
+  @available(watchOS, unavailable)
+  final public var authenticationPrompt: Swift.String? {
+    get
+  }
+  @available(iOS 9.0, macOS 10.11, *)
+  final public var authenticationUI: FTSDKCoreKit.FTSDKKeychainAuthenticationUI {
+    get
+  }
+  @available(iOS 9.0, macOS 10.11, *)
+  final public var authenticationContext: LocalAuthentication.LAContext? {
+    get
+  }
+  convenience public init()
+  convenience public init(service: Swift.String)
+  convenience public init(accessGroup: Swift.String)
+  convenience public init(service: Swift.String, accessGroup: Swift.String)
+  convenience public init(server: Swift.String, protocolType: FTSDKCoreKit.FTSDKKeychainProtocolType, accessGroup: Swift.String? = nil, authenticationType: FTSDKCoreKit.FTSDKKeychainAuthenticationType = .default)
+  convenience public init(server: Foundation.URL, protocolType: FTSDKCoreKit.FTSDKKeychainProtocolType, accessGroup: Swift.String? = nil, authenticationType: FTSDKCoreKit.FTSDKKeychainAuthenticationType = .default)
+  final public func accessibility(_ accessibility: FTSDKCoreKit.FTSDKKeychainAccessibility) -> FTSDKCoreKit.FTSDKKeychain
+  @available(iOS 8.0, macOS 10.10, *)
+  @available(watchOS, unavailable)
+  final public func accessibility(_ accessibility: FTSDKCoreKit.FTSDKKeychainAccessibility, authenticationPolicy: FTSDKCoreKit.FTSDKKeychainAuthenticationPolicy) -> FTSDKCoreKit.FTSDKKeychain
+  final public func synchronizable(_ synchronizable: Swift.Bool) -> FTSDKCoreKit.FTSDKKeychain
+  final public func label(_ label: Swift.String) -> FTSDKCoreKit.FTSDKKeychain
+  final public func comment(_ comment: Swift.String) -> FTSDKCoreKit.FTSDKKeychain
+  final public func attributes(_ attributes: [Swift.String : Any]) -> FTSDKCoreKit.FTSDKKeychain
+  @available(iOS 8.0, macOS 10.10, *)
+  @available(watchOS, unavailable)
+  final public func authenticationPrompt(_ authenticationPrompt: Swift.String) -> FTSDKCoreKit.FTSDKKeychain
+  @available(iOS 9.0, macOS 10.11, *)
+  final public func authenticationUI(_ authenticationUI: FTSDKCoreKit.FTSDKKeychainAuthenticationUI) -> FTSDKCoreKit.FTSDKKeychain
+  @available(iOS 9.0, macOS 10.11, *)
+  final public func authenticationContext(_ authenticationContext: LocalAuthentication.LAContext) -> FTSDKCoreKit.FTSDKKeychain
+  final public func get(_ key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true) throws -> Swift.String?
+  final public func getString(_ key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true) throws -> Swift.String?
+  final public func getData(_ key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true) throws -> Foundation.Data?
+  final public func get<T>(_ key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true, handler: (FTSDKCoreKit.FTSDKKeychainAttributes?) -> T) throws -> T
+  final public func set(_ value: Swift.String, key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true) throws
+  final public func set(_ value: Foundation.Data, key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true) throws
+  final public subscript(key: Swift.String) -> Swift.String? {
+    get
+    set
+  }
+  final public subscript(string key: Swift.String) -> Swift.String? {
+    get
+    set
+  }
+  final public subscript(data key: Swift.String) -> Foundation.Data? {
+    get
+    set
+  }
+  final public subscript(attributes key: Swift.String) -> FTSDKCoreKit.FTSDKKeychainAttributes? {
+    get
+  }
+  final public func remove(_ key: Swift.String, ignoringAttributeSynchronizable: Swift.Bool = true) throws
+  final public func removeAll() throws
+  final public func contains(_ key: Swift.String, withoutAuthenticationUI: Swift.Bool = false) throws -> Swift.Bool
+  final public class func allKeys(_ itemClass: FTSDKCoreKit.FTSDKKeychainItemClass) -> [(Swift.String, Swift.String)]
+  final public func allKeys() -> [Swift.String]
+  final public class func allItems(_ itemClass: FTSDKCoreKit.FTSDKKeychainItemClass) -> [[Swift.String : Any]]
+  final public func allItems() -> [[Swift.String : Any]]
+  @available(iOS 8.0, *)
+  final public func getSharedPassword(_ completion: @escaping (_ account: Swift.String?, _ password: Swift.String?, _ error: Swift.Error?) -> () = { account, password, error -> () in })
+  @available(iOS 8.0, *)
+  final public func getSharedPassword(_ account: Swift.String, completion: @escaping (_ password: Swift.String?, _ error: Swift.Error?) -> () = { password, error -> () in })
+  @available(iOS 8.0, *)
+  final public func setSharedPassword(_ password: Swift.String, account: Swift.String, completion: @escaping (_ error: Swift.Error?) -> () = { e -> () in })
+  @available(iOS 8.0, *)
+  final public func removeSharedPassword(_ account: Swift.String, completion: @escaping (_ error: Swift.Error?) -> () = { e -> () in })
+  @available(iOS 8.0, *)
+  final public class func requestSharedWebCredential(_ completion: @escaping (_ credentials: [[Swift.String : Swift.String]], _ error: Swift.Error?) -> () = { credentials, error -> () in })
+  @available(iOS 8.0, *)
+  final public class func requestSharedWebCredential(domain: Swift.String, completion: @escaping (_ credentials: [[Swift.String : Swift.String]], _ error: Swift.Error?) -> () = { credentials, error -> () in })
+  @available(iOS 8.0, *)
+  final public class func requestSharedWebCredential(domain: Swift.String, account: Swift.String, completion: @escaping (_ credentials: [[Swift.String : Swift.String]], _ error: Swift.Error?) -> () = { credentials, error -> () in })
+  @available(iOS 8.0, *)
+  final public class func generatePassword() -> Swift.String
+  @objc deinit
+}
+extension FTSDKCoreKit.FTSDKKeychain : Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+  final public var description: Swift.String {
+    get
+  }
+  final public var debugDescription: Swift.String {
+    get
+  }
+}
+extension FTSDKCoreKit.FTSDKKeychainAttributes : Swift.CustomStringConvertible, Swift.CustomDebugStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+  public var debugDescription: Swift.String {
+    get
+  }
+}
+extension FTSDKCoreKit.FTSDKKeychainItemClass : Swift.RawRepresentable, Swift.CustomStringConvertible {
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.String
+}
+extension FTSDKCoreKit.FTSDKKeychainProtocolType : Swift.RawRepresentable, Swift.CustomStringConvertible {
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.String
+}
+extension FTSDKCoreKit.FTSDKKeychainAuthenticationType : Swift.RawRepresentable, Swift.CustomStringConvertible {
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.String
+}
+extension FTSDKCoreKit.FTSDKKeychainAccessibility : Swift.RawRepresentable, Swift.CustomStringConvertible {
+  public init?(rawValue: Swift.String)
+  public var rawValue: Swift.String {
+    get
+  }
+  public var description: Swift.String {
+    get
+  }
+  public typealias RawValue = Swift.String
+}
+public enum Status : Darwin.OSStatus, Swift.Error {
+  case success
+  case unimplemented
+  case diskFull
+  case io
+  case opWr
+  case param
+  case wrPerm
+  case allocate
+  case userCanceled
+  case badReq
+  case internalComponent
+  case notAvailable
+  case readOnly
+  case authFailed
+  case noSuchKeychain
+  case invalidKeychain
+  case duplicateKeychain
+  case duplicateCallback
+  case invalidCallback
+  case duplicateItem
+  case itemNotFound
+  case bufferTooSmall
+  case dataTooLarge
+  case noSuchAttr
+  case invalidItemRef
+  case invalidSearchRef
+  case noSuchClass
+  case noDefaultKeychain
+  case interactionNotAllowed
+  case readOnlyAttr
+  case wrongSecVersion
+  case keySizeNotAllowed
+  case noStorageModule
+  case noCertificateModule
+  case noPolicyModule
+  case interactionRequired
+  case dataNotAvailable
+  case dataNotModifiable
+  case createChainFailed
+  case invalidPrefsDomain
+  case inDarkWake
+  case aclNotSimple
+  case policyNotFound
+  case invalidTrustSetting
+  case noAccessForItem
+  case invalidOwnerEdit
+  case trustNotAvailable
+  case unsupportedFormat
+  case unknownFormat
+  case keyIsSensitive
+  case multiplePrivKeys
+  case passphraseRequired
+  case invalidPasswordRef
+  case invalidTrustSettings
+  case noTrustSettings
+  case pkcs12VerifyFailure
+  case invalidCertificate
+  case notSigner
+  case policyDenied
+  case invalidKey
+  case decode
+  case `internal`
+  case unsupportedAlgorithm
+  case unsupportedOperation
+  case unsupportedPadding
+  case itemInvalidKey
+  case itemInvalidKeyType
+  case itemInvalidValue
+  case itemClassMissing
+  case itemMatchUnsupported
+  case useItemListUnsupported
+  case useKeychainUnsupported
+  case useKeychainListUnsupported
+  case returnDataUnsupported
+  case returnAttributesUnsupported
+  case returnRefUnsupported
+  case returnPersitentRefUnsupported
+  case valueRefUnsupported
+  case valuePersistentRefUnsupported
+  case returnMissingPointer
+  case matchLimitUnsupported
+  case itemIllegalQuery
+  case waitForCallback
+  case missingEntitlement
+  case upgradePending
+  case mpSignatureInvalid
+  case otrTooOld
+  case otrIDTooNew
+  case serviceNotAvailable
+  case insufficientClientID
+  case deviceReset
+  case deviceFailed
+  case appleAddAppACLSubject
+  case applePublicKeyIncomplete
+  case appleSignatureMismatch
+  case appleInvalidKeyStartDate
+  case appleInvalidKeyEndDate
+  case conversionError
+  case appleSSLv2Rollback
+  case quotaExceeded
+  case fileTooBig
+  case invalidDatabaseBlob
+  case invalidKeyBlob
+  case incompatibleDatabaseBlob
+  case incompatibleKeyBlob
+  case hostNameMismatch
+  case unknownCriticalExtensionFlag
+  case noBasicConstraints
+  case noBasicConstraintsCA
+  case invalidAuthorityKeyID
+  case invalidSubjectKeyID
+  case invalidKeyUsageForPolicy
+  case invalidExtendedKeyUsage
+  case invalidIDLinkage
+  case pathLengthConstraintExceeded
+  case invalidRoot
+  case crlExpired
+  case crlNotValidYet
+  case crlNotFound
+  case crlServerDown
+  case crlBadURI
+  case unknownCertExtension
+  case unknownCRLExtension
+  case crlNotTrusted
+  case crlPolicyFailed
+  case idpFailure
+  case smimeEmailAddressesNotFound
+  case smimeBadExtendedKeyUsage
+  case smimeBadKeyUsage
+  case smimeKeyUsageNotCritical
+  case smimeNoEmailAddress
+  case smimeSubjAltNameNotCritical
+  case sslBadExtendedKeyUsage
+  case ocspBadResponse
+  case ocspBadRequest
+  case ocspUnavailable
+  case ocspStatusUnrecognized
+  case endOfData
+  case incompleteCertRevocationCheck
+  case networkFailure
+  case ocspNotTrustedToAnchor
+  case recordModified
+  case ocspSignatureError
+  case ocspNoSigner
+  case ocspResponderMalformedReq
+  case ocspResponderInternalError
+  case ocspResponderTryLater
+  case ocspResponderSignatureRequired
+  case ocspResponderUnauthorized
+  case ocspResponseNonceMismatch
+  case codeSigningBadCertChainLength
+  case codeSigningNoBasicConstraints
+  case codeSigningBadPathLengthConstraint
+  case codeSigningNoExtendedKeyUsage
+  case codeSigningDevelopment
+  case resourceSignBadCertChainLength
+  case resourceSignBadExtKeyUsage
+  case trustSettingDeny
+  case invalidSubjectName
+  case unknownQualifiedCertStatement
+  case mobileMeRequestQueued
+  case mobileMeRequestRedirected
+  case mobileMeServerError
+  case mobileMeServerNotAvailable
+  case mobileMeServerAlreadyExists
+  case mobileMeServerServiceErr
+  case mobileMeRequestAlreadyPending
+  case mobileMeNoRequestPending
+  case mobileMeCSRVerifyFailure
+  case mobileMeFailedConsistencyCheck
+  case notInitialized
+  case invalidHandleUsage
+  case pvcReferentNotFound
+  case functionIntegrityFail
+  case internalError
+  case memoryError
+  case invalidData
+  case mdsError
+  case invalidPointer
+  case selfCheckFailed
+  case functionFailed
+  case moduleManifestVerifyFailed
+  case invalidGUID
+  case invalidHandle
+  case invalidDBList
+  case invalidPassthroughID
+  case invalidNetworkAddress
+  case crlAlreadySigned
+  case invalidNumberOfFields
+  case verificationFailure
+  case unknownTag
+  case invalidSignature
+  case invalidName
+  case invalidCertificateRef
+  case invalidCertificateGroup
+  case tagNotFound
+  case invalidQuery
+  case invalidValue
+  case callbackFailed
+  case aclDeleteFailed
+  case aclReplaceFailed
+  case aclAddFailed
+  case aclChangeFailed
+  case invalidAccessCredentials
+  case invalidRecord
+  case invalidACL
+  case invalidSampleValue
+  case incompatibleVersion
+  case privilegeNotGranted
+  case invalidScope
+  case pvcAlreadyConfigured
+  case invalidPVC
+  case emmLoadFailed
+  case emmUnloadFailed
+  case addinLoadFailed
+  case invalidKeyRef
+  case invalidKeyHierarchy
+  case addinUnloadFailed
+  case libraryReferenceNotFound
+  case invalidAddinFunctionTable
+  case invalidServiceMask
+  case moduleNotLoaded
+  case invalidSubServiceID
+  case attributeNotInContext
+  case moduleManagerInitializeFailed
+  case moduleManagerNotFound
+  case eventNotificationCallbackNotFound
+  case inputLengthError
+  case outputLengthError
+  case privilegeNotSupported
+  case deviceError
+  case attachHandleBusy
+  case notLoggedIn
+  case algorithmMismatch
+  case keyUsageIncorrect
+  case keyBlobTypeIncorrect
+  case keyHeaderInconsistent
+  case unsupportedKeyFormat
+  case unsupportedKeySize
+  case invalidKeyUsageMask
+  case unsupportedKeyUsageMask
+  case invalidKeyAttributeMask
+  case unsupportedKeyAttributeMask
+  case invalidKeyLabel
+  case unsupportedKeyLabel
+  case invalidKeyFormat
+  case unsupportedVectorOfBuffers
+  case invalidInputVector
+  case invalidOutputVector
+  case invalidContext
+  case invalidAlgorithm
+  case invalidAttributeKey
+  case missingAttributeKey
+  case invalidAttributeInitVector
+  case missingAttributeInitVector
+  case invalidAttributeSalt
+  case missingAttributeSalt
+  case invalidAttributePadding
+  case missingAttributePadding
+  case invalidAttributeRandom
+  case missingAttributeRandom
+  case invalidAttributeSeed
+  case missingAttributeSeed
+  case invalidAttributePassphrase
+  case missingAttributePassphrase
+  case invalidAttributeKeyLength
+  case missingAttributeKeyLength
+  case invalidAttributeBlockSize
+  case missingAttributeBlockSize
+  case invalidAttributeOutputSize
+  case missingAttributeOutputSize
+  case invalidAttributeRounds
+  case missingAttributeRounds
+  case invalidAlgorithmParms
+  case missingAlgorithmParms
+  case invalidAttributeLabel
+  case missingAttributeLabel
+  case invalidAttributeKeyType
+  case missingAttributeKeyType
+  case invalidAttributeMode
+  case missingAttributeMode
+  case invalidAttributeEffectiveBits
+  case missingAttributeEffectiveBits
+  case invalidAttributeStartDate
+  case missingAttributeStartDate
+  case invalidAttributeEndDate
+  case missingAttributeEndDate
+  case invalidAttributeVersion
+  case missingAttributeVersion
+  case invalidAttributePrime
+  case missingAttributePrime
+  case invalidAttributeBase
+  case missingAttributeBase
+  case invalidAttributeSubprime
+  case missingAttributeSubprime
+  case invalidAttributeIterationCount
+  case missingAttributeIterationCount
+  case invalidAttributeDLDBHandle
+  case missingAttributeDLDBHandle
+  case invalidAttributeAccessCredentials
+  case missingAttributeAccessCredentials
+  case invalidAttributePublicKeyFormat
+  case missingAttributePublicKeyFormat
+  case invalidAttributePrivateKeyFormat
+  case missingAttributePrivateKeyFormat
+  case invalidAttributeSymmetricKeyFormat
+  case missingAttributeSymmetricKeyFormat
+  case invalidAttributeWrappedKeyFormat
+  case missingAttributeWrappedKeyFormat
+  case stagedOperationInProgress
+  case stagedOperationNotStarted
+  case verifyFailed
+  case querySizeUnknown
+  case blockSizeMismatch
+  case publicKeyInconsistent
+  case deviceVerifyFailed
+  case invalidLoginName
+  case alreadyLoggedIn
+  case invalidDigestAlgorithm
+  case invalidCRLGroup
+  case certificateCannotOperate
+  case certificateExpired
+  case certificateNotValidYet
+  case certificateRevoked
+  case certificateSuspended
+  case insufficientCredentials
+  case invalidAction
+  case invalidAuthority
+  case verifyActionFailed
+  case invalidCertAuthority
+  case invaldCRLAuthority
+  case invalidCRLEncoding
+  case invalidCRLType
+  case invalidCRL
+  case invalidFormType
+  case invalidID
+  case invalidIdentifier
+  case invalidIndex
+  case invalidPolicyIdentifiers
+  case invalidTimeString
+  case invalidReason
+  case invalidRequestInputs
+  case invalidResponseVector
+  case invalidStopOnPolicy
+  case invalidTuple
+  case multipleValuesUnsupported
+  case notTrusted
+  case noDefaultAuthority
+  case rejectedForm
+  case requestLost
+  case requestRejected
+  case unsupportedAddressType
+  case unsupportedService
+  case invalidTupleGroup
+  case invalidBaseACLs
+  case invalidTupleCredendtials
+  case invalidEncoding
+  case invalidValidityPeriod
+  case invalidRequestor
+  case requestDescriptor
+  case invalidBundleInfo
+  case invalidCRLIndex
+  case noFieldValues
+  case unsupportedFieldFormat
+  case unsupportedIndexInfo
+  case unsupportedLocality
+  case unsupportedNumAttributes
+  case unsupportedNumIndexes
+  case unsupportedNumRecordTypes
+  case fieldSpecifiedMultiple
+  case incompatibleFieldFormat
+  case invalidParsingModule
+  case databaseLocked
+  case datastoreIsOpen
+  case missingValue
+  case unsupportedQueryLimits
+  case unsupportedNumSelectionPreds
+  case unsupportedOperator
+  case invalidDBLocation
+  case invalidAccessRequest
+  case invalidIndexInfo
+  case invalidNewOwner
+  case invalidModifyMode
+  case missingRequiredExtension
+  case extendedKeyUsageNotCritical
+  case timestampMissing
+  case timestampInvalid
+  case timestampNotTrusted
+  case timestampServiceNotAvailable
+  case timestampBadAlg
+  case timestampBadRequest
+  case timestampBadDataFormat
+  case timestampTimeNotAvailable
+  case timestampUnacceptedPolicy
+  case timestampUnacceptedExtension
+  case timestampAddInfoNotAvailable
+  case timestampSystemFailure
+  case signingTimeMissing
+  case timestampRejection
+  case timestampWaiting
+  case timestampRevocationWarning
+  case timestampRevocationNotification
+  case unexpectedError
+}
+extension FTSDKCoreKit.Status : Swift.RawRepresentable, Swift.CustomStringConvertible {
+  public init(status: Darwin.OSStatus)
+  public var description: Swift.String {
+    get
+  }
+  public init?(rawValue: Darwin.OSStatus)
+  public typealias RawValue = Darwin.OSStatus
+  public var rawValue: Darwin.OSStatus {
+    get
+  }
+}
+extension FTSDKCoreKit.Status : Foundation.CustomNSError {
+  public static let errorDomain: Swift.String
+  public var errorCode: Swift.Int {
+    get
+  }
+  public var errorUserInfo: [Swift.String : Any] {
+    get
+  }
+}
+public protocol FTSDK3rdAuthProviderProtocol : AnyObject {
+  init()
+  func authorize(_ context: UIKit.UIViewController?, completed: @escaping (Swift.Result<FTSDKCoreKit.FTSDK3rdAuthProtocol, FTSDKCoreKit.FTSDKError>) -> Swift.Void)
+  func signOut()
+}
+public struct ValidationRuleURL : FTSDKCoreKit.ValidationRule {
+  public let error: FTSDKCoreKit.ValidationError
+  public init(error: FTSDKCoreKit.ValidationError)
+  public func validate(input: Swift.String?) -> Swift.Bool
+  public typealias InputType = Swift.String
+}
+extension Foundation.URLRequest {
+  public var method: FTSDKCoreKit.HTTPMethod? {
+    get
+    set
+  }
+}
+public struct ValidationRuleComparison<T> : FTSDKCoreKit.ValidationRule where T : Swift.Comparable {
+  public let min: T
+  public let max: T
+  public let error: FTSDKCoreKit.ValidationError
+  public init(min: T, max: T, error: FTSDKCoreKit.ValidationError)
+  public func validate(input: T?) -> Swift.Bool
+  public typealias InputType = T
+}
+public struct ValidationRuleSet<InputType> {
+  public init()
+  public init<Rule>(rules: [Rule]) where InputType == Rule.InputType, Rule : FTSDKCoreKit.ValidationRule
+  public mutating func add<Rule>(rule: Rule) where InputType == Rule.InputType, Rule : FTSDKCoreKit.ValidationRule
+}
+public protocol CancellableRequest {
+  func cancel()
+}
+@_hasMissingDesignatedInitializers public class EmptyRequest : FTSDKCoreKit.CancellableRequest {
+  public func cancel()
+  @objc deinit
+}
+extension Foundation.URLSessionTask : FTSDKCoreKit.CancellableRequest {
+}
+extension Dispatch.DispatchWorkItem : FTSDKCoreKit.CancellableRequest {
+}
+extension Swift.String {
+  public func localized(_ bundle: Foundation.Bundle? = nil) -> Swift.String
+}
+public struct ValidationRuleEquality<T> : FTSDKCoreKit.ValidationRule where T : Swift.Equatable {
+  public let target: T?
+  public let dynamicTarget: (() -> T)?
+  public let error: FTSDKCoreKit.ValidationError
+  public init(target: T, error: FTSDKCoreKit.ValidationError)
+  public init(dynamicTarget: @escaping (() -> T), error: FTSDKCoreKit.ValidationError)
+  public func validate(input: T?) -> Swift.Bool
+  public typealias InputType = T
+}
+public protocol IFTSDKTextInput : UIKit.UIView {
+  var onclickedDoneListener: ((FTSDKCoreKit.IFTSDKTextInput) -> Swift.Void)? { get set }
+  var onclickedPreviousListener: ((FTSDKCoreKit.IFTSDKTextInput) -> Swift.Void)? { get set }
+  var onclickedNextListener: ((FTSDKCoreKit.IFTSDKTextInput) -> Swift.Void)? { get set }
+  var keyboardToolbar: FTSDKCoreKit.FTSDKToolbar { get }
+  func addToolbarIfNeed(_ siblings: [UIKit.UIView])
+}
+public protocol FTSDKKeyboardInputAdjustable : UIKit.UIView {
+  var responderViews: [UIKit.UIView] { get }
+}
+public struct ValidationRuleContains<T, S> : FTSDKCoreKit.ValidationRule where T : Swift.Equatable, T == S.Element, S : Swift.Sequence {
+  public var sequence: S
+  public let error: FTSDKCoreKit.ValidationError
+  public init(sequence: S, error: FTSDKCoreKit.ValidationError)
+  public func validate(input: T?) -> Swift.Bool
+  public typealias InputType = T
+}
+@objc @objcMembers public class FTSDKListPackageData : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var packages: [FTSDKCoreKit.FTSDKPackageData]?
+  public var page: Swift.Int?
+  public var pageSize: Swift.Int?
+  public var totalRow: Swift.Int?
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+@objc @_inheritsConvenienceInitializers @objcMembers final public class FTSDKBottomSheetController : ObjectiveC.NSObject {
+  @objc @discardableResult
+  final public func show(context: UIKit.UIView? = nil, completion: (() -> Swift.Void)? = nil) -> FTSDKCoreKit.FTSDKBottomSheetController
+  @objc final public func hide()
+  @objc @_inheritsConvenienceInitializers @objcMembers public class Builder : ObjectiveC.NSObject {
+    @objc @discardableResult
+    public func title(_ title: Swift.String?) -> FTSDKCoreKit.FTSDKBottomSheetController.Builder
+    @objc @discardableResult
+    public func titleFont(_ font: UIKit.UIFont?) -> FTSDKCoreKit.FTSDKBottomSheetController.Builder
+    @objc @discardableResult
+    public func titleColor(_ color: UIKit.UIColor?) -> FTSDKCoreKit.FTSDKBottomSheetController.Builder
+    @objc @discardableResult
+    public func dismissWhenTouchOutSide(_ dismissable: Swift.Bool) -> FTSDKCoreKit.FTSDKBottomSheetController.Builder
+    @objc @discardableResult
+    public func contentView(_ view: UIKit.UIView?, withInsets insets: UIKit.UIEdgeInsets = .zero) -> FTSDKCoreKit.FTSDKBottomSheetController.Builder
+    @objc @discardableResult
+    public func build() -> FTSDKCoreKit.FTSDKBottomSheetController
+    @objc override dynamic public init()
+    @objc deinit
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum CaseValidationPattern : Swift.String, FTSDKCoreKit.ValidationPattern {
+  case uppercase, lowercase
+  public var pattern: Swift.String {
+    get
+  }
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public protocol RequestBagCompatible : AnyObject {
+  var requestBag: [FTSDKCoreKit.CancellableRequest?] { get set }
+  func cancelRequestBag()
+}
+extension FTSDKCoreKit.CancellableRequest {
+  public func add(into bag: FTSDKCoreKit.RequestBagCompatible)
+}
+extension FTSDKCoreKit.RequestBagCompatible {
+  public func cancelRequestBag()
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FTSDKTextView : UIKit.UITextView, FTSDKCoreKit.IFTSDKTextInput {
+  @_Concurrency.MainActor(unsafe) public var onclickedDoneListener: ((FTSDKCoreKit.IFTSDKTextInput) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var onclickedPreviousListener: ((FTSDKCoreKit.IFTSDKTextInput) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var onclickedNextListener: ((FTSDKCoreKit.IFTSDKTextInput) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) public var shouldPlayInputClicks: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var shouldToolbarUsesTextFieldTintColor: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var toolbarTintColor: UIKit.UIColor?
+  @_Concurrency.MainActor(unsafe) public var shouldShowToolbarPlaceholder: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public var attributedPlaceholder: Foundation.NSAttributedString?
+  @_Concurrency.MainActor(unsafe) public var keyboardToolbar: FTSDKCoreKit.FTSDKToolbar {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect, textContainer: UIKit.NSTextContainer?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public func addToolbarIfNeed(_ siblings: [UIKit.UIView])
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers open class HTTPDecoding {
+  open class Factory {
+    public init()
+    open func create() -> Foundation.JSONDecoder
+    @objc deinit
+  }
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers open class HTTPEncoding {
+  open class Factory {
+    public init()
+    open func create() -> Foundation.JSONEncoder
+    @objc deinit
+  }
+  @objc deinit
+}
+@objc @objcMembers public class FTSDKTransaction : ObjectiveC.NSObject {
+  @objc public var transId: Swift.String
+  @objc public init(transId: Swift.String)
+  @objc deinit
+}
+public struct NormalValidationError : FTSDKCoreKit.ValidationError {
+  public var message: Swift.String
+  public init(_ errorMessage: Swift.String)
+}
+@objc @objcMembers public class FTSDKGalleryPhoto : ObjectiveC.NSObject {
+  @objc final public let image: UIKit.UIImage
+  @objc final public let name: Swift.String?
+  @objc final public let type: Swift.String?
+  @objc public init(image: UIKit.UIImage, name: Swift.String?, type: Swift.String?)
+  @objc deinit
+}
+public struct FTSDKVerifyOrderData : Swift.Decodable {
+  public var code: Swift.Int
+  public var status: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class FTSDKCoreAnalyticEvent {
+  public static let openApp: Swift.String
+  public static let login: Swift.String
+  public static let playNow: Swift.String
+  public static let loginPhone: Swift.String
+  public static let loginMail: Swift.String
+  public static let loginFacebook: Swift.String
+  public static let loginZalo: Swift.String
+  public static let loginGoogle: Swift.String
+  public static let loginApple: Swift.String
+  public static let loginFail: Swift.String
+  public static let signUp: Swift.String
+  public static let signUpFail: Swift.String
+  public static let startIap: Swift.String
+  public static let paySuccess: Swift.String
+  public static let payFail: Swift.String
+  public static let payNotYetSuccess: Swift.String
+  public static let selectCharacter: Swift.String
+  public static let selectServer: Swift.String
+  public static let levelUp: Swift.String
+  public static let tutorialCompleted: Swift.String
+  public static let logout: Swift.String
+  public static let registration: Swift.String
+  public static let retentionD1: Swift.String
+  public static let retentionD3: Swift.String
+  @objc deinit
+}
+public struct FTSDKCoreAnalyticParam {
+  public static let packageName: Swift.String
+  public static let clientId: Swift.String
+  public static let gameVersion: Swift.String
+  public static let sdkVersion: Swift.String
+  public static let characterId: Swift.String
+  public static let characterName: Swift.String
+  public static let characterLevel: Swift.String
+  public static let serverId: Swift.String
+  public static let userId: Swift.String
+  public static let os: Swift.String
+  public static let osVersion: Swift.String
+  public static let deviceName: Swift.String
+  public static let deviceModel: Swift.String
+  public static let networkType: Swift.String
+  public static let ip: Swift.String
+  public static let manufactory: Swift.String
+  public static let emutor: Swift.String
+  public static let time: Swift.String
+  public static let partnerCode: Swift.String
+  public static let gameCode: Swift.String
+  public static let scope: Swift.String
+  public static let dataExtra: Swift.String
+  public static let errorCode: Swift.String
+  public static let message: Swift.String
+  public static let orderId: Swift.String
+  public static let price: Swift.String
+  public static let revenue: Swift.String
+  public static let contentId: Swift.String
+  public static let currency: Swift.String
+  public static let orderStatus: Swift.String
+  public static let mobileCarrier: Swift.String
+  public static let loginMethod: Swift.String
+  public static let signupMethod: Swift.String
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FTSDKBaseCollectionViewCell : UIKit.UICollectionViewCell {
+  @_Concurrency.MainActor(unsafe) public static var reuseIdentifier: Swift.String {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public static var nib: UIKit.UINib {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers final public class FTSDKTracking : ObjectiveC.NSObject {
+  @objc public static func instance() -> FTSDKCoreKit.FTSDKTracking
+  @objc final public var tracker: FTSDKCoreKit.FTSDKTrackerProtocol {
+    @objc get
+  }
+  @objc final public var isDebug: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc public static func configure()
+  @objc public static func getDefaultParams() -> [Swift.String : Any]
+  @objc public static func buildName(_ name: Swift.String, from oldPrefix: Swift.String, to newPrefix: Swift.String) -> Swift.String
+  @objc final public func logEvent(_ event: Swift.String, params: [Swift.String : Any])
+  @objc final public func logEvent(_ event: Swift.String)
+  @objc final public func addTracker(_ tracker: FTSDKCoreKit.FTSDKTrackerProtocol)
+  @objc final public func requestTrackingAuthorization()
+  @objc final public func onConversionDataSuccess(_ data: [Swift.AnyHashable : Any])
+  @objc final public func onConversionDataFail(_ error: Swift.Error)
+  @objc public static func addBreadcrumb(level: Swift.Int, category: Swift.String, message: Swift.String)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class FTSDKComponentView : FTSDKCoreKit.MVPComponentView, FTSDKCoreKit.FTSDKKeyboardInputAdjustable {
+  @_Concurrency.MainActor(unsafe) open var responderViews: [UIKit.UIView] {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) override open func viewDidReady()
+  @_Concurrency.MainActor(unsafe) override open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) override open func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) override open func viewDidRelease()
+  @_Concurrency.MainActor(unsafe) open func addTrackerKeyboard()
+  @_Concurrency.MainActor(unsafe) required public init(nibName: Swift.String?, bundle: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+public class FTSDKNotEmptyStringBuilder {
+  final public let split: Swift.String
+  public init(split: Swift.String)
+  @discardableResult
+  public func append(_ str: Swift.String?) -> FTSDKCoreKit.FTSDKNotEmptyStringBuilder
+  public func build() -> Swift.String?
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class FTSDKListSelectionView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public var maxItemDisplay: Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) public func setDataSource<T>(_ dataSource: FTSDKCoreKit.FTSDKListSelectionDataSource<T>)
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class FTSDKListSelectionDataSource<T> : ObjectiveC.NSObject, UIKit.UITableViewDelegate, UIKit.UITableViewDataSource {
+  @_Concurrency.MainActor(unsafe) public var onSelectedItemListener: ((T) -> Swift.Void)?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init()
+  @_Concurrency.MainActor(unsafe) public func reset(_ data: [FTSDKCoreKit.FTSDKSelectionItem<T>], _ selectedItem: T?)
+  @_Concurrency.MainActor(unsafe) public func reset(_ data: [T], selected: T?)
+  @_Concurrency.MainActor(unsafe) @objc public func tableView(_ tableView: UIKit.UITableView, numberOfRowsInSection section: Swift.Int) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc public func tableView(_ tableView: UIKit.UITableView, cellForRowAt indexPath: Foundation.IndexPath) -> UIKit.UITableViewCell
+  @_Concurrency.MainActor(unsafe) @objc public func tableView(_ tableView: UIKit.UITableView, didSelectRowAt indexPath: Foundation.IndexPath)
+  @_Concurrency.MainActor(unsafe) public func emptyDataSetShouldDisplay(_ scrollView: UIKit.UIScrollView) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) public func shouldShowImageAndTitleEmptyDataSet() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) public func customView(forEmptyDataSet scrollView: UIKit.UIScrollView) -> UIKit.UIView?
+  @_Concurrency.MainActor(unsafe) public func title(forEmptyDataSet scrollView: UIKit.UIScrollView) -> Foundation.NSAttributedString?
+  @_Concurrency.MainActor(unsafe) public func image(forEmptyDataSet scrollView: UIKit.UIScrollView) -> UIKit.UIImage?
+  @_Concurrency.MainActor(unsafe) public func spaceHeight(forEmptyDataSet scrollView: UIKit.UIScrollView) -> CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) public func verticalOffset(forEmptyDataSet scrollView: UIKit.UIScrollView) -> CoreFoundation.CGFloat
+  @objc deinit
+}
+public struct JSONCodingKeys : Swift.CodingKey {
+  public var stringValue: Swift.String
+  public init?(stringValue: Swift.String)
+  public var intValue: Swift.Int?
+  public init?(intValue: Swift.Int)
+}
+extension Swift.KeyedDecodingContainer {
+  public func decode(_ type: [Any].Type, forKey key: Swift.KeyedDecodingContainer<K>.Key) throws -> [Any]
+  public func decode(_ type: [Swift.String : Any].Type, forKey key: Swift.KeyedDecodingContainer<K>.Key) throws -> [Swift.String : Any]
+  public func decodeIfPresent(_ type: [Any].Type, forKey key: Swift.KeyedDecodingContainer<K>.Key) throws -> [Any]?
+  public func decodeIfPresent(_ type: [Swift.String : Any].Type, forKey key: Swift.KeyedDecodingContainer<K>.Key) throws -> [Swift.String : Any]?
+}
+extension Swift.KeyedEncodingContainer {
+  public mutating func encode(_ value: [Swift.String : Any], forKey key: Swift.KeyedEncodingContainer<K>.Key) throws
+  public mutating func encode(_ value: [Any], forKey key: Swift.KeyedEncodingContainer<K>.Key) throws
+  public mutating func encodeIfPresent(_ value: [Swift.String : Any]?, forKey key: Swift.KeyedEncodingContainer<K>.Key) throws
+  public mutating func encodeIfPresent(_ value: [Any]?, forKey key: Swift.KeyedEncodingContainer<K>.Key) throws
+}
+extension Swift.UnkeyedEncodingContainer {
+  public mutating func encode(_ value: [Any]) throws
+  public mutating func encode(_ value: [Swift.String : Any]) throws
+}
+extension Foundation.Locale {
+  public static var sdkCurrent: Foundation.Locale {
+    get
+  }
+}
+public protocol ValidationError : Swift.Error {
+  var message: Swift.String { get }
+}
+public struct ValidationRuleLength2 : FTSDKCoreKit.ValidationRule {
+  public enum LengthType {
+    case characters
+    case utf8
+    case utf16
+    case unicodeScalars
+    public static func == (a: FTSDKCoreKit.ValidationRuleLength2.LengthType, b: FTSDKCoreKit.ValidationRuleLength2.LengthType) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  public let min: Swift.Int
+  public let max: Swift.Int
+  public let lengthType: FTSDKCoreKit.ValidationRuleLength2.LengthType
+  public let error: FTSDKCoreKit.ValidationError
+  public init(min: Swift.Int = 0, max: Swift.Int = Int.max, lengthType: FTSDKCoreKit.ValidationRuleLength2.LengthType = .characters, error: FTSDKCoreKit.ValidationError)
+  public func validate(input: Swift.String?) -> Swift.Bool
+  public typealias InputType = Swift.String
+}
+public enum PaymentCardType : Swift.Int, Swift.CaseIterable {
+  case amex
+  case mastercard
+  case visa
+  case maestro
+  case dinersClub
+  case jcb
+  case discover
+  case unionPay
+  public init?(cardNumber: Swift.String)
+  public init?(rawValue: Swift.Int)
+  public typealias AllCases = [FTSDKCoreKit.PaymentCardType]
+  public typealias RawValue = Swift.Int
+  public static var allCases: [FTSDKCoreKit.PaymentCardType] {
+    get
+  }
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public struct ValidationRulePaymentCard : FTSDKCoreKit.ValidationRule {
+  public let acceptedTypes: [FTSDKCoreKit.PaymentCardType]
+  public let error: FTSDKCoreKit.ValidationError
+  public init(acceptedTypes: [FTSDKCoreKit.PaymentCardType], error: FTSDKCoreKit.ValidationError)
+  public init(error: FTSDKCoreKit.ValidationError)
+  public func validate(input: Swift.String?) -> Swift.Bool
+  public typealias InputType = Swift.String
+}
+@objc @_Concurrency.MainActor(unsafe) public class FTSDKFadeNavigationController : UIKit.UINavigationController, UIKit.UINavigationControllerDelegate {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(rootViewController: UIKit.UIViewController)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(nibName nibNameOrNil: Swift.String?, bundle nibBundleOrNil: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var shouldAutorotate: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc public func navigationController(_ navigationController: UIKit.UINavigationController, animationControllerFor operation: UIKit.UINavigationController.Operation, from fromVC: UIKit.UIViewController, to toVC: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+}
+@objc @_inheritsConvenienceInitializers @objcMembers final public class FTSDKLoadingDialogController : ObjectiveC.NSObject {
+  @objc public static func show(title: Swift.String = "Vui lòng chờ...")
+  @objc public static func hide(animation: Swift.Bool = true)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum JustAnError : FTSDKCoreKit.ValidationError {
+  case invalid
+  case empty
+  public var message: Swift.String {
+    get
+  }
+  public static func == (a: FTSDKCoreKit.JustAnError, b: FTSDKCoreKit.JustAnError) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct ValidationRuleEmail : FTSDKCoreKit.ValidationRule {
+  public typealias InputType = Swift.String
+  public let error: FTSDKCoreKit.ValidationError
+  public static var `default`: FTSDKCoreKit.ValidationRuleEmail {
+    get
+  }
+  public init(error: FTSDKCoreKit.ValidationError)
+  public func validate(input: Swift.String?) -> Swift.Bool
+}
+public struct ValidationRuleFullName : FTSDKCoreKit.ValidationRule {
+  public typealias InputType = Swift.String
+  public let error: FTSDKCoreKit.ValidationError
+  public static var `default`: FTSDKCoreKit.ValidationRuleFullName {
+    get
+  }
+  public init(error: FTSDKCoreKit.ValidationError)
+  public func validate(input: Swift.String?) -> Swift.Bool
+}
+public struct ValidationRuleDateOfBirth : FTSDKCoreKit.ValidationRule {
+  public typealias InputType = Swift.String
+  public let error: FTSDKCoreKit.ValidationError
+  public init(minAge: Swift.Int, maxAge: Swift.Int, error: FTSDKCoreKit.ValidationError)
+  public init(minAge: Swift.Int, maxAge: Swift.Int)
+  public func validate(input: Swift.String?) -> Swift.Bool
+}
+public struct ValidationRuleFlightTime : FTSDKCoreKit.ValidationRule {
+  public typealias InputType = Swift.String
+  public let error: FTSDKCoreKit.ValidationError
+  public init()
+  public func validate(input: Swift.String?) -> Swift.Bool
+}
+public struct ValidationRuleLength : FTSDKCoreKit.ValidationRule {
+  public typealias InputType = Swift.String
+  public let error: FTSDKCoreKit.ValidationError
+  public init(min: Swift.Int?, max: Swift.Int?, error: FTSDKCoreKit.ValidationError)
+  public func validate(input: Swift.String?) -> Swift.Bool
+}
+public struct ValidationRuleName : FTSDKCoreKit.ValidationRule {
+  public typealias InputType = Swift.String
+  public let error: FTSDKCoreKit.ValidationError
+  public static var `default`: FTSDKCoreKit.ValidationRuleName {
+    get
+  }
+  public init(error: FTSDKCoreKit.ValidationError)
+  public func validate(input: Swift.String?) -> Swift.Bool
+}
+public struct ValidationRulePassword : FTSDKCoreKit.ValidationRule {
+  public typealias InputType = Swift.String
+  public let error: FTSDKCoreKit.ValidationError
+  public static var `default`: FTSDKCoreKit.ValidationRulePassword {
+    get
+  }
+  public init(error: FTSDKCoreKit.ValidationError)
+  public func validate(input: Swift.String?) -> Swift.Bool
+}
+public struct ValidationRuleCharacter : FTSDKCoreKit.ValidationRule {
+  public typealias InputType = Swift.String
+  public let error: FTSDKCoreKit.ValidationError
+  public static var `default`: FTSDKCoreKit.ValidationRuleCharacter {
+    get
+  }
+  public init(error: FTSDKCoreKit.ValidationError)
+  public func validate(input: Swift.String?) -> Swift.Bool
+}
+public struct ValidationRuleOnlyNumber : FTSDKCoreKit.ValidationRule {
+  public typealias InputType = Swift.String
+  public let error: FTSDKCoreKit.ValidationError
+  public static var `default`: FTSDKCoreKit.ValidationRuleNumber {
+    get
+  }
+  public init(error: FTSDKCoreKit.ValidationError)
+  public func validate(input: Swift.String?) -> Swift.Bool
+}
+public struct ValidationRuleDOB : FTSDKCoreKit.ValidationRule {
+  public typealias InputType = Swift.String
+  public let error: FTSDKCoreKit.ValidationError
+  public static var `default`: FTSDKCoreKit.ValidationRuleDOB {
+    get
+  }
+  public init(error: FTSDKCoreKit.ValidationError)
+  public func validate(input: Swift.String?) -> Swift.Bool
+}
+public struct ValidationRuleEmpty : FTSDKCoreKit.ValidationRule {
+  public typealias InputType = Swift.String
+  public let error: FTSDKCoreKit.ValidationError
+  public static var `default`: FTSDKCoreKit.ValidationRuleEmpty {
+    get
+  }
+  public init(error: FTSDKCoreKit.ValidationError)
+  public func validate(input: Swift.String?) -> Swift.Bool
+}
+public struct ValidationRuleCitizenIdOrPassportId : FTSDKCoreKit.ValidationRule {
+  public typealias InputType = Swift.String
+  public let error: FTSDKCoreKit.ValidationError
+  public static var `default`: FTSDKCoreKit.ValidationRuleCitizenIdOrPassportId {
+    get
+  }
+  public init(error: FTSDKCoreKit.ValidationError)
+  public func validate(input: Swift.String?) -> Swift.Bool
+}
+public struct ValidationRuleDiff : FTSDKCoreKit.ValidationRule {
+  public typealias InputType = Swift.String
+  public let error: FTSDKCoreKit.ValidationError
+  public static var `default`: FTSDKCoreKit.ValidationRuleDiff {
+    get
+  }
+  public init(target: Swift.String? = "", error: FTSDKCoreKit.ValidationError)
+  public func validate(input: Swift.String?) -> Swift.Bool
+}
+@objc @_Concurrency.MainActor(unsafe) public class FTSDKIndicatorView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public var bounds: CoreFoundation.CGRect {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var color: UIKit.UIColor
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var padding: CoreFoundation.CGFloat
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) public var lineWidth: CoreFoundation.CGFloat
+  @_Concurrency.MainActor(unsafe) public var animating: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var isAnimating: Swift.Bool {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) public init(frame: CoreFoundation.CGRect, color: UIKit.UIColor = UIColor.systemBlue, padding: CoreFoundation.CGFloat = 0.0, lineWidth: CoreFoundation.CGFloat = 4.0)
+  @_Concurrency.MainActor(unsafe) final public func startAnimating()
+  @_Concurrency.MainActor(unsafe) final public func stopAnimating()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers final public class FTSDKAppDelegate : ObjectiveC.NSObject, FTSDKCoreKit.FTSDKUseCaseBagCompatible {
+  final public var useCaseBag: [FTSDKCoreKit.FTSDKUseCaseable?]
+  @objc public static func instance() -> FTSDKCoreKit.FTSDKAppDelegate
+  @objc final public func didFinishLaunching(_ application: UIKit.UIApplication, with launchOptions: [UIKit.UIApplication.LaunchOptionsKey : Any]?)
+  @discardableResult
+  @objc final public func application(_ app: UIKit.UIApplication, open url: Foundation.URL, options: [UIKit.UIApplication.OpenURLOptionsKey : Any]?) -> Swift.Bool
+  @discardableResult
+  @objc final public func application(_ application: UIKit.UIApplication, open url: Foundation.URL, sourceApplication: Swift.String?, annotation: Any) -> Swift.Bool
+  @discardableResult
+  @objc final public func `continue`(_ userActivity: Foundation.NSUserActivity?, restorationHandler: (([UIKit.UIUserActivityRestoring]?) -> Swift.Void)?) -> Swift.Bool
+  @objc final public func invokeTracker(_ tracker: FTSDKCoreKit.FTSDKTrackerProtocol)
+  @objc final public func getAppData() -> FTSDKCoreKit.FTSDKAppData
+  @objc final public func setLanguage(_ language: FTSDKCoreKit.FTSDKLanguage)
+  @objc final public func loadConfig()
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @objcMembers public class FTSDKCardData : ObjectiveC.NSObject, Swift.Codable {
+  @objc final public let id: Swift.String?
+  @objc final public let birthDay: Swift.String?
+  @objc final public let birthPlace: Swift.String?
+  @objc final public let cardType: Swift.String?
+  @objc final public let cardSubType: Swift.String?
+  @objc final public let citizenId: Swift.String?
+  @objc final public let codeNumber: Swift.String?
+  @objc final public let gender: Swift.String?
+  @objc final public let issueDate: Swift.String?
+  @objc final public let issuePlace: Swift.String?
+  @objc final public let name: Swift.String?
+  @objc final public let nationality: Swift.String?
+  @objc final public let originLocation: Swift.String?
+  @objc final public let passportNo: Swift.String?
+  @objc final public let recentLocation: Swift.String?
+  final public let typeId: Swift.Int64?
+  @objc final public let validDate: Swift.String?
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+public struct FTSDKDevicePermission {
+  public static func requestCameraPermission(_ onAuthorized: @escaping () -> Swift.Void)
+  public static func requestPhotoPermission(_ onAuthorized: @escaping () -> Swift.Void)
+  public static func requestPhotoPermission(onAuthorized: @escaping () -> Swift.Void, onNoPermisson: @escaping () -> Swift.Void)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FTSDKBaseTableViewCell : UIKit.UITableViewCell {
+  @_Concurrency.MainActor(unsafe) public var isEnableHighlight: Swift.Bool
+  @_Concurrency.MainActor(unsafe) public static var reuseIdentifier: Swift.String {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public static var nib: UIKit.UINib {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(style: UIKit.UITableViewCell.CellStyle, reuseIdentifier: Swift.String?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func setSelected(_ selected: Swift.Bool, animated: Swift.Bool)
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class FTSDKAppData : ObjectiveC.NSObject {
+  @objc public var profile: FTSDKCoreKit.FTSDKProfileData?
+  @objc public var authentication: FTSDKCoreKit.FTSDKAuthentication?
+  @objc public var playerInfo: FTSDKCoreKit.FTSDKPlayerInfo?
+  @objc public var user: FTSDKCoreKit.FTSDKUser? {
+    @objc get
+  }
+  @objc public var isLoginSocial: Swift.Bool
+  @objc public var isValidUser: Swift.Bool {
+    @objc get
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct LoginRequest : Swift.Encodable {
+  public func encode(to encoder: Swift.Encoder) throws
+}
+open class FTSDKException : Swift.Error {
+  public var localizedDescription: Swift.String {
+    get
+  }
+  open var message: Swift.String?
+  public init(_ message: Swift.String?)
+  public init(e: Swift.Error?)
+  @objc deinit
+}
+extension Swift.Error {
+  public var exception: FTSDKCoreKit.FTSDKException {
+    get
+  }
+  public var message: Swift.String? {
+    get
+  }
+}
+@objc public enum FTSDKEnvironment : Swift.Int {
+  case pro
+  case dev
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+open class FTSDKSelectionItem<T> {
+  open var isSelected: Swift.Bool
+  public init(_ item: T)
+  open func getData() -> T
+  open func getTitle() -> Swift.String?
+  open func itemIsTheSame(data: T?) -> Swift.Bool
+  open func match(keySearch: Swift.String) -> Swift.Bool
+  open func getUrlImage() -> Swift.String?
+  @objc deinit
+}
+public struct EmptyResponse : Swift.Codable {
+  public func encode(to encoder: Swift.Encoder) throws
+  public init(from decoder: Swift.Decoder) throws
+}
+public struct BoolResponse : Swift.Decodable {
+  public let success: Swift.Bool?
+  public init(from decoder: Swift.Decoder) throws
+}
+extension UIKit.UITextField : FTSDKCoreKit.ValidatableInterfaceElement {
+  @_Concurrency.MainActor(unsafe) public var inputValue: Swift.String? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public func validateOnInputChange(enabled: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) public func validateOnEditingEnd(enabled: Swift.Bool)
+  public typealias InputType = Swift.String
+}
+public protocol ValidatableInterfaceElement {
+  associatedtype InputType : FTSDKCoreKit.Validatable
+  var inputValue: Self.InputType? { get }
+  func validate<R>(rule r: R) -> FTSDKCoreKit.ValidationResult where R : FTSDKCoreKit.ValidationRule
+  func validate(rules: FTSDKCoreKit.ValidationRuleSet<Self.InputType>) -> FTSDKCoreKit.ValidationResult
+  var validationHandler: ((FTSDKCoreKit.ValidationResult) -> Swift.Void)? { get set }
+  func validateOnInputChange(enabled: Swift.Bool)
+}
+extension FTSDKCoreKit.ValidatableInterfaceElement {
+  public func validate<Rule>(rule: Rule) -> FTSDKCoreKit.ValidationResult where Rule : FTSDKCoreKit.ValidationRule
+  public func validate(rules: FTSDKCoreKit.ValidationRuleSet<Self.InputType>) -> FTSDKCoreKit.ValidationResult
+  @discardableResult
+  public func validate() -> FTSDKCoreKit.ValidationResult
+  public var validationRules: FTSDKCoreKit.ValidationRuleSet<Self.InputType>? {
+    get
+    set(newValue)
+  }
+  public var validationHandler: ((FTSDKCoreKit.ValidationResult) -> Swift.Void)? {
+    get
+    set(newValue)
+  }
+}
+@objc public protocol FTSDKDynamicLinkProtocol {
+  @objc @discardableResult
+  func handleUniversalLink(_ url: Foundation.URL, handler: @escaping ((FTSDKCoreKit.FTSDKDynamicLinkObjectProtocol) -> Swift.Void)) -> Swift.Bool
+  @objc @discardableResult
+  func handleDynamicLink(fromSchemeURL schemeUrl: Foundation.URL, handler: @escaping ((FTSDKCoreKit.FTSDKDynamicLinkObjectProtocol) -> Swift.Void)) -> Swift.Bool
+  @objc optional func configure()
+  @objc optional func start()
+}
+@objc public protocol FTSDKDynamicLinkObjectProtocol {
+  @objc var url: Foundation.URL? { get }
+  @objc var payload: [Swift.AnyHashable : Any]? { get }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class FTSDKDynamicLinkObject : ObjectiveC.NSObject, FTSDKCoreKit.FTSDKDynamicLinkObjectProtocol {
+  @objc public var url: Foundation.URL?
+  @objc public var payload: [Swift.AnyHashable : Any]?
+  @objc public init(_ url: Foundation.URL?, payload: [Swift.AnyHashable : Any]?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public protocol FTSDKDynamicLinksDelegate {
+  @objc optional func dynamicLinks(didReceiveWithObject dynamicLinkObj: FTSDKCoreKit.FTSDKDynamicLinkObjectProtocol)
+}
+@objc @_inheritsConvenienceInitializers @objcMembers final public class FTSDKDynamicLinks : ObjectiveC.NSObject {
+  @objc public static func instance() -> FTSDKCoreKit.FTSDKDynamicLinks
+  @objc weak final public var delegate: FTSDKCoreKit.FTSDKDynamicLinksDelegate?
+  @objc final public func addDynamicLink(_ dynamicLink: FTSDKCoreKit.FTSDKDynamicLinkProtocol)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum FTSDKLanguage : Swift.Int, Swift.RawRepresentable, Swift.Comparable {
+  case vietnamese
+  case english
+  public typealias RawValue = Swift.String
+  public var rawValue: FTSDKCoreKit.FTSDKLanguage.RawValue {
+    get
+  }
+  public init?(rawValue: FTSDKCoreKit.FTSDKLanguage.RawValue)
+  public var isBase: Swift.Bool {
+    get
+  }
+  public var bundlePath: Swift.String? {
+    get
+  }
+  public static func < (lhs: FTSDKCoreKit.FTSDKLanguage, rhs: FTSDKCoreKit.FTSDKLanguage) -> Swift.Bool
+}
+@objc public protocol FTSDKLinkAccountDelegate {
+  @objc optional func didLinkAccountSuccess(user: FTSDKCoreKit.FTSDKUser)
+  @objc optional func didLinkAccountFail(error: FTSDKCoreKit.FTSDKError)
+}
+@objc @objcMembers public class FTSDKUser : ObjectiveC.NSObject, Swift.Codable {
+  @objc public var profile: FTSDKCoreKit.FTSDKProfileData
+  @objc final public let authentication: FTSDKCoreKit.FTSDKAuthentication
+  @objc public var isValid: Swift.Bool {
+    @objc get
+  }
+  @objc public var isJustSignUp: Swift.Bool {
+    @objc get
+  }
+  @objc public init(_ profile: FTSDKCoreKit.FTSDKProfileData, _ authen: FTSDKCoreKit.FTSDKAuthentication)
+  @objc public func jsonDescription() -> Swift.String
+  @objc public func base64Description() -> Swift.String
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public struct ValidationNumberError : FTSDKCoreKit.ValidationError {
+  public init()
+  public var message: Swift.String
+}
+public struct ValidationRuleNumber : FTSDKCoreKit.ValidationRule {
+  public var error: FTSDKCoreKit.ValidationError
+  public init(error: FTSDKCoreKit.ValidationError = ValidationNumberError())
+  public func validate(input: Swift.String?) -> Swift.Bool
+  public typealias InputType = Swift.String
+}
+public protocol UseCustomKeyDecodingStrategyType {
+  static var keyDecodingStrategy: Foundation.JSONDecoder.KeyDecodingStrategy { get }
+}
+public protocol UseKeyDecodingStrategyDefaults : FTSDKCoreKit.UseCustomKeyDecodingStrategyType {
+}
+extension FTSDKCoreKit.UseKeyDecodingStrategyDefaults {
+  public static var keyDecodingStrategy: Foundation.JSONDecoder.KeyDecodingStrategy {
+    get
+  }
+}
+public protocol UseCustomKeyEncodingStrategyType {
+  var keyEncodingStrategy: Foundation.JSONEncoder.KeyEncodingStrategy { get }
+}
+public protocol UseKeyEncodingStrategyDefaults : FTSDKCoreKit.UseCustomKeyEncodingStrategyType {
+}
+extension FTSDKCoreKit.UseKeyEncodingStrategyDefaults {
+  public var keyEncodingStrategy: Foundation.JSONEncoder.KeyEncodingStrategy {
+    get
+  }
+}
+public protocol UseKeyCodingStrategyDefaults : FTSDKCoreKit.UseKeyDecodingStrategyDefaults, FTSDKCoreKit.UseKeyEncodingStrategyDefaults {
+}
+@_inheritsConvenienceInitializers @objc public class FTSDKInfrasFactory : ObjectiveC.NSObject {
+  @objc public static func getGalleryService() -> FTSDKCoreKit.FTSDKGalleryServiceProtocol
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol FTSDKUseCaseBagCompatible : AnyObject {
+  var useCaseBag: [FTSDKCoreKit.FTSDKUseCaseable?] { get set }
+  func cancelUseCaseBag()
+  func cancelUseCase<T>(_ type: T.Type) where T : FTSDKCoreKit.FTSDKUseCaseable
+}
+extension FTSDKCoreKit.FTSDKUseCaseable {
+  public func add(into bag: FTSDKCoreKit.FTSDKUseCaseBagCompatible)
+}
+extension FTSDKCoreKit.FTSDKUseCaseBagCompatible {
+  public func cancelUseCaseBag()
+  public func cancelUseCase<T>(_ type: T.Type) where T : FTSDKCoreKit.FTSDKUseCaseable
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class NoSelectionTextField : FTSDKCoreKit.CustomTextField {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func canPerformAction(_ action: ObjectiveC.Selector, withSender sender: Any?) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+}
+final public class FTSDKTranslationService {
+  public static let shared: FTSDKCoreKit.FTSDKTranslationService
+  public init()
+  final public func reloadBundle()
+  final public func lookupTranslation(forKey key: Swift.String, inTable table: Swift.String?) -> Swift.String
+  final public func lookupTranslation(forKey key: Swift.String, inTable table: Swift.String?, bundle: Foundation.Bundle) -> Swift.String
+  final public func format(key: Swift.String, table: Swift.String, args: [Swift.CVarArg]) -> Swift.String
+  @objc deinit
+}
+@_inheritsConvenienceInitializers @objc(FTSDKTransactionEntity) public class FTSDKTransactionEntity : CoreData.NSManagedObject {
+  @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
+  @objc deinit
+}
+public protocol FTSDKImageLoaderProtocol : AnyObject {
+  init()
+  func loadImage(_ view: UIKit.UIView?, url: Swift.String?, placeholder: Swift.String?)
+  func loadImage(_ view: UIKit.UIView?, url: Swift.String?, placeholderImage: UIKit.UIImage?)
+  func loadImage(_ view: UIKit.UIView?, url: Swift.String?)
+}
+public enum HttpResponseError : Swift.Int, Swift.Error {
+  case badRequest
+  case unauthorized
+  case paymentRequired
+  case forbidden
+  case notFound
+  case methodNotAllowed
+  case notAcceptable
+  case proxyAuthenticationRequired
+  case requestTimeout
+  case conflict
+  case gone
+  case lengthRequired
+  case preconditionFailed
+  case payloadTooLarge
+  case URITooLong
+  case unsupportedMediaType
+  case rangeNotSatisfiable
+  case expectationFailed
+  case teapot
+  case misdirectedRequest
+  case unprocessableEntity
+  case locked
+  case failedDependency
+  case upgradeRequired
+  case preconditionRequired
+  case tooManyRequests
+  case requestHeaderFieldsTooLarge
+  case noResponse
+  case unavailableForLegalReasons
+  case SSLCertificateError
+  case SSLCertificateRequired
+  case HTTPRequestSentToHTTPSPort
+  case clientClosedRequest
+  case internalServerError
+  case notImplemented
+  case badGateway
+  case serviceUnavailable
+  case gatewayTimeout
+  case HTTPVersionNotSupported
+  case variantAlsoNegotiates
+  case insufficientStorage
+  case loopDetected
+  case notExtended
+  case networkAuthenticationRequired
+  case undefine
+  case noReturnData
+  case noStatusCode
+  case encodeSendingDataFail
+  case decodeReceivedDataFail
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+extension FTSDKCoreKit.HttpResponseError : Foundation.LocalizedError {
+  public var errorDescription: Swift.String? {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class GetConfigResponse : ObjectiveC.NSObject, Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class ConfigData : ObjectiveC.NSObject, Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class AnalyticsConfigs : ObjectiveC.NSObject, Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class IapConfigs : ObjectiveC.NSObject, Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class MaintenanceConfigs : ObjectiveC.NSObject, Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+public enum ModuleStatus : Swift.String, Swift.Codable {
+  case disable
+  case enable
+  case helpLinkAccount
+  case hidden
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public enum SDKModule : Swift.String, Swift.Codable {
+  case loginPhone
+  case appleAuth
+  case facebookAuth
+  case googleAuth
+  case playNow
+  case registerPhone
+  case forgotPassword
+  case linkAccount
+  case inAppPurchase
+  case localLog
+  case maintenance
+  case registerPromotion
+  case supportBubble
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class ModuleConfig : ObjectiveC.NSObject, Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class OtherConfigs : ObjectiveC.NSObject, Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class Settings : ObjectiveC.NSObject, Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class ThemeConfigs : ObjectiveC.NSObject, Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class ThemeColor : ObjectiveC.NSObject, Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class ThemeImages : ObjectiveC.NSObject, Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class ThirdPartyAuth : ObjectiveC.NSObject, Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@_inheritsConvenienceInitializers public class FTSDKAPIException : FTSDKCoreKit.FTSDKException {
+  public static let unkownError: Swift.Int
+  public static let networkError: Swift.Int
+  public var code: Swift.Int?
+  public var status: FTSDKCoreKit.HttpResponseError
+  public var payload: Any?
+  convenience public init(code: Swift.Int? = nil, message: Swift.String? = nil, payload: Any? = nil)
+  override public init(e: Swift.Error?)
+  override public init(_ message: Swift.String?)
+  @objc deinit
+}
+extension Swift.Error {
+  public var apiException: FTSDKCoreKit.FTSDKAPIException {
+    get
+  }
+}
+public enum APIExcetionCode : Swift.Int {
+  case invalidRequest
+  case unkownError
+  case database
+  case invalidPhoneNumber
+  case invalidOTP
+  case phoneExists
+  case phoneNotExists
+  case wrongOTPLimit
+  case exepiredOTPSMS
+  case wrongOTP
+  case overOTPInDay
+  case rateLimitSMS
+  case errorResetPassword
+  case unknowUser
+  case invalidSystemTime
+  case invalidSignature
+  case userLocked
+  case invalidUsername
+  case invalidPassword
+  case wrongUsernamePassword
+  case notLogin
+  case errorCreateUser
+  case userNoPhoneNumber
+  case oldPasswordWrong
+  case invalidClient
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class FTSDKPurchase : ObjectiveC.NSObject, FTSDKCoreKit.RequestBagCompatible, FTSDKCoreKit.FTSDKUseCaseBagCompatible {
+  @objc weak public var delegate: FTSDKCoreKit.FTSDKPurchaseDelegate?
+  public var useCaseBag: [FTSDKCoreKit.FTSDKUseCaseable?]
+  public var requestBag: [FTSDKCoreKit.CancellableRequest?]
+  @objc public var isDebug: Swift.Bool
+  @objc public static func instance() -> FTSDKCoreKit.FTSDKPurchase
+  @objc public func setPlayerInfo(gameServer: Swift.String, nickName: Swift.String)
+  @objc public func createLogGame(gameServer: Swift.String, nickName: Swift.String, gameCode: Swift.String)
+  @objc public func getListPackages(onSuccess: @escaping (FTSDKCoreKit.FTSDKListPackageData) -> Swift.Void, onFailure: @escaping (FTSDKCoreKit.FTSDKError) -> Swift.Void)
+  @objc public func paymentWithUISDK(funzyOrderInfo: FTSDKCoreKit.FTSDKFunzyOrderInfo)
+  @objc public func paymentWithoutUISDK(with package: FTSDKCoreKit.FTSDKPackageData, funzyOrderInfo: FTSDKCoreKit.FTSDKFunzyOrderInfo)
+  @objc public func reVerifyPendingTransacions(completed: (([FTSDKCoreKit.FTSDKTransaction]) -> Swift.Void)?)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public struct FTSDKRetentionDay : Swift.Decodable {
+  public var retentionDay: Swift.Int?
+  public var rValue: Swift.Bool?
+  public init(from decoder: Swift.Decoder) throws
+}
+extension UIKit.UIScrollView : UIKit.UIGestureRecognizerDelegate {
+}
+@objc @_inheritsConvenienceInitializers @objcMembers public class FTSDKDeviceUtils : ObjectiveC.NSObject {
+  @objc public static var bundleName: Swift.String? {
+    @objc get
+  }
+  @objc public static var systemVersion: Swift.String? {
+    @objc get
+  }
+  @objc public static var deviceModel: Swift.String {
+    @objc get
+  }
+  @objc public static var deviceId: Swift.String?
+  @objc public static var deviceOs: Swift.String {
+    @objc get
+  }
+  @objc public static var deviceName: Swift.String? {
+    @objc get
+  }
+  @objc public static var sdkVersion: Swift.String {
+    @objc get
+  }
+  @objc public static func getDeviceInfo() -> Swift.String?
+  @objc public static func getExtraData() -> Swift.String?
+  @objc public static let mobileCarrier: Swift.String
+  @objc public static let modelName: Swift.String
+  @objc public static let deviceIPv4: Swift.String
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers public class FTSDKKeychainService : ObjectiveC.NSObject {
+  public static let shared: FTSDKCoreKit.FTSDKKeychainService
+  public class func saveIAPRequestId(data: Swift.String)
+  public class func loadIAPRequestId() -> Swift.String?
+  public class func removeIAPRequestId()
+  public class func saveIAPRefOrderId(data: Swift.String)
+  public class func loadIAPRefOrderId() -> Swift.String?
+  public class func saveFunzyCooOrderSerial(data: Swift.String)
+  public class func loadFunzyCooOrderSerial() -> Swift.String?
+  public class func saveFunzyGoodsCount(data: Swift.String)
+  public class func loadFunzyGoodsCount() -> Swift.String?
+  public class func loadDeviceId() -> Swift.String?
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension UIKit.UIColor {
+  public static var mainColor: UIKit.UIColor
+  public static var mainGradientStartColor: UIKit.UIColor
+  public static var mainGradientEndColor: UIKit.UIColor
+  public static var mainBackgroundColor: UIKit.UIColor
+  public static var textPrimaryColor: UIKit.UIColor
+  public static var textPrimarySecondaryColor: UIKit.UIColor
+  public static var textHintColor: UIKit.UIColor
+  public static var textLinkColor: UIKit.UIColor
+  public static var textBoxBorderColor: UIKit.UIColor
+  public static var buttonBackgroundDisableColor: UIKit.UIColor
+  public static var buttonBackgroundEnableColor: UIKit.UIColor
+  public static var buttonBorderColor: UIKit.UIColor
+  public static var buttonTextColor: UIKit.UIColor
+  public static var buttonTextDisableColor: UIKit.UIColor
+  public static var buttonTextEnableColor: UIKit.UIColor
+  public static var inValidLabelMessageColor: UIKit.UIColor
+  public static var validLabelMessageColor: UIKit.UIColor
+  public static var checkedBoxColor: UIKit.UIColor
+  public static var timeRemainLabelColor: UIKit.UIColor
+  public static var secondRamainLabelColor: UIKit.UIColor
+}
+@objc public protocol FTSDKGalleryServiceProtocol {
+  @objc var imagePickedListener: ((FTSDKCoreKit.FTSDKGalleryPhoto) -> Swift.Void)? { get set }
+  @objc func showPickerWithOptions(_ context: UIKit.UIViewController?)
+  @objc func showPickerWithOptions(_ context: UIKit.UIViewController?, allowsEditing: Swift.Bool)
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class MVPComponentView : UIKit.UIView, FTSDKCoreKit.FTSDKViewProtocol {
+  @_Concurrency.MainActor(unsafe) public var isPortrait: Swift.Bool
+  @_Concurrency.MainActor(unsafe) open var containerView: UIKit.UIView {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) required public init(nibName: Swift.String?, bundle: Foundation.Bundle?)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) public func attachPresenter(_ presenter: FTSDKCoreKit.FTSDKPresenterProtocol)
+  @_Concurrency.MainActor(unsafe) open func viewDidReady()
+  @_Concurrency.MainActor(unsafe) open func viewDidRelease()
+  @_Concurrency.MainActor(unsafe) open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) open func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) open func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) open func viewDidDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) open func willTransitionLandscape()
+  @_Concurrency.MainActor(unsafe) open func willTransitionPortrait()
+  @_Concurrency.MainActor(unsafe) open func dispatchCommand(_ command: FTSDKCoreKit.FTSDKCommandProtocol)
+}
+extension UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) public static var nibName: Swift.String {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public static func loadNib(file: Swift.StaticString = #file, line: Swift.UInt = #line, bundle: Foundation.Bundle? = nil) -> Self?
+  @_Concurrency.MainActor(unsafe) public var x: CoreFoundation.CGFloat {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var y: CoreFoundation.CGFloat {
+    get
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var fCornerRadius: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var fBorderWidth: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var fBorderColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) public func addSubviews(_ subViews: UIKit.UIView...)
+  @_Concurrency.MainActor(unsafe) public func removeAllSubviews()
+  public enum ViewCorner {
+    case topLeft
+    case topRight
+    case bottomLeft
+    case bottomRight
+    public static func == (a: UIKit.UIView.ViewCorner, b: UIKit.UIView.ViewCorner) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+  @_Concurrency.MainActor(unsafe) public func makeCorner(radius: CoreFoundation.CGFloat, corners: [UIKit.UIView.ViewCorner])
+  @_Concurrency.MainActor(unsafe) public func drawDashLine(lineWidth: CoreFoundation.CGFloat, color: CoreGraphics.CGColor)
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class FTSDKNavigationBarView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public func awakeFromNib()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+}
+@objc @objcMembers public class FTSDKError : Foundation.NSError {
+  @objc public static let PURCHASE_PEINDING: Swift.Int
+  @objc public static let PROVIDER_3RD_NOTFOUND: Swift.Int
+  @objc public static let AUTH_3RD_NOTFOUND_TOKEN: Swift.Int
+  @objc public var message: Swift.String {
+    @objc get
+  }
+  @objc dynamic public init()
+  @objc public init(with error: Swift.Error)
+  public init(ex: FTSDKCoreKit.FTSDKAPIException)
+  @objc public init(code: Swift.Int, message: Swift.String)
+  @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc public func jsonDescription() -> Swift.String
+  @objc public func base64Description() -> Swift.String
+  public enum StoreKitErrorCode : Swift.Int {
+    case none
+    case unknown
+    case clientInvalid
+    case paymentCancelled
+    case paymentInvalid
+    case paymentNotAllowed
+    case storeProductNotAvailable
+    case cloudServicePermissionDenied
+    case cloudServiceNetworkConnectionFailed
+    case cloudServiceRevoked
+    case privacyAcknowledgementRequired
+    case unauthorizedRequestData
+    case invalidOfferIdentifier
+    case invalidSignature
+    case missingOfferParams
+    case invalidOfferPrice
+    case noProductIDsFound
+    case noProductsFound
+    case productRequestFailed
+    case cantMakePayments
+    case noPurchasesToRestore
+    case cantReadReceipt
+    case productPurchaseFailed
+    case missingOfferSigningParams
+    case fallbackPaywallsNotRequired
+    case noItemFount
+    public var message: Swift.String {
+      get
+    }
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class CustomTextField : FTSDKCoreKit.FTSDKTextField {
+  @IBInspectable @_Concurrency.MainActor(unsafe) @objc override dynamic open var placeholder: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func textRect(forBounds bounds: CoreFoundation.CGRect) -> CoreFoundation.CGRect
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func editingRect(forBounds bounds: CoreFoundation.CGRect) -> CoreFoundation.CGRect
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func placeholderRect(forBounds bounds: CoreFoundation.CGRect) -> CoreFoundation.CGRect
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func prepareForInterfaceBuilder()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @objc deinit
+}
+@_Concurrency.MainActor(unsafe) open class MVPComponentPresenter<V> : UIKit.UIViewController, FTSDKCoreKit.FTSDKPresenterProtocol where V : FTSDKCoreKit.FTSDKViewProtocol {
+  @_Concurrency.MainActor(unsafe) public var mView: V? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic public init()
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func loadView()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var supportedInterfaceOrientations: UIKit.UIInterfaceOrientationMask {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var shouldAutorotate: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidAppear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewWillDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidDisappear(_ animated: Swift.Bool)
+  @_Concurrency.MainActor(unsafe) open func presenterDidReady()
+  @_Concurrency.MainActor(unsafe) open func presenterDidRelease()
+  @_Concurrency.MainActor(unsafe) open func presenterWillActive()
+  @_Concurrency.MainActor(unsafe) open func presenterDidActive()
+  @_Concurrency.MainActor(unsafe) open func presenterWillInactive()
+  @_Concurrency.MainActor(unsafe) open func presenterDidInactive()
+  @_Concurrency.MainActor(unsafe) open func onBackPress()
+  @_Concurrency.MainActor(unsafe) open func setMVPView(_ view: FTSDKCoreKit.FTSDKViewProtocol)
+  @_Concurrency.MainActor(unsafe) open func executeCommand(_ command: FTSDKCoreKit.FTSDKCommandProtocol)
+  @_Concurrency.MainActor(unsafe) open func showLoading()
+  @_Concurrency.MainActor(unsafe) open func hideLoading()
+  @_Concurrency.MainActor(unsafe) open func showHeaderMessage(_ message: Swift.String?, type: FTSDKCoreKit.MVPComponentPresenter<V>.HeaderMessageType)
+  @_Concurrency.MainActor(unsafe) open func loadNibView()
+  @_Concurrency.MainActor(unsafe) open func installContentView()
+  @_Concurrency.MainActor(unsafe) public func present(_ viewController: UIKit.UIViewController, animated: Swift.Bool = true)
+  @_Concurrency.MainActor(unsafe) public func dismiss(animated: Swift.Bool = true)
+  @_Concurrency.MainActor(unsafe) public func pushViewController(_ viewController: UIKit.UIViewController, animated: Swift.Bool = true)
+  @_Concurrency.MainActor(unsafe) public func popViewController(animated: Swift.Bool = true)
+  @objc @_Concurrency.MainActor(unsafe) public func dismissKeyboard()
+  public enum HeaderMessageType {
+    case success
+    case error
+    public static func == (a: FTSDKCoreKit.MVPComponentPresenter<V>.HeaderMessageType, b: FTSDKCoreKit.MVPComponentPresenter<V>.HeaderMessageType) -> Swift.Bool
+    public func hash(into hasher: inout Swift.Hasher)
+    public var hashValue: Swift.Int {
+      get
+    }
+  }
+}
+public protocol ValidationPattern {
+  var pattern: Swift.String { get }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers final public class FTSDKDialogController : ObjectiveC.NSObject {
+  @objc final public func show(completion: (() -> Swift.Void)? = nil)
+  @objc final public func hide()
+  @objc @_inheritsConvenienceInitializers @objcMembers public class Builder : ObjectiveC.NSObject {
+    @objc @discardableResult
+    public func title(_ title: Swift.String?) -> FTSDKCoreKit.FTSDKDialogController.Builder
+    @objc @discardableResult
+    public func titleFont(_ font: UIKit.UIFont?) -> FTSDKCoreKit.FTSDKDialogController.Builder
+    @objc @discardableResult
+    public func titleColor(_ color: UIKit.UIColor?) -> FTSDKCoreKit.FTSDKDialogController.Builder
+    @objc @discardableResult
+    public func message(_ message: Swift.String?) -> FTSDKCoreKit.FTSDKDialogController.Builder
+    @objc @discardableResult
+    public func messageFont(_ font: UIKit.UIFont?) -> FTSDKCoreKit.FTSDKDialogController.Builder
+    @objc @discardableResult
+    public func messageColor(_ color: UIKit.UIColor?) -> FTSDKCoreKit.FTSDKDialogController.Builder
+    @objc @discardableResult
+    public func dismissWhenTouchOutSide(_ dismissable: Swift.Bool) -> FTSDKCoreKit.FTSDKDialogController.Builder
+    @objc @discardableResult
+    public func addAction(_ action: FTSDKCoreKit.FTSDKDialogAction) -> FTSDKCoreKit.FTSDKDialogController.Builder
+    @objc @discardableResult
+    public func addAction(_ action: FTSDKCoreKit.FTSDKDialogAction, withFont font: UIKit.UIFont, andColor color: UIKit.UIColor) -> FTSDKCoreKit.FTSDKDialogController.Builder
+    @objc @discardableResult
+    public func contentView(_ view: UIKit.UIView, withInsets insets: UIKit.UIEdgeInsets = .zero) -> FTSDKCoreKit.FTSDKDialogController.Builder
+    @objc @discardableResult
+    public func build() -> FTSDKCoreKit.FTSDKDialogController
+    @objc override dynamic public init()
+    @objc deinit
+  }
+  @objc override dynamic public init()
+  @objc deinit
+}
+public protocol ValidationRule {
+  associatedtype InputType
+  func validate(input: Self.InputType?) -> Swift.Bool
+  var error: FTSDKCoreKit.ValidationError { get }
+}
+extension Swift.Dictionary {
+  public func toJson(beautify: Swift.Bool = false) -> Swift.String?
+  public func joined(_ other: [Key : Value?]) -> [Key : Value]
+}
+public struct ContainsNumberValidationPattern : FTSDKCoreKit.ValidationPattern {
+  public init()
+  public var pattern: Swift.String {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @objcMembers final public class FTSDKSignIn : ObjectiveC.NSObject, FTSDKCoreKit.RequestBagCompatible, FTSDKCoreKit.FTSDKUseCaseBagCompatible {
+  @objc weak final public var delegate: FTSDKCoreKit.FTSDKAuthDelegate?
+  @objc weak final public var linkAccountDelegate: FTSDKCoreKit.FTSDKLinkAccountDelegate?
+  @objc final public var isLoginFID: Swift.Bool {
+    @objc get
+  }
+  final public var useCaseBag: [FTSDKCoreKit.FTSDKUseCaseable?]
+  final public var requestBag: [FTSDKCoreKit.CancellableRequest?]
+  @objc public static func instance() -> FTSDKCoreKit.FTSDKSignIn
+  @objc final public func signIn()
+  @objc final public func linkAccount()
+  @objc final public func signOut(completed: ((_ error: FTSDKCoreKit.FTSDKError?) -> Swift.Void)?)
+  @objc final public func changePassword(completed: (() -> Swift.Void)?)
+  @objc final public func updatePhoneFor3rd()
+  @objc final public func getUserInfo(with loading: Swift.Bool, onSuccess: @escaping (FTSDKCoreKit.FTSDKUser) -> Swift.Void, onFailure: @escaping (FTSDKCoreKit.FTSDKError) -> Swift.Void)
+  @objc final public func refreshToken(onSuccess: @escaping (FTSDKCoreKit.FTSDKAuthentication) -> Swift.Void, onFailure: @escaping (FTSDKCoreKit.FTSDKError) -> Swift.Void)
+  @objc override dynamic public init()
+  @objc deinit
+}
+public enum FTSDKFontSize {
+  case large
+  case lmedium
+  case medium
+  case `default`
+  case small
+  case smallest
+  case title
+  case subTitle
+  case custom(CoreFoundation.CGFloat)
+}
+extension UIKit.UIFont {
+  public static func defaultLight(ofSize fontSize: FTSDKCoreKit.FTSDKFontSize) -> UIKit.UIFont
+  public static func `default`(ofSize fontSize: FTSDKCoreKit.FTSDKFontSize) -> UIKit.UIFont
+  public static func defaultMedium(ofSize fontSize: FTSDKCoreKit.FTSDKFontSize) -> UIKit.UIFont
+  public static func defaultBold(ofSize fontSize: FTSDKCoreKit.FTSDKFontSize) -> UIKit.UIFont
+  public static func defaultItalic(ofSize fontSize: FTSDKCoreKit.FTSDKFontSize) -> UIKit.UIFont
+}
+public struct FTSDKVoidUseCaseInput : FTSDKCoreKit.FTSDKUseCaseInput {
+}
+public protocol FTSDKUseCaseable : AnyObject {
+  func cancel()
+}
+public protocol FTSDKUseCaseInput {
+}
+@_inheritsConvenienceInitializers open class FTSDKUseCase<R, T> : ObjectiveC.NSObject, FTSDKCoreKit.RequestBagCompatible, FTSDKCoreKit.FTSDKUseCaseable where R : FTSDKCoreKit.FTSDKUseCaseInput {
+  public var requestBag: [FTSDKCoreKit.CancellableRequest?]
+  public var isAutoRefreshToken: Swift.Bool
+  public func setInput(_ input: R)
+  public func execute(onSuccess: ((T) -> Swift.Void)?, onFailure: ((FTSDKCoreKit.FTSDKException) -> Swift.Void)?)
+  open func onExecute(_ input: R)
+  public func cancel()
+  public func onSuccess(_ result: T)
+  public func onFailure(_ exception: FTSDKCoreKit.FTSDKException)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc @objcMembers public class FTSDKDialogAction : ObjectiveC.NSObject {
+  @objc public init(title: Swift.String?, image: UIKit.UIImage?, style: FTSDKCoreKit.FTSDKDialogAction.ActionStyle, handler: (() -> Swift.Void)?)
+  @objc public init(title: Swift.String?, style: FTSDKCoreKit.FTSDKDialogAction.ActionStyle, handler: (() -> Swift.Void)?)
+  @objc public enum ActionStyle : Swift.Int {
+    case `default`
+    case cancel
+    case destructive
+    public init?(rawValue: Swift.Int)
+    public typealias RawValue = Swift.Int
+    public var rawValue: Swift.Int {
+      get
+    }
+  }
+  @objc deinit
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FTSDKPresentationManager : ObjectiveC.NSObject, UIKit.UIViewControllerTransitioningDelegate {
+  @_Concurrency.MainActor(unsafe) @objc public func presentationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController?, source: UIKit.UIViewController) -> UIKit.UIPresentationController?
+  @_Concurrency.MainActor(unsafe) @objc public func animationController(forPresented presented: UIKit.UIViewController, presenting: UIKit.UIViewController, source: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc public func animationController(forDismissed dismissed: UIKit.UIViewController) -> UIKit.UIViewControllerAnimatedTransitioning?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init()
+  @objc deinit
+}
+public struct ValidationNoSpacesError : FTSDKCoreKit.ValidationError {
+  public init()
+  public var message: Swift.String
+}
+public struct ValidationRuleNoSpaces : FTSDKCoreKit.ValidationRule {
+  public var error: FTSDKCoreKit.ValidationError
+  public init(error: FTSDKCoreKit.ValidationError = ValidationNoSpacesError())
+  public func validate(input: Swift.String?) -> Swift.Bool
+  public typealias InputType = Swift.String
+}
+@objc public protocol FTSDKTrackerProtocol {
+  @objc var isEnableDebug: Swift.Bool { get set }
+  @objc func trackEvent(_ event: Swift.String, _ params: [Swift.String : Any])
+  @objc func trackEvent(_ event: Swift.String)
+}
+public enum HTTPMethod : Swift.String {
+  case get
+  case put
+  case post
+  case patch
+  case delete
+  case head
+  case options
+  case trace
+  case connect
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
+public struct CombineResponseErrorAndData : Swift.Error {
+  public var dataError: Foundation.Data?
+  public var responseError: FTSDKCoreKit.HttpResponseError?
+}
+public struct FTSDKAuthData : Swift.Decodable {
+  public var username: Swift.String?
+  public var phoneNumber: Swift.String?
+  public var hasPassword: Swift.Bool
+  public var email: Swift.String?
+  public var isEkycVerified: Swift.Bool
+  public init(from decoder: Swift.Decoder) throws
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FTSDKLoadingView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func awakeFromNib()
+  @objc deinit
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+}
+@objc @_inheritsConvenienceInitializers @objcMembers final public class FTSDKConfig : ObjectiveC.NSObject {
+  @objc public static var clientId: Swift.String
+  @objc public static var gameCode: Swift.String?
+  @objc public static var partnerCode: Swift.String
+  @objc public static var paymentMethod: Swift.String
+  @objc public static var bundleId: Swift.String?
+  @objc public static var redirectURI: Swift.String
+  @objc public static var scopes: [Swift.String]
+  @objc public static var sentryDSN: Swift.String
+  @objc public static var appId: Swift.String?
+  @objc public static var analyticKey: Swift.String?
+  @objc public static var appName: Swift.String
+  @objc public static var domain: Swift.String
+  @objc public static var domainGame: Swift.String
+  @objc public static var configFileName: Swift.String
+  @objc public static var releaseVersionNumber: Swift.String?
+  @objc public static var projectFirebase: Swift.String
+  @objc public static var env: FTSDKCoreKit.FTSDKEnvironment
+  @objc public static func setSDKLicense(license: Swift.String)
+  @objc public static func setFPaySecretKey(_ secret: Swift.String)
+  @objc public static var flow: FTSDKCoreKit.FTSDKFlow {
+    @objc get
+    @objc set
+  }
+  @objc public static func setFlowDialog()
+  @objc public static func setFlowFullScreen()
+  @objc public static var logoName: Swift.String?
+  @objc public static var companyLogoName: Swift.String?
+  @objc public static var mainBackgroundName: Swift.String?
+  @objc public static func invokeTheme(_ theme: FTSDKCoreKit.FTSDKTheme)
+  @objc public static func setDebug(_ isDebug: Swift.Bool)
+  public static func invoke(imageLoader: FTSDKCoreKit.FTSDKImageLoaderProtocol.Type, isDefault: Swift.Bool = true)
+  public static func invoke(dialog: FTSDKCoreKit.FTSDKDialogPresenter.Type)
+  public static func invoke(header: FTSDKCoreKit.FTSDKDialogPresenter.Type)
+  public static func invoke(loading: FTSDKCoreKit.FTSDKDialogPresenter.Type)
+  public static func invoke(provider3rd: FTSDKCoreKit.FTSDK3rdAuthProviderProtocol.Type, type: FTSDKCoreKit.FTSDKAuthType)
+  @objc override dynamic public init()
+  @objc deinit
+}
+@objc public enum FTSDKFlow : Swift.Int {
+  case fullscreen
+  case dialog
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+@objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @IBDesignable @_Concurrency.MainActor(unsafe) open class CheckBox : UIKit.UIControl {
+  @_Concurrency.MainActor(unsafe) open var isChecked: Swift.Bool {
+    get
+    set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var isSquare: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var checkmarkLineWidth: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var boxLineWidth: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var cornerRadius: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var unCheckedColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var checkedColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var markColor: UIKit.UIColor {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func layoutSubviews()
+  @objc deinit
+}
+public struct Validator {
+  public static func validate<Rule>(input: Rule.InputType?, rule: Rule) -> FTSDKCoreKit.ValidationResult where Rule : FTSDKCoreKit.ValidationRule
+  public static func validate<Input>(input: Input?, rules: FTSDKCoreKit.ValidationRuleSet<Input>) -> FTSDKCoreKit.ValidationResult
+}
+public protocol FTSDKViewProtocol : AnyObject {
+  var isPortrait: Swift.Bool { get }
+  func attachPresenter(_ presenter: FTSDKCoreKit.FTSDKPresenterProtocol)
+  func viewDidReady()
+  func viewDidRelease()
+  func viewWillAppear(_ animated: Swift.Bool)
+  func viewDidAppear(_ animated: Swift.Bool)
+  func viewWillDisappear(_ animated: Swift.Bool)
+  func viewDidDisappear(_ animated: Swift.Bool)
+  func willTransitionLandscape()
+  func willTransitionPortrait()
+  func dispatchCommand(_ command: FTSDKCoreKit.FTSDKCommandProtocol)
+  init()
+  init(nibName: Swift.String?, bundle: Foundation.Bundle?)
+}
+infix operator >=~ : DefaultPrecedence
+extension FTSDKCoreKit.FTSDKTransactionEntity {
+  @nonobjc public class func fetchRequest() -> CoreData.NSFetchRequest<FTSDKCoreKit.FTSDKTransactionEntity>
+  @objc @NSManaged dynamic public var id: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var customerId: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var storePackageId: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var extraData: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var appleBundleCode: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var appleReceiptDataEncoded: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var appleSkPaymentTransactionState: Swift.Int16 {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var appleOrderId: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var funzyOrderId: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var signature: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var deviceId: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var deviceIPv4: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @NSManaged dynamic public var deviceProductName: Swift.String? {
+    @objc get
+    @objc set
+  }
+}
+public enum ValidationResult {
+  case valid
+  case invalid([FTSDKCoreKit.ValidationError])
+  public var isValid: Swift.Bool {
+    get
+  }
+}
+extension FTSDKCoreKit.ValidationResult : Swift.Equatable {
+  public static func == (lhs: FTSDKCoreKit.ValidationResult, rhs: FTSDKCoreKit.ValidationResult) -> Swift.Bool
+}
+@objcMembers public class FTSDKCheckingRetention : Swift.Decodable {
+  final public let totalRow: Swift.Int64?
+  final public let lData: [FTSDKCoreKit.FTSDKRetentionDay]?
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+}
+public struct FTSDKCreateOrderData : Swift.Decodable {
+  public var refOrderId: Swift.String?
+  public var requestId: Swift.String?
+  public var code: Swift.Int
+  public var status: Swift.String?
+  public init(from decoder: Swift.Decoder) throws
+}
+@_hasMissingDesignatedInitializers public class FTSDKLog {
+  public enum Level : Swift.String {
+    case debug
+    case info
+    case warning
+    case error
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public enum Category : Swift.String {
+    case `default`
+    case network
+    public init?(rawValue: Swift.String)
+    public typealias RawValue = Swift.String
+    public var rawValue: Swift.String {
+      get
+    }
+  }
+  public var isEnabled: Swift.Bool
+  public func log(category: FTSDKCoreKit.FTSDKLog.Category = .default, level: FTSDKCoreKit.FTSDKLog.Level, items: [Any], outputWriting: ((Swift.String) -> Swift.Void)? = nil)
+  public func logToOSLog(category: FTSDKCoreKit.FTSDKLog.Category, level: FTSDKCoreKit.FTSDKLog.Level, message: Swift.String)
+  @objc deinit
+}
+extension FTSDKCoreKit.FTSDKLog {
+  public static func logDeinit(_ object: Any)
+  public static func d(category: FTSDKCoreKit.FTSDKLog.Category = .default, _ items: Any...)
+  public static func i(category: FTSDKCoreKit.FTSDKLog.Category = .default, _ items: Any...)
+  public static func w(category: FTSDKCoreKit.FTSDKLog.Category = .default, _ items: Any...)
+  public static func e(category: FTSDKCoreKit.FTSDKLog.Category = .default, _ items: Any...)
+  public func d(category: FTSDKCoreKit.FTSDKLog.Category = .default, _ items: Any...)
+  public func i(category: FTSDKCoreKit.FTSDKLog.Category = .default, _ items: Any...)
+  public func w(category: FTSDKCoreKit.FTSDKLog.Category = .default, _ items: Any...)
+  public func e(category: FTSDKCoreKit.FTSDKLog.Category = .default, _ items: Any...)
+}
+public struct FTSDKDialogConfig {
+  public var isDismissWhenTouchOutSide: Swift.Bool
+  public var duration: Swift.Double
+}
+public protocol FTSDKDialogPresenter {
+  init()
+  var isVisible: Swift.Bool { get }
+  func showDialog(_ contextView: UIKit.UIView?, with contentView: UIKit.UIView, config: FTSDKCoreKit.FTSDKDialogConfig, completion: (() -> Swift.Void)?)
+  func showDialog(with contentView: UIKit.UIView, config: FTSDKCoreKit.FTSDKDialogConfig, completion: (() -> Swift.Void)?)
+  func hideDialog(animation: Swift.Bool)
+  func hideDialog()
+}
+public struct ListConverter<C> : FTSDKCoreKit.IConverter where C : FTSDKCoreKit.IConverter {
+  public typealias SourceType = [C.SourceType]
+  public typealias DestinationType = [C.DestinationType]
+  public init(_ converter: C)
+  public func convert(from sourceType: FTSDKCoreKit.ListConverter<C>.SourceType) -> FTSDKCoreKit.ListConverter<C>.DestinationType
+}
+@objc @objcMembers public class FTSDKAuthentication : ObjectiveC.NSObject, Swift.Codable {
+  @objc final public let accessToken: Swift.String?
+  @objc final public let idToken: Swift.String?
+  @objc final public let refreshToken: Swift.String?
+  final public let expiresIn: Swift.Double?
+  @objc final public let tokenType: Swift.String?
+  @objc final public let scope: Swift.String?
+  required public init(from decoder: Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+}
+extension Swift.String {
+  public func removingWhitespaces() -> Swift.String
+  public var isBlank: Swift.Bool {
+    get
+  }
+  public func trim() -> Swift.String
+  public func removeAllWhitespaces() -> Swift.String
+  public func base64() -> Swift.String
+  public func decodeBase64() -> Swift.String?
+  public func md5() -> Swift.String
+  public func removeURLScheme() -> Swift.String
+}
+extension Swift.Optional where Wrapped == Swift.String {
+  public var isNilOrBlank: Swift.Bool {
+    get
+  }
+  public var isNilOrEmpty: Swift.Bool {
+    get
+  }
+}
+extension FTSDKCoreKit.Reachability.Connection : Swift.Equatable {}
+extension FTSDKCoreKit.Reachability.Connection : Swift.Hashable {}
+extension FTSDKCoreKit.FTSDKAuthType : Swift.Equatable {}
+extension FTSDKCoreKit.FTSDKAuthType : Swift.Hashable {}
+extension FTSDKCoreKit.FTSDKAuthType : Swift.RawRepresentable {}
+extension FTSDKCoreKit.ReceiptStatus : Swift.Equatable {}
+extension FTSDKCoreKit.ReceiptStatus : Swift.Hashable {}
+extension FTSDKCoreKit.ReceiptStatus : Swift.RawRepresentable {}
+extension FTSDKCoreKit.HTTPStatusCode : Swift.Equatable {}
+extension FTSDKCoreKit.HTTPStatusCode : Swift.Hashable {}
+extension FTSDKCoreKit.HTTPStatusCode : Swift.RawRepresentable {}
+extension FTSDKCoreKit.FTSDKEmailValidationPattern : Swift.Equatable {}
+extension FTSDKCoreKit.FTSDKEmailValidationPattern : Swift.Hashable {}
+extension FTSDKCoreKit.URLEncodedBuilder.ArrayEncoding : Swift.Equatable {}
+extension FTSDKCoreKit.URLEncodedBuilder.ArrayEncoding : Swift.Hashable {}
+extension FTSDKCoreKit.URLEncodedBuilder.BoolEncoding : Swift.Equatable {}
+extension FTSDKCoreKit.URLEncodedBuilder.BoolEncoding : Swift.Hashable {}
+extension FTSDKCoreKit.FTSDKKeychainItemClass : Swift.Equatable {}
+extension FTSDKCoreKit.FTSDKKeychainItemClass : Swift.Hashable {}
+extension FTSDKCoreKit.FTSDKKeychainProtocolType : Swift.Equatable {}
+extension FTSDKCoreKit.FTSDKKeychainProtocolType : Swift.Hashable {}
+extension FTSDKCoreKit.FTSDKKeychainAuthenticationType : Swift.Equatable {}
+extension FTSDKCoreKit.FTSDKKeychainAuthenticationType : Swift.Hashable {}
+extension FTSDKCoreKit.FTSDKKeychainAccessibility : Swift.Equatable {}
+extension FTSDKCoreKit.FTSDKKeychainAccessibility : Swift.Hashable {}
+extension FTSDKCoreKit.FTSDKKeychainAuthenticationUI : Swift.Equatable {}
+extension FTSDKCoreKit.FTSDKKeychainAuthenticationUI : Swift.Hashable {}
+extension FTSDKCoreKit.Status : Swift.Equatable {}
+extension FTSDKCoreKit.Status : Swift.Hashable {}
+extension FTSDKCoreKit.CaseValidationPattern : Swift.Equatable {}
+extension FTSDKCoreKit.CaseValidationPattern : Swift.Hashable {}
+extension FTSDKCoreKit.CaseValidationPattern : Swift.RawRepresentable {}
+extension FTSDKCoreKit.ValidationRuleLength2.LengthType : Swift.Equatable {}
+extension FTSDKCoreKit.ValidationRuleLength2.LengthType : Swift.Hashable {}
+extension FTSDKCoreKit.PaymentCardType : Swift.Equatable {}
+extension FTSDKCoreKit.PaymentCardType : Swift.Hashable {}
+extension FTSDKCoreKit.PaymentCardType : Swift.RawRepresentable {}
+extension FTSDKCoreKit.JustAnError : Swift.Equatable {}
+extension FTSDKCoreKit.JustAnError : Swift.Hashable {}
+extension FTSDKCoreKit.FTSDKEnvironment : Swift.Equatable {}
+extension FTSDKCoreKit.FTSDKEnvironment : Swift.Hashable {}
+extension FTSDKCoreKit.FTSDKEnvironment : Swift.RawRepresentable {}
+extension FTSDKCoreKit.FTSDKLanguage : Swift.Hashable {}
+extension FTSDKCoreKit.HttpResponseError : Swift.Equatable {}
+extension FTSDKCoreKit.HttpResponseError : Swift.Hashable {}
+extension FTSDKCoreKit.HttpResponseError : Swift.RawRepresentable {}
+extension FTSDKCoreKit.ModuleStatus : Swift.Equatable {}
+extension FTSDKCoreKit.ModuleStatus : Swift.Hashable {}
+extension FTSDKCoreKit.ModuleStatus : Swift.RawRepresentable {}
+extension FTSDKCoreKit.SDKModule : Swift.Equatable {}
+extension FTSDKCoreKit.SDKModule : Swift.Hashable {}
+extension FTSDKCoreKit.SDKModule : Swift.RawRepresentable {}
+extension FTSDKCoreKit.APIExcetionCode : Swift.Equatable {}
+extension FTSDKCoreKit.APIExcetionCode : Swift.Hashable {}
+extension FTSDKCoreKit.APIExcetionCode : Swift.RawRepresentable {}
+extension UIKit.UIView.ViewCorner : Swift.Equatable {}
+extension UIKit.UIView.ViewCorner : Swift.Hashable {}
+extension FTSDKCoreKit.FTSDKError.StoreKitErrorCode : Swift.Equatable {}
+extension FTSDKCoreKit.FTSDKError.StoreKitErrorCode : Swift.Hashable {}
+extension FTSDKCoreKit.FTSDKError.StoreKitErrorCode : Swift.RawRepresentable {}
+extension FTSDKCoreKit.MVPComponentPresenter.HeaderMessageType : Swift.Equatable {}
+extension FTSDKCoreKit.MVPComponentPresenter.HeaderMessageType : Swift.Hashable {}
+extension FTSDKCoreKit.FTSDKDialogAction.ActionStyle : Swift.Equatable {}
+extension FTSDKCoreKit.FTSDKDialogAction.ActionStyle : Swift.Hashable {}
+extension FTSDKCoreKit.FTSDKDialogAction.ActionStyle : Swift.RawRepresentable {}
+extension FTSDKCoreKit.HTTPMethod : Swift.Equatable {}
+extension FTSDKCoreKit.HTTPMethod : Swift.Hashable {}
+extension FTSDKCoreKit.HTTPMethod : Swift.RawRepresentable {}
+extension FTSDKCoreKit.FTSDKFlow : Swift.Equatable {}
+extension FTSDKCoreKit.FTSDKFlow : Swift.Hashable {}
+extension FTSDKCoreKit.FTSDKFlow : Swift.RawRepresentable {}
+extension FTSDKCoreKit.FTSDKLog.Level : Swift.Equatable {}
+extension FTSDKCoreKit.FTSDKLog.Level : Swift.Hashable {}
+extension FTSDKCoreKit.FTSDKLog.Level : Swift.RawRepresentable {}
+extension FTSDKCoreKit.FTSDKLog.Category : Swift.Equatable {}
+extension FTSDKCoreKit.FTSDKLog.Category : Swift.Hashable {}
+extension FTSDKCoreKit.FTSDKLog.Category : Swift.RawRepresentable {}
