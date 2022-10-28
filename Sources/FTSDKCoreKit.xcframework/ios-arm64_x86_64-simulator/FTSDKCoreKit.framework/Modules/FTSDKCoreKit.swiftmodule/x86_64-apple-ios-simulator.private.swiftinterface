@@ -125,19 +125,6 @@ extension Swift.String : FTSDKCoreKit.FTSDKTrackerValueProtocol {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
 }
-extension UIKit.UIColor {
-  convenience public init(hex: Swift.String, alpha: CoreFoundation.CGFloat = 1.0)
-  convenience public init(r: Swift.Int, g: Swift.Int, b: Swift.Int, a: CoreFoundation.CGFloat = 1.0)
-  public var rgba: (red: CoreFoundation.CGFloat, green: CoreFoundation.CGFloat, blue: CoreFoundation.CGFloat, alpha: CoreFoundation.CGFloat) {
-    get
-  }
-  public var alpha: CoreFoundation.CGFloat {
-    get
-  }
-  public func lighter(by percentage: CoreFoundation.CGFloat = 30.0) -> UIKit.UIColor?
-  public func darker(by percentage: CoreFoundation.CGFloat = 30.0) -> UIKit.UIColor?
-  public func adjust(by percentage: CoreFoundation.CGFloat = 30.0) -> UIKit.UIColor?
-}
 public struct ValidationRuleOTPCodeError : FTSDKCoreKit.ValidationError {
   public init()
   public var message: Swift.String
@@ -465,10 +452,6 @@ public struct ValidationRulePattern : FTSDKCoreKit.ValidationRule {
   public func validate(input: Swift.String?) -> Swift.Bool
   public typealias InputType = Swift.String
 }
-extension UIKit.UIButton {
-  @objc @_Concurrency.MainActor(unsafe) dynamic public func set(title: Swift.String, and color: UIKit.UIColor = .buttonTextColor, with font: UIKit.UIFont = UIFont.defaultMedium(ofSize: .default), for state: UIKit.UIControl.State = .normal)
-  @_Concurrency.MainActor(unsafe) public func setDefaultBorderStyle()
-}
 public enum HTTPStatusCode : Swift.Int, Swift.Error {
   case `continue`
   case switchingProtocols
@@ -682,11 +665,6 @@ public class URLEncodedBuilder {
   public func append(name: Swift.String, value: Any?) -> FTSDKCoreKit.URLEncodedBuilder
   public func build() -> Foundation.Data?
   @objc deinit
-}
-extension UIKit.UIDevice {
-  @objc @_Concurrency.MainActor(unsafe) public static let isPad: Swift.Bool
-  @objc @_Concurrency.MainActor(unsafe) public static let globalSupportedOrientationMask: UIKit.UIInterfaceOrientationMask
-  @objc @_Concurrency.MainActor(unsafe) public static func setOrientation(_ orientation: UIKit.UIDeviceOrientation)
 }
 @objc @_inheritsConvenienceInitializers @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) final public class FTSDKOverlayView : UIKit.UIView {
   @objc @_Concurrency.MainActor(unsafe) dynamic final public var color: UIKit.UIColor? {
@@ -1680,12 +1658,22 @@ extension FTSDKCoreKit.RequestBagCompatible {
     open func create() -> Foundation.JSONDecoder
     @objc deinit
   }
+  @_inheritsConvenienceInitializers open class UseDefaultKeys : FTSDKCoreKit.HTTPDecoding.Factory {
+    override open func create() -> Foundation.JSONDecoder
+    override public init()
+    @objc deinit
+  }
   @objc deinit
 }
 @_hasMissingDesignatedInitializers open class HTTPEncoding {
   open class Factory {
     public init()
     open func create() -> Foundation.JSONEncoder
+    @objc deinit
+  }
+  @_inheritsConvenienceInitializers open class UseDefaultKeys : FTSDKCoreKit.HTTPEncoding.Factory {
+    override open func create() -> Foundation.JSONEncoder
+    override public init()
     @objc deinit
   }
   @objc deinit
@@ -2107,7 +2095,7 @@ public struct ValidationRuleDiff : FTSDKCoreKit.ValidationRule {
   @objc final public func invokeTracker(_ tracker: FTSDKCoreKit.FTSDKTrackerProtocol)
   @objc final public func getAppData() -> FTSDKCoreKit.FTSDKAppData
   @objc final public func setLanguage(_ language: FTSDKCoreKit.FTSDKLanguage)
-  @objc final public func loadConfig()
+  @objc final public func loadConfig(completed: (() -> Swift.Void)?)
   @objc override dynamic public init()
   @objc deinit
 }
@@ -2508,7 +2496,7 @@ public enum SDKModule : Swift.String, Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
 }
-@objc @_hasMissingDesignatedInitializers @objcMembers public class Settings : ObjectiveC.NSObject, Swift.Codable {
+@objc @_hasMissingDesignatedInitializers @objcMembers public class SDKSettings : ObjectiveC.NSObject, Swift.Codable {
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
@@ -2528,7 +2516,19 @@ public enum SDKModule : Swift.String, Swift.Codable {
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
 }
-@objc @_hasMissingDesignatedInitializers @objcMembers public class ThirdPartyAuth : ObjectiveC.NSObject, Swift.Codable {
+@_hasMissingDesignatedInitializers @objcMembers public class ThirdPartyAuth : Swift.Codable {
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objcMembers public class GoogleServiceInfo : Swift.Codable {
+  @objc final public let API_KEY: Swift.String, BUNDLE_ID: Swift.String, CLIENT_ID: Swift.String, PROJECT_ID: Swift.String
+  @objc final public let GCM_SENDER_ID: Swift.String, GOOGLE_APP_ID: Swift.String, PLIST_VERSION: Swift.String
+  @objc final public let IS_ADS_ENABLED: Swift.Bool, IS_GCM_ENABLED: Swift.Bool
+  @objc final public let STORAGE_BUCKET: Swift.String, ANDROID_CLIENT_ID: Swift.String
+  @objc final public let IS_SIGNIN_ENABLED: Swift.Bool
+  @objc final public let REVERSED_CLIENT_ID: Swift.String
+  @objc final public let IS_ANALYTICS_ENABLED: Swift.Bool, IS_APPINVITE_ENABLED: Swift.Bool
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
@@ -2691,45 +2691,6 @@ extension UIKit.UIColor {
   @_Concurrency.MainActor(unsafe) open func willTransitionLandscape()
   @_Concurrency.MainActor(unsafe) open func willTransitionPortrait()
   @_Concurrency.MainActor(unsafe) open func dispatchCommand(_ command: FTSDKCoreKit.FTSDKCommandProtocol)
-}
-extension UIKit.UIView {
-  @_Concurrency.MainActor(unsafe) public static var nibName: Swift.String {
-    get
-  }
-  @_Concurrency.MainActor(unsafe) public static func loadNib(file: Swift.StaticString = #file, line: Swift.UInt = #line, bundle: Foundation.Bundle? = nil) -> Self?
-  @_Concurrency.MainActor(unsafe) public var x: CoreFoundation.CGFloat {
-    get
-  }
-  @_Concurrency.MainActor(unsafe) public var y: CoreFoundation.CGFloat {
-    get
-  }
-  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var fCornerRadius: CoreFoundation.CGFloat {
-    @objc get
-    @objc set
-  }
-  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var fBorderWidth: CoreFoundation.CGFloat {
-    @objc get
-    @objc set
-  }
-  @objc @IBInspectable @_Concurrency.MainActor(unsafe) dynamic public var fBorderColor: UIKit.UIColor? {
-    @objc get
-    @objc set
-  }
-  @_Concurrency.MainActor(unsafe) public func addSubviews(_ subViews: UIKit.UIView...)
-  @_Concurrency.MainActor(unsafe) public func removeAllSubviews()
-  public enum ViewCorner {
-    case topLeft
-    case topRight
-    case bottomLeft
-    case bottomRight
-    public static func == (a: UIKit.UIView.ViewCorner, b: UIKit.UIView.ViewCorner) -> Swift.Bool
-    public func hash(into hasher: inout Swift.Hasher)
-    public var hashValue: Swift.Int {
-      get
-    }
-  }
-  @_Concurrency.MainActor(unsafe) public func makeCorner(radius: CoreFoundation.CGFloat, corners: [UIKit.UIView.ViewCorner])
-  @_Concurrency.MainActor(unsafe) public func drawDashLine(lineWidth: CoreFoundation.CGFloat, color: CoreGraphics.CGColor)
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class FTSDKNavigationBarView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func awakeFromNib()
@@ -2934,13 +2895,6 @@ public enum FTSDKFontSize {
   case subTitle
   case custom(CoreFoundation.CGFloat)
 }
-extension UIKit.UIFont {
-  public static func defaultLight(ofSize fontSize: FTSDKCoreKit.FTSDKFontSize) -> UIKit.UIFont
-  public static func `default`(ofSize fontSize: FTSDKCoreKit.FTSDKFontSize) -> UIKit.UIFont
-  public static func defaultMedium(ofSize fontSize: FTSDKCoreKit.FTSDKFontSize) -> UIKit.UIFont
-  public static func defaultBold(ofSize fontSize: FTSDKCoreKit.FTSDKFontSize) -> UIKit.UIFont
-  public static func defaultItalic(ofSize fontSize: FTSDKCoreKit.FTSDKFontSize) -> UIKit.UIFont
-}
 public struct FTSDKVoidUseCaseInput : FTSDKCoreKit.FTSDKUseCaseInput {
 }
 public protocol FTSDKUseCaseable : AnyObject {
@@ -3048,6 +3002,8 @@ public struct FTSDKAuthData : Swift.Decodable {
   @objc public static var configFileName: Swift.String
   @objc public static var releaseVersionNumber: Swift.String?
   @objc public static var projectFirebase: Swift.String
+  public static var googleServiceInfo: FTSDKCoreKit.GoogleServiceInfo?
+  @objc public static var facebookAppID: Swift.String?, facebookClientID: Swift.String?
   @objc public static var env: FTSDKCoreKit.FTSDKEnvironment
   @objc public static func setSDKLicense(license: Swift.String)
   @objc public static func setFPaySecretKey(_ secret: Swift.String)
@@ -3280,26 +3236,6 @@ public struct ListConverter<C> : FTSDKCoreKit.IConverter where C : FTSDKCoreKit.
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
 }
-extension Swift.String {
-  public func removingWhitespaces() -> Swift.String
-  public var isBlank: Swift.Bool {
-    get
-  }
-  public func trim() -> Swift.String
-  public func removeAllWhitespaces() -> Swift.String
-  public func base64() -> Swift.String
-  public func decodeBase64() -> Swift.String?
-  public func md5() -> Swift.String
-  public func removeURLScheme() -> Swift.String
-}
-extension Swift.Optional where Wrapped == Swift.String {
-  public var isNilOrBlank: Swift.Bool {
-    get
-  }
-  public var isNilOrEmpty: Swift.Bool {
-    get
-  }
-}
 extension FTSDKCoreKit.Reachability.Connection : Swift.Equatable {}
 extension FTSDKCoreKit.Reachability.Connection : Swift.Hashable {}
 extension FTSDKCoreKit.FTSDKAuthType : Swift.Equatable {}
@@ -3355,8 +3291,6 @@ extension FTSDKCoreKit.SDKModule : Swift.RawRepresentable {}
 extension FTSDKCoreKit.APIExcetionCode : Swift.Equatable {}
 extension FTSDKCoreKit.APIExcetionCode : Swift.Hashable {}
 extension FTSDKCoreKit.APIExcetionCode : Swift.RawRepresentable {}
-extension UIKit.UIView.ViewCorner : Swift.Equatable {}
-extension UIKit.UIView.ViewCorner : Swift.Hashable {}
 extension FTSDKCoreKit.FTSDKError.StoreKitErrorCode : Swift.Equatable {}
 extension FTSDKCoreKit.FTSDKError.StoreKitErrorCode : Swift.Hashable {}
 extension FTSDKCoreKit.FTSDKError.StoreKitErrorCode : Swift.RawRepresentable {}

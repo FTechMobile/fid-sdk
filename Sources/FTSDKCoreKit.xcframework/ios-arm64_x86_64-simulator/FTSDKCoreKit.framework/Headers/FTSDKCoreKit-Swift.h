@@ -347,7 +347,7 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit16FTSDKAppDelegate")
 - (void)invokeTracker:(id <FTSDKTrackerProtocol> _Nonnull)tracker;
 - (FTSDKAppData * _Nonnull)getAppData SWIFT_WARN_UNUSED_RESULT;
 - (void)setLanguage:(enum FTSDKLanguage)language;
-- (void)loadConfig;
+- (void)loadConfigWithCompleted:(void (^ _Nullable)(void))completed;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -513,6 +513,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nullable rel
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull projectFirebase;)
 + (NSString * _Nonnull)projectFirebase SWIFT_WARN_UNUSED_RESULT;
 + (void)setProjectFirebase:(NSString * _Nonnull)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nullable facebookAppID;)
++ (NSString * _Nullable)facebookAppID SWIFT_WARN_UNUSED_RESULT;
++ (void)setFacebookAppID:(NSString * _Nullable)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nullable facebookClientID;)
++ (NSString * _Nullable)facebookClientID SWIFT_WARN_UNUSED_RESULT;
++ (void)setFacebookClientID:(NSString * _Nullable)value;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) enum FTSDKEnvironment env;)
 + (enum FTSDKEnvironment)env SWIFT_WARN_UNUSED_RESULT;
 + (void)setEnv:(enum FTSDKEnvironment)value;
@@ -1150,12 +1156,12 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit20PhoneNumberTextField")
 @end
 
 
-
-SWIFT_CLASS("_TtC12FTSDKCoreKit8Settings")
-@interface Settings : NSObject
+SWIFT_CLASS("_TtC12FTSDKCoreKit11SDKSettings")
+@interface SDKSettings : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 SWIFT_CLASS("_TtC12FTSDKCoreKit10ThemeColor")
@@ -1179,32 +1185,12 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit11ThemeImages")
 @end
 
 
-SWIFT_CLASS("_TtC12FTSDKCoreKit14ThirdPartyAuth")
-@interface ThirdPartyAuth : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-
-@class UIFont;
-
-@interface UIButton (SWIFT_EXTENSION(FTSDKCoreKit))
-- (void)setWithTitle:(NSString * _Nonnull)title and:(UIColor * _Nonnull)color with:(UIFont * _Nonnull)font for:(UIControlState)state;
-@end
 
 
 
 
 
 
-@interface UIDevice (SWIFT_EXTENSION(FTSDKCoreKit))
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL isPad;)
-+ (BOOL)isPad SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) UIInterfaceOrientationMask globalSupportedOrientationMask;)
-+ (UIInterfaceOrientationMask)globalSupportedOrientationMask SWIFT_WARN_UNUSED_RESULT;
-+ (void)setOrientation:(UIDeviceOrientation)orientation;
-@end
 
 
 
@@ -1225,12 +1211,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) UIInterfaceOrientati
 
 
 
-
-@interface UIView (SWIFT_EXTENSION(FTSDKCoreKit))
-@property (nonatomic) IBInspectable CGFloat fCornerRadius;
-@property (nonatomic) IBInspectable CGFloat fBorderWidth;
-@property (nonatomic, strong) IBInspectable UIColor * _Nullable fBorderColor;
-@end
 
 
 
@@ -1592,7 +1572,7 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit16FTSDKAppDelegate")
 - (void)invokeTracker:(id <FTSDKTrackerProtocol> _Nonnull)tracker;
 - (FTSDKAppData * _Nonnull)getAppData SWIFT_WARN_UNUSED_RESULT;
 - (void)setLanguage:(enum FTSDKLanguage)language;
-- (void)loadConfig;
+- (void)loadConfigWithCompleted:(void (^ _Nullable)(void))completed;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -1758,6 +1738,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nullable rel
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull projectFirebase;)
 + (NSString * _Nonnull)projectFirebase SWIFT_WARN_UNUSED_RESULT;
 + (void)setProjectFirebase:(NSString * _Nonnull)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nullable facebookAppID;)
++ (NSString * _Nullable)facebookAppID SWIFT_WARN_UNUSED_RESULT;
++ (void)setFacebookAppID:(NSString * _Nullable)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nullable facebookClientID;)
++ (NSString * _Nullable)facebookClientID SWIFT_WARN_UNUSED_RESULT;
++ (void)setFacebookClientID:(NSString * _Nullable)value;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) enum FTSDKEnvironment env;)
 + (enum FTSDKEnvironment)env SWIFT_WARN_UNUSED_RESULT;
 + (void)setEnv:(enum FTSDKEnvironment)value;
@@ -2395,12 +2381,12 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit20PhoneNumberTextField")
 @end
 
 
-
-SWIFT_CLASS("_TtC12FTSDKCoreKit8Settings")
-@interface Settings : NSObject
+SWIFT_CLASS("_TtC12FTSDKCoreKit11SDKSettings")
+@interface SDKSettings : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 SWIFT_CLASS("_TtC12FTSDKCoreKit10ThemeColor")
@@ -2424,32 +2410,12 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit11ThemeImages")
 @end
 
 
-SWIFT_CLASS("_TtC12FTSDKCoreKit14ThirdPartyAuth")
-@interface ThirdPartyAuth : NSObject
-- (nonnull instancetype)init SWIFT_UNAVAILABLE;
-+ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
-@end
-
-
-
-@class UIFont;
-
-@interface UIButton (SWIFT_EXTENSION(FTSDKCoreKit))
-- (void)setWithTitle:(NSString * _Nonnull)title and:(UIColor * _Nonnull)color with:(UIFont * _Nonnull)font for:(UIControlState)state;
-@end
 
 
 
 
 
 
-@interface UIDevice (SWIFT_EXTENSION(FTSDKCoreKit))
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) BOOL isPad;)
-+ (BOOL)isPad SWIFT_WARN_UNUSED_RESULT;
-SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) UIInterfaceOrientationMask globalSupportedOrientationMask;)
-+ (UIInterfaceOrientationMask)globalSupportedOrientationMask SWIFT_WARN_UNUSED_RESULT;
-+ (void)setOrientation:(UIDeviceOrientation)orientation;
-@end
 
 
 
@@ -2470,12 +2436,6 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, readonly) UIInterfaceOrientati
 
 
 
-
-@interface UIView (SWIFT_EXTENSION(FTSDKCoreKit))
-@property (nonatomic) IBInspectable CGFloat fCornerRadius;
-@property (nonatomic) IBInspectable CGFloat fBorderWidth;
-@property (nonatomic, strong) IBInspectable UIColor * _Nullable fBorderColor;
-@end
 
 
 

@@ -68,29 +68,33 @@ public class FTSDK: NSObject {
     }
     
     private static func config() {
-        FTSDKAppDelegate.instance().loadConfig()
+        FTSDKAppDelegate.instance().loadConfig {
+            // login with google config
+            if let googleConfig = FTSDKConfig.googleServiceInfo {
+                let firOptions = FirebaseOptions(googleAppID: googleConfig.GOOGLE_APP_ID,
+                                                 gcmSenderID: googleConfig.GCM_SENDER_ID)
+                firOptions.apiKey = googleConfig.API_KEY
+                firOptions.bundleID = googleConfig.BUNDLE_ID
+                firOptions.clientID = googleConfig.CLIENT_ID
+                firOptions.androidClientID = googleConfig.ANDROID_CLIENT_ID
+                firOptions.projectID = googleConfig.PROJECT_ID
+                firOptions.storageBucket = googleConfig.STORAGE_BUCKET
+                FirebaseApp.configure(options: firOptions)
+            }
+            
+            // login with facebook config
+            if let appID = FTSDKConfig.facebookAppID, let clientID = FTSDKConfig.facebookClientID {
+                Settings.shared.appID = appID
+                Settings.shared.clientToken = clientID
+                Settings.shared.displayName = "FID SDK"
+            }
+        }
         FTSDKConfig.invoke(provider3rd: FTSDKAppleAuthenProvider.self, type: .apple)
         FTSDKConfig.invoke(provider3rd: FTSDKFacebookAuthenProvider.self, type: .facebook)
         FTSDKConfig.invoke(provider3rd: FTSDKGoogleAuthenProvider.self, type: .google)
         FTSDKConfig.invoke(loading: FTSDKLoadingDialogPresenter.self)
         FTSDKConfig.invoke(header: FTSDKHeaderDialogPresenter.self)
         FTSDKConfig.invoke(dialog: FTSDKCenterDialogPresenter.self)
-        
-        
-        let firOptions = FirebaseOptions(googleAppID: "1:150808678819:ios:7de3c3cd0995a9d3b5ca16",
-                                         gcmSenderID: "150808678819")
-        firOptions.apiKey = "AIzaSyDj7Wf3OeaIGj04YoxND_ESgJd1DytlYLw"
-//        firOptions.appGroupID
-        firOptions.bundleID = "com.racing.mobile"
-        firOptions.clientID = "150808678819-aovemg083k7ag6uauulsqt6bur8fi7dj.apps.googleusercontent.com"
-        firOptions.androidClientID = "150808678819-1eqjhvchh3hbd4mrhkkua74sa5ibd8nm.apps.googleusercontent.com"
-        firOptions.projectID = "funzylcm"
-        firOptions.storageBucket = "funzylcm.appspot.com"
-        FirebaseApp.configure(options: firOptions)
-        
-        Settings.shared.appID = "252406222542533"
-        Settings.shared.clientToken = "20f09b1f38dfab2c9e5c45d1bfbe0601"
-        Settings.shared.displayName = "FID DEV"
     }
 }
 
