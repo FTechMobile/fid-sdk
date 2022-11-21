@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.7 (swiftlang-5.7.0.127.4 clang-1400.0.29.50)
+// swift-compiler-version: Apple Swift version 5.7.1 (swiftlang-5.7.1.135.3 clang-1400.0.29.51)
 // swift-module-flags: -target arm64-apple-ios11.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FTSDKCoreKit
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
@@ -526,7 +526,10 @@ public enum HTTPStatusCode : Swift.Int, Swift.Error {
   }
 }
 @objc public protocol FTSDKAuthDelegate {
-  @objc optional func didConfigSuccess(_ config: FTSDKCoreKit.ConfigData)
+  @objc optional func onFTSDKIsReady()
+  @objc optional func onFTSDKError(error: FTSDKCoreKit.FTSDKError)
+  @objc optional func onFIDMaintenance(config: FTSDKCoreKit.MaintenanceConfigs)
+  @objc optional func onFIDLinkAccountSuggestion(message: Swift.String)
   @objc optional func didSignInSuccess(_ signIn: FTSDKCoreKit.FTSDKSignIn, didSignInFor user: FTSDKCoreKit.FTSDKUser, withMethod authType: Swift.String)
   @objc optional func didSignInFail(_ signIn: FTSDKCoreKit.FTSDKSignIn, with error: FTSDKCoreKit.FTSDKError)
   @objc optional func didSignUpSuccess(_ signIn: FTSDKCoreKit.FTSDKSignIn, didSignInFor user: FTSDKCoreKit.FTSDKUser, withMethod authType: Swift.String)
@@ -692,6 +695,7 @@ public typealias ParametersType = [Swift.String : Any]
     @objc set
   }
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func setAttributedTitle(_ title: Foundation.NSAttributedString?, for state: UIKit.UIControl.State)
+  @_Concurrency.MainActor(unsafe) open func setupUIWithStatus(isEnabled: Swift.Bool)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
   @objc deinit
@@ -2368,6 +2372,8 @@ public protocol FTSDKImageLoaderProtocol : AnyObject {
   func loadImage(_ view: UIKit.UIView?, url: Swift.String?, placeholder: Swift.String?)
   func loadImage(_ view: UIKit.UIView?, url: Swift.String?, placeholderImage: UIKit.UIImage?)
   func loadImage(_ view: UIKit.UIView?, url: Swift.String?)
+  func loadImageBackground(_ view: UIKit.UIView?, url: Swift.String?)
+  func loadImage(_ view: UIKit.UIView?, url: Swift.String?, sizeImage: CoreFoundation.CGSize, edgeInserts: UIKit.UIEdgeInsets)
 }
 public enum HttpResponseError : Swift.Int, Swift.Error {
   case badRequest
@@ -2466,6 +2472,15 @@ public enum ModuleStatus : Swift.String, Swift.Codable {
     get
   }
 }
+public enum ModuleCaptchaStatus : Swift.String, Swift.Codable {
+  case disable
+  case enable
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 public enum SDKModule : Swift.String, Swift.Codable {
   case loginPhone
   case appleAuth
@@ -2529,6 +2544,14 @@ public enum SDKModule : Swift.String, Swift.Codable {
   @objc final public let IS_SIGNIN_ENABLED: Swift.Bool
   @objc final public let REVERSED_CLIENT_ID: Swift.String
   @objc final public let IS_ANALYTICS_ENABLED: Swift.Bool, IS_APPINVITE_ENABLED: Swift.Bool
+  @objc deinit
+  public func encode(to encoder: Swift.Encoder) throws
+  required public init(from decoder: Swift.Decoder) throws
+}
+@objc @objcMembers public class SDKPromotion : ObjectiveC.NSObject, Swift.Codable {
+  @objc final public let url: Swift.String?, image: Swift.String?, imageLanscape: Swift.String?
+  final public let status: FTSDKCoreKit.ModuleStatus
+  final public let module: FTSDKCoreKit.SDKModule
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
   required public init(from decoder: Swift.Decoder) throws
@@ -2691,6 +2714,300 @@ extension UIKit.UIColor {
   @_Concurrency.MainActor(unsafe) open func willTransitionLandscape()
   @_Concurrency.MainActor(unsafe) open func willTransitionPortrait()
   @_Concurrency.MainActor(unsafe) open func dispatchCommand(_ command: FTSDKCoreKit.FTSDKCommandProtocol)
+}
+@objc public protocol FTSDKFormFieldDelegate {
+  @objc optional func formFieldDidTapLeftView(_ formField: FTSDKCoreKit.FTSDKFormField)
+  @objc optional func formFieldDidTapRightView(_ formField: FTSDKCoreKit.FTSDKFormField)
+  @objc optional func formFieldTouchesBeganRightView(_ formField: FTSDKCoreKit.FTSDKFormField)
+  @objc optional func formFieldTouchesEndRightView(_ formField: FTSDKCoreKit.FTSDKFormField)
+  @objc optional func formFieldShouldBeginEditing(_ formField: FTSDKCoreKit.FTSDKFormField) -> Swift.Bool
+  @objc optional func formFieldDidBeginEditing(_ formField: FTSDKCoreKit.FTSDKFormField)
+  @objc optional func formFieldShouldEndEditing(_ formField: FTSDKCoreKit.FTSDKFormField) -> Swift.Bool
+  @objc optional func formFieldDidEndEditing(_ formField: FTSDKCoreKit.FTSDKFormField)
+  @objc optional func formFieldDidEndEditing(_ formField: FTSDKCoreKit.FTSDKFormField, reason: FTSDKCoreKit.FTSDKFormField.DidEndEditingReason)
+  @objc optional func formField(_ formField: FTSDKCoreKit.FTSDKFormField, shouldChangeCharactersIn range: Foundation.NSRange, replacementString string: Swift.String) -> Swift.Bool
+  @available(iOS 13.0, *)
+  @objc optional func formFieldDidChangeSelection(_ formField: FTSDKCoreKit.FTSDKFormField)
+  @objc optional func formFieldShouldClear(_ formField: FTSDKCoreKit.FTSDKFormField) -> Swift.Bool
+  @objc optional func formFieldShouldReturn(_ formField: FTSDKCoreKit.FTSDKFormField) -> Swift.Bool
+}
+@objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FTSDKFormField : UIKit.UIView {
+  public typealias DidEndEditingReason = UIKit.UITextField.DidEndEditingReason
+  public typealias ViewMode = UIKit.UITextField.ViewMode
+  @objc @IBOutlet @_Concurrency.MainActor(unsafe) weak public var delegate: FTSDKCoreKit.FTSDKFormFieldDelegate?
+  @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var maxLength: Swift.Int
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var textFieldHeight: CoreFoundation.CGFloat {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var textFieldBorderColor: UIKit.UIColor? {
+    @objc get
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var textFieldBackgroundColor: UIKit.UIColor? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var text: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var title: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) open var attributedTitle: Foundation.NSAttributedString? {
+    get
+    set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var message: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) open var attributedMessage: Foundation.NSAttributedString? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var attributedText: Foundation.NSAttributedString? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var titleColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var titleFont: UIKit.UIFont? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var inputTextColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var inputTextFont: UIKit.UIFont? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var messageColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var messageFont: UIKit.UIFont? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var inputTextAlignment: UIKit.NSTextAlignment {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var defaultTextAttributes: [Foundation.NSAttributedString.Key : Any] {
+    get
+    set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var placeholder: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) open var attributedPlaceholder: Foundation.NSAttributedString? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var placeholderColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var clearsOnBeginEditing: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var adjustsFontSizeToFitWidth: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) open var isEditing: Swift.Bool {
+    get
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var allowsEditingTextAttributes: Swift.Bool {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) open var typingAttributes: [Foundation.NSAttributedString.Key : Any]? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var clearButtonMode: FTSDKCoreKit.FTSDKFormField.ViewMode {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc open var keyboardType: UIKit.UIKeyboardType {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func canPaste(_ itemProviders: [Foundation.NSItemProvider]) -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func paste(_ sender: Any?)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var pasteConfiguration: UIKit.UIPasteConfiguration? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var canBecomeFirstResponder: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var canResignFirstResponder: Swift.Bool {
+    @objc get
+  }
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func becomeFirstResponder() -> Swift.Bool
+  @discardableResult
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func resignFirstResponder() -> Swift.Bool
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var intrinsicContentSize: CoreFoundation.CGSize {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) open var clearsOnInsertion: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var inputView: UIKit.UIView? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open var inputAccessoryView: UIKit.UIView? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var leftText: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var leftImage: UIKit.UIImage? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) open var leftTextColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var leftTextFont: UIKit.UIFont? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var validationRules: FTSDKCoreKit.ValidationRuleSet<Swift.String>? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var validateOnInputChange: Swift.Bool {
+    get
+    set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var rightText: Swift.String? {
+    @objc get
+    @objc set
+  }
+  @objc @IBInspectable @_Concurrency.MainActor(unsafe) open var rightImage: UIKit.UIImage? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) open var rightTextColor: UIKit.UIColor? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var rightTextFont: UIKit.UIFont? {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) open var rightLabel: UIKit.UILabel? {
+    get
+  }
+  @objc deinit
+}
+extension FTSDKCoreKit.FTSDKFormField : UIKit.UIContentSizeCategoryAdjusting {
+  @_Concurrency.MainActor(unsafe) @objc dynamic open var adjustsFontForContentSizeCategory: Swift.Bool {
+    @objc get
+    @objc set
+  }
+}
+extension FTSDKCoreKit.FTSDKFormField : UIKit.UITextInput {
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func replace(_ range: UIKit.UITextRange, withText text: Swift.String)
+  @_Concurrency.MainActor(unsafe) @objc dynamic open var selectedTextRange: UIKit.UITextRange? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic open var markedTextRange: UIKit.UITextRange? {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic open var markedTextStyle: [Foundation.NSAttributedString.Key : Any]? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func setMarkedText(_ markedText: Swift.String?, selectedRange: Foundation.NSRange)
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func unmarkText()
+  @_Concurrency.MainActor(unsafe) @objc dynamic open var beginningOfDocument: UIKit.UITextPosition {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic open var endOfDocument: UIKit.UITextPosition {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func textRange(from fromPosition: UIKit.UITextPosition, to toPosition: UIKit.UITextPosition) -> UIKit.UITextRange?
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func position(from position: UIKit.UITextPosition, offset: Swift.Int) -> UIKit.UITextPosition?
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func position(from position: UIKit.UITextPosition, in direction: UIKit.UITextLayoutDirection, offset: Swift.Int) -> UIKit.UITextPosition?
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func compare(_ position: UIKit.UITextPosition, to other: UIKit.UITextPosition) -> Foundation.ComparisonResult
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func offset(from: UIKit.UITextPosition, to toPosition: UIKit.UITextPosition) -> Swift.Int
+  @_Concurrency.MainActor(unsafe) @objc dynamic open var inputDelegate: UIKit.UITextInputDelegate? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic open var tokenizer: UIKit.UITextInputTokenizer {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func position(within range: UIKit.UITextRange, farthestIn direction: UIKit.UITextLayoutDirection) -> UIKit.UITextPosition?
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func characterRange(byExtending position: UIKit.UITextPosition, in direction: UIKit.UITextLayoutDirection) -> UIKit.UITextRange?
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func baseWritingDirection(for position: UIKit.UITextPosition, in direction: UIKit.UITextStorageDirection) -> UIKit.NSWritingDirection
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func setBaseWritingDirection(_ writingDirection: UIKit.NSWritingDirection, for range: UIKit.UITextRange)
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func firstRect(for range: UIKit.UITextRange) -> CoreFoundation.CGRect
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func caretRect(for position: UIKit.UITextPosition) -> CoreFoundation.CGRect
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func selectionRects(for range: UIKit.UITextRange) -> [UIKit.UITextSelectionRect]
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func closestPosition(to point: CoreFoundation.CGPoint) -> UIKit.UITextPosition?
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func closestPosition(to point: CoreFoundation.CGPoint, within range: UIKit.UITextRange) -> UIKit.UITextPosition?
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func characterRange(at point: CoreFoundation.CGPoint) -> UIKit.UITextRange?
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func text(in range: UIKit.UITextRange) -> Swift.String?
+  @_Concurrency.MainActor(unsafe) @objc dynamic open var hasText: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func insertText(_ text: Swift.String)
+  @_Concurrency.MainActor(unsafe) @objc dynamic open func deleteBackward()
+}
+extension FTSDKCoreKit.FTSDKFormField : UIKit.UITextDraggable, UIKit.UITextDroppable, UIKit.UITextPasteConfigurationSupporting {
+  @_Concurrency.MainActor(unsafe) @objc dynamic open var textDragDelegate: UIKit.UITextDragDelegate? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic open var textDragInteraction: UIKit.UIDragInteraction? {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic open var isTextDragActive: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic open var textDragOptions: UIKit.UITextDragOptions {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic open var textDropDelegate: UIKit.UITextDropDelegate? {
+    @objc get
+    @objc set
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic open var textDropInteraction: UIKit.UIDropInteraction? {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic open var isTextDropActive: Swift.Bool {
+    @objc get
+  }
+  @_Concurrency.MainActor(unsafe) @objc dynamic open var pasteDelegate: UIKit.UITextPasteDelegate? {
+    @objc get
+    @objc set
+  }
+}
+extension FTSDKCoreKit.FTSDKFormField {
+  @_Concurrency.MainActor(unsafe) public func createNormalFormField()
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) public class FTSDKNavigationBarView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func awakeFromNib()
@@ -2865,6 +3182,16 @@ public struct ContainsNumberValidationPattern : FTSDKCoreKit.ValidationPattern {
     get
   }
 }
+public protocol FTSDKCaptchaProtocol : AnyObject {
+  init()
+  func startCaptcha(completed: ((Swift.Result<FTSDKCoreKit.FTSDKCaptchaParams?, FTSDKCoreKit.FTSDKError>) -> Swift.Void)?)
+}
+public protocol FTSDKCaptchaParams : AnyObject {
+  var challenge: Swift.String { get }
+  var validate: Swift.String { get }
+  var secCode: Swift.String { get }
+  func dict() -> [Swift.String : Swift.String]
+}
 @objc @_inheritsConvenienceInitializers @objcMembers final public class FTSDKSignIn : ObjectiveC.NSObject, FTSDKCoreKit.RequestBagCompatible, FTSDKCoreKit.FTSDKUseCaseBagCompatible {
   @objc weak final public var delegate: FTSDKCoreKit.FTSDKAuthDelegate?
   @objc weak final public var linkAccountDelegate: FTSDKCoreKit.FTSDKLinkAccountDelegate?
@@ -3004,6 +3331,10 @@ public struct FTSDKAuthData : Swift.Decodable {
   @objc public static var projectFirebase: Swift.String
   public static var googleServiceInfo: FTSDKCoreKit.GoogleServiceInfo?
   @objc public static var facebookAppID: Swift.String?, facebookClientID: Swift.String?
+  @objc public static var modulesConfigs: [FTSDKCoreKit.ModuleConfig]?
+  @objc public static var themeConfigs: FTSDKCoreKit.ThemeConfigs?
+  @objc public static var promotions: [FTSDKCoreKit.SDKPromotion]?
+  public static var supportOrientation: UIKit.UIInterfaceOrientationMask?
   @objc public static var env: FTSDKCoreKit.FTSDKEnvironment
   @objc public static func setSDKLicense(license: Swift.String)
   @objc public static func setFPaySecretKey(_ secret: Swift.String)
@@ -3013,6 +3344,8 @@ public struct FTSDKAuthData : Swift.Decodable {
   }
   @objc public static func setFlowDialog()
   @objc public static func setFlowFullScreen()
+  public static func getModuleConfig(_ module: FTSDKCoreKit.SDKModule) -> FTSDKCoreKit.ModuleConfig?
+  public static func getPromotionConfig(_ module: FTSDKCoreKit.SDKModule) -> FTSDKCoreKit.SDKPromotion?
   @objc public static var logoName: Swift.String?
   @objc public static var companyLogoName: Swift.String?
   @objc public static var mainBackgroundName: Swift.String?
@@ -3023,6 +3356,7 @@ public struct FTSDKAuthData : Swift.Decodable {
   public static func invoke(header: FTSDKCoreKit.FTSDKDialogPresenter.Type)
   public static func invoke(loading: FTSDKCoreKit.FTSDKDialogPresenter.Type)
   public static func invoke(provider3rd: FTSDKCoreKit.FTSDK3rdAuthProviderProtocol.Type, type: FTSDKCoreKit.FTSDKAuthType)
+  public static func invoke(captchaProvider: FTSDKCoreKit.FTSDKCaptchaProtocol.Type)
   @objc override dynamic public init()
   @objc deinit
 }
@@ -3236,6 +3570,12 @@ public struct ListConverter<C> : FTSDKCoreKit.IConverter where C : FTSDKCoreKit.
   @objc deinit
   public func encode(to encoder: Swift.Encoder) throws
 }
+@objc @_inheritsConvenienceInitializers @objcMembers final public class FTSDKQA : ObjectiveC.NSObject, FTSDKCoreKit.FTSDKUseCaseBagCompatible {
+  final public var useCaseBag: [FTSDKCoreKit.FTSDKUseCaseable?]
+  @objc public static func startShowQA()
+  @objc override dynamic public init()
+  @objc deinit
+}
 extension FTSDKCoreKit.Reachability.Connection : Swift.Equatable {}
 extension FTSDKCoreKit.Reachability.Connection : Swift.Hashable {}
 extension FTSDKCoreKit.FTSDKAuthType : Swift.Equatable {}
@@ -3285,6 +3625,9 @@ extension FTSDKCoreKit.HttpResponseError : Swift.RawRepresentable {}
 extension FTSDKCoreKit.ModuleStatus : Swift.Equatable {}
 extension FTSDKCoreKit.ModuleStatus : Swift.Hashable {}
 extension FTSDKCoreKit.ModuleStatus : Swift.RawRepresentable {}
+extension FTSDKCoreKit.ModuleCaptchaStatus : Swift.Equatable {}
+extension FTSDKCoreKit.ModuleCaptchaStatus : Swift.Hashable {}
+extension FTSDKCoreKit.ModuleCaptchaStatus : Swift.RawRepresentable {}
 extension FTSDKCoreKit.SDKModule : Swift.Equatable {}
 extension FTSDKCoreKit.SDKModule : Swift.Hashable {}
 extension FTSDKCoreKit.SDKModule : Swift.RawRepresentable {}

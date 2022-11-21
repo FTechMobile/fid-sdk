@@ -13,7 +13,6 @@ import SwiftMessages
 import GoogleSignIn
 
 public class FTSDK: NSObject {
-    
     @objc public static func didFinishLaunching(_ application: UIApplication, with launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
         ApplicationDelegate.shared.application(application, didFinishLaunchingWithOptions: launchOptions)
         FTSDKAppDelegate.instance().didFinishLaunching(application, with: launchOptions)
@@ -95,6 +94,8 @@ public class FTSDK: NSObject {
         FTSDKConfig.invoke(loading: FTSDKLoadingDialogPresenter.self)
         FTSDKConfig.invoke(header: FTSDKHeaderDialogPresenter.self)
         FTSDKConfig.invoke(dialog: FTSDKCenterDialogPresenter.self)
+        FTSDKConfig.invoke(imageLoader: FTSDKImageLoaderImpl.self)
+        FTSDKConfig.invoke(captchaProvider: FTSDKCaptchaProvider.self)
     }
 }
 

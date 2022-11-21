@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		AkVfzOnIo9IYGwCnpvqx6VxRYeU=
+		a4ysMS955qhT0YlHTATFPHV+NKk=
 		</data>
 		<key>ChangePasswordView.nib/objects-13.0+.nib</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>FTSDKDatabase.momd/FTSDKDatabase.mom</key>
 		<data>
-		aBHzGJ5LN3LvNrdxIZwIzereHTk=
+		H1YUf/fAqWd0IHRxW+McUFl10is=
 		</data>
 		<key>FTSDKDatabase.momd/VersionInfo.plist</key>
 		<data>
@@ -83,6 +83,78 @@
 		<key>FTSDKNavigationBarView.nib</key>
 		<data>
 		mhrdO78IVgzLat8/XtqRYvbB1PE=
+		</data>
+		<key>FTSDKQAAccountItemCell.nib</key>
+		<data>
+		IIYrm7/VcYJ/fTb6jFq0dGUem9M=
+		</data>
+		<key>FTSDKQAAccountView.nib</key>
+		<data>
+		FqtL+tWOAiDZnrSotFUGX3d3q+Q=
+		</data>
+		<key>FTSDKQAAccountViewLandscape.nib</key>
+		<data>
+		ioprFbDQk3xPOS9afNG/I4PqD1A=
+		</data>
+		<key>FTSDKQACreateCommentView.nib</key>
+		<data>
+		qouJBlueWz4jWg2lQv6/A+m9Org=
+		</data>
+		<key>FTSDKQACreateCommentViewLandscape.nib</key>
+		<data>
+		x6W2fXjherAB2RIqJMM0V/MZlAk=
+		</data>
+		<key>FTSDKQACreateTicketView.nib</key>
+		<data>
+		n4i7eWlgPAUUIkXBgNC5/7Getv0=
+		</data>
+		<key>FTSDKQACreateTicketViewLandscape.nib</key>
+		<data>
+		p5TI+IA52bKwph1iym+zAhNF/RQ=
+		</data>
+		<key>FTSDKQAMenuItemCell.nib/objects-12.3+.nib</key>
+		<data>
+		sGFi69AifjzniGsBRMpbONylfR0=
+		</data>
+		<key>FTSDKQAMenuItemCell.nib/runtime.nib</key>
+		<data>
+		eQK6x+Z/8q7RhLDKIWuvW6q0F0E=
+		</data>
+		<key>FTSDKQAMenuView.nib</key>
+		<data>
+		PCZ1e5nUWLGkNSzh0DNTPoTNfXY=
+		</data>
+		<key>FTSDKQAMenuViewLandscape.nib</key>
+		<data>
+		EAs6X3eJT8wMnCREApRa67qo20U=
+		</data>
+		<key>FTSDKQATicketCommentItemCell.nib</key>
+		<data>
+		yIOz/0Skvexhfm2i8b2RttOZE6I=
+		</data>
+		<key>FTSDKQATicketDetailItemCell.nib</key>
+		<data>
+		TO0osabKa2TGGOZbfEVkec7Bv/I=
+		</data>
+		<key>FTSDKQATicketDetailView.nib</key>
+		<data>
+		j1uQ0aghv1ywIMvnv3kZnZ9y5MM=
+		</data>
+		<key>FTSDKQATicketDetailViewLandscape.nib</key>
+		<data>
+		ld+2GEo81vUQpuoTrItzkiuZLhA=
+		</data>
+		<key>FTSDKQATicketItemCell.nib</key>
+		<data>
+		fsq3b856IIu8rA3eAHkLo8XgQhY=
+		</data>
+		<key>FTSDKQATicketListView.nib</key>
+		<data>
+		hYmPEyvbrmkoLLxepuqo9V1sCGE=
+		</data>
+		<key>FTSDKQATicketListViewLandscape.nib</key>
+		<data>
+		U8B+uHvOnUHYl32GtP5HKNEUlm4=
 		</data>
 		<key>FTSDKSelectionTableViewCell.nib</key>
 		<data>
@@ -146,11 +218,27 @@
 		</data>
 		<key>FullScreenVerifyOTPNumberView.nib</key>
 		<data>
-		h9L3uJdGZRTFH2Tj3AUZvm8O3v0=
+		VhOQ6CU08BDfU6ePsyUX5oBj1S4=
+		</data>
+		<key>FunzyPhotoInfoView.nib</key>
+		<data>
+		UHMTmqQv1yyTatdlnJHSHSpGcAU=
+		</data>
+		<key>FunzyPickPhotosView.nib</key>
+		<data>
+		xbdMAAiFB0u/F6VprBr2X779RGk=
+		</data>
+		<key>FunzyShowPhotoPreview.nib</key>
+		<data>
+		0dGhB+ACx/QWbcyBx7pVxZbmjMI=
+		</data>
+		<key>FunzyShowPhotoPreviewLandscape.nib</key>
+		<data>
+		ZutUGJHCMtdgSAmyYkzH3A54Gt8=
 		</data>
 		<key>Headers/FTSDKCoreKit-Swift.h</key>
 		<data>
-		0tgDeSYbX2qvQO0H4UhHVPm+ZS4=
+		w4YjIAqWvQEA3dWnNZOzYyBSX5w=
 		</data>
 		<key>Headers/FTSDKCoreKit.h</key>
 		<data>
@@ -158,7 +246,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		8OI+bLZLr+dzMwSY2EY8eIlFGF8=
+		8UW/ltQp9IBXiR/hxfdkGA606yA=
 		</data>
 		<key>LinkAccountPlaynowView.nib/objects-13.0+.nib</key>
 		<data>
@@ -194,43 +282,43 @@
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		8H4gqpCVId0i1tzzmTTv9CkekVo=
+		0ta3rTd9JtZlD1iadN+2vLux2XA=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		miu0dTqEjK8yRSqRxDBA0B98ie0=
+		rLLmHUq05bMgHd+VfeSUNSl3bVc=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		0VgrMTK+/M2yG4oFmS/fFsonDZ0=
+		s/PD3WDub+XdLLoVCcRZNJz5dpM=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		miu0dTqEjK8yRSqRxDBA0B98ie0=
+		rLLmHUq05bMgHd+VfeSUNSl3bVc=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		1yHlFr9d7pZGomyexWD4/llWG4A=
+		DNskE5tJZu38+J44KG+hX2hKwnA=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		8H4gqpCVId0i1tzzmTTv9CkekVo=
+		0ta3rTd9JtZlD1iadN+2vLux2XA=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		2wDAdoxUMuOpqybFGC7ueMUlu1Y=
+		SyNI3FPGInba5Dd6BLnLqP+JLFo=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		MVAviQx4th7CMFKI6e0C2tnKQag=
+		D9ueLz7vtdUTXttZfb1DwEuTxKs=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		2wDAdoxUMuOpqybFGC7ueMUlu1Y=
+		SyNI3FPGInba5Dd6BLnLqP+JLFo=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		ZJwRaVYsKua73Hmp0j+XMe16YOE=
+		BXoSOfnJjQVodLIdt9Y+acdv0dU=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -326,11 +414,11 @@
 		</data>
 		<key>ShowWebviewContent.nib</key>
 		<data>
-		hwQJ3i+3vf9IFsNZET7Y8SgFnbQ=
+		sJMbfQmqRz4YpdwG+c5jfvbLmm4=
 		</data>
 		<key>ShowWebviewContentLandscape.nib</key>
 		<data>
-		mntrimbUZs0mLrIrIWWpNxYIGoA=
+		oasTDfi9FKOZdREIIqr6/Ju8S58=
 		</data>
 		<key>SignUpView.nib/objects-13.0+.nib</key>
 		<data>
@@ -347,6 +435,18 @@
 		<key>SignUpViewLandscape.nib/runtime.nib</key>
 		<data>
 		0m+mC9fv1TKhmafbcPnvGS7mdGA=
+		</data>
+		<key>V2LoginView.nib</key>
+		<data>
+		X9fpPjHIibozZ1KqsLlfpeXn3kI=
+		</data>
+		<key>V2LoginViewLandscape.nib/objects-13.0+.nib</key>
+		<data>
+		PNRa8Mm05nBz4bHq2p0Mr69aZAo=
+		</data>
+		<key>V2LoginViewLandscape.nib/runtime.nib</key>
+		<data>
+		nNnawjL124IKHZgtVMTMuVXfTRM=
 		</data>
 		<key>VerifyImageCaptchaView.nib/objects-13.0+.nib</key>
 		<data>
@@ -366,17 +466,26 @@
 		</data>
 		<key>VerifyOTPNumberView.nib</key>
 		<data>
-		ub1t406qr7UVDJ0bw6QSKxUdNOU=
+		d4iVdq4Zh3rSjB/FKr6XtFJ4ahU=
 		</data>
 		<key>VerifyOTPNumberViewLandscape.nib</key>
 		<data>
-		J6mlP8jHfASMVuj6BziIyH2nhx4=
+		v5VUCS6hnFVTe9yqz0bcNYnC0Xk=
 		</data>
 		<key>en.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash</key>
 			<data>
-			VfMfwfDkWaxT+oD4+0wkDgIHEWo=
+			EGr8aCjHS2An8l+RcUuf6eA44XM=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>en.lproj/QALocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			qPCH8/ta6RuYyuVvdk1DGCPfh4Q=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -433,7 +542,16 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			acmtlVZFeetWZKFYKY/1pNAHH/s=
+			3YyJz2zQi7oSkNOSY+YgegdcOII=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>vi.lproj/QALocalizable.strings</key>
+		<dict>
+			<key>hash</key>
+			<data>
+			BYLQUxqs/+iQaNql9vezYAIhZa8=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -445,7 +563,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9xh5kz2rg1+4uWonaHAE2ADme93VtSx+bMTES4y0P3g=
+			XjdFSxXMbsvTs1s3Fsg8Mk2WVcV2ukkBF+P2w+9ujpk=
 			</data>
 		</dict>
 		<key>ChangePasswordView.nib/objects-13.0+.nib</key>
@@ -529,7 +647,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			7Jw5skhb4AjKbgr4bGz05OjJ7hkeSmto2Bfm1/yCqrc=
+			WM4YI1xBBsaX1JZtalMky0ZoB2uFzfNmCWrhg8/0B1U=
 			</data>
 		</dict>
 		<key>FTSDKDatabase.momd/VersionInfo.plist</key>
@@ -579,6 +697,132 @@
 			<key>hash2</key>
 			<data>
 			OUu53x9KRsPRoAwbpFeyJ56y37nb3wndHaDGfZwgiVI=
+			</data>
+		</dict>
+		<key>FTSDKQAAccountItemCell.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WWoeXJFrI4nw8Wdv4eL/IX0WmgevcvwmxcAYN+HMFUU=
+			</data>
+		</dict>
+		<key>FTSDKQAAccountView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			x87mOzKgX7j+spO6N4kasULj7H6zicEGpFR0yF1MulU=
+			</data>
+		</dict>
+		<key>FTSDKQAAccountViewLandscape.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			Mwb5HyjFLCljbGRozWq3K9jsmimSSQbEUd/Mj/Y0aXU=
+			</data>
+		</dict>
+		<key>FTSDKQACreateCommentView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			RPNL7BAjLrjUf3tMCYxW0L5SDlRL0ZsEcFbj2mMs4dE=
+			</data>
+		</dict>
+		<key>FTSDKQACreateCommentViewLandscape.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			XUTzAydBHZjeulX+aT+Nw6H4NVxZh6k+ZEI0VY/vqtM=
+			</data>
+		</dict>
+		<key>FTSDKQACreateTicketView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			VW6zuiI9Ehu36eVk4jdV94a22xHsLJiU8dCapdkfWSE=
+			</data>
+		</dict>
+		<key>FTSDKQACreateTicketViewLandscape.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			T0vrMaV1Lb6GoxQ902B1/IU68qMtKa1Qcg/yE9MCx4g=
+			</data>
+		</dict>
+		<key>FTSDKQAMenuItemCell.nib/objects-12.3+.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			vnUS4lCn1tyVAd5PY0VtT0feMxb+QBlNFW1kwBGggec=
+			</data>
+		</dict>
+		<key>FTSDKQAMenuItemCell.nib/runtime.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			8Per8lUudWDbdrW6aokd8TqJq2xubt16oGC31FDGzO8=
+			</data>
+		</dict>
+		<key>FTSDKQAMenuView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			caxea1wRccHrSM6dnjJUfm2CRzrtJ97U64bpTblvzNo=
+			</data>
+		</dict>
+		<key>FTSDKQAMenuViewLandscape.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			zJ6GrdLJed6tcuXH41wT+xgvJCKoEoKA3J6hHJlwIo0=
+			</data>
+		</dict>
+		<key>FTSDKQATicketCommentItemCell.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			6/gvnQr4gCo2qkOtWvEwke2JWo1dWl+HoOZgr7ue1IQ=
+			</data>
+		</dict>
+		<key>FTSDKQATicketDetailItemCell.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			PQ+lgee+3c2hQfNQqZGjObwHLYn09ravz84C62nDAzA=
+			</data>
+		</dict>
+		<key>FTSDKQATicketDetailView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			EUGX5cphrK+4m3UkPMaL/PA6EhHOj0k/3De3F0yNveQ=
+			</data>
+		</dict>
+		<key>FTSDKQATicketDetailViewLandscape.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			21BbzCLUCze1znoTluHr0tWaJI0DzUciUHqQ0Wco70A=
+			</data>
+		</dict>
+		<key>FTSDKQATicketItemCell.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			nXRL9yCuKcdnJ5GtPE7eLV2KDRJsYz9aWYiksSwaCCk=
+			</data>
+		</dict>
+		<key>FTSDKQATicketListView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			XCpbYhMqSGlYR0JfPbg073/1OUjMp23nHrs0jV9FK1U=
+			</data>
+		</dict>
+		<key>FTSDKQATicketListViewLandscape.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			WtcpNa4zmNFlolHVFp+KBI3IrQ4ASHWxSv9lTVRtbHU=
 			</data>
 		</dict>
 		<key>FTSDKSelectionTableViewCell.nib</key>
@@ -690,14 +934,42 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			BCZ29/swZdfqkUM1XKdzKOdcPw4yvMjciawiEk8BHEQ=
+			yUSI7gqUllM9cNVpaSO4ooBywSs5cBBkgr6OkvfkxA4=
+			</data>
+		</dict>
+		<key>FunzyPhotoInfoView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			ODTqh7292QBxtB2r4m18baKsMiZebzW0qntBRdM/gbw=
+			</data>
+		</dict>
+		<key>FunzyPickPhotosView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+KPWOpsmqzgpAOhsE/OSYY+6qse59/iXXVSDxqW/EWE=
+			</data>
+		</dict>
+		<key>FunzyShowPhotoPreview.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			GMujr+EQm0ztJHMwu1Xugh8osQ+PO2zfbXMG1P3Gpuo=
+			</data>
+		</dict>
+		<key>FunzyShowPhotoPreviewLandscape.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			goZdo7q7DDc7OUS6CjglNLlfCFccb9zv+0Bbf/Aw5lE=
 			</data>
 		</dict>
 		<key>Headers/FTSDKCoreKit-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Lq8JkbKBvcB8xoMG8TvaMMeFjRV8E+OGN+CUTcmRwDI=
+			6mx2QXARubmDl3pvF/oJPx1RaR7SYpgSzgNvjQ37vxM=
 			</data>
 		</dict>
 		<key>Headers/FTSDKCoreKit.h</key>
@@ -767,70 +1039,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Y0RE7NclYgR1twJ9igJUoCzQU/CukImwYE5wODKMU9U=
+			X7I5a/ABB2ndOjyn+8HtuBg/HxbVjEbImfKrfONN0SM=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yBsmm38FRbRjqjAMfnH4wacSJBvhIvb5oWdua+ynYmI=
+			aUzYOW4HBVEZaYN9TSlur2TH+08VreZg79HVBDUHXbY=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BusrzEfUbp/RFPQoCW3YIVFd9Bvj+A/4xCDXnwkrZ/0=
+			Ni4H1VEA5XJU6WFg2blYeJA8iYbohxFbIlcXMctfCu8=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			yBsmm38FRbRjqjAMfnH4wacSJBvhIvb5oWdua+ynYmI=
+			aUzYOW4HBVEZaYN9TSlur2TH+08VreZg79HVBDUHXbY=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oepKGHsPGQ7PnDcqzOvLyq2wSIB4DnSBoaY9OP+4wR4=
+			Xe9ogduJlqT880zJx8h1jU3yELZGi/Ue0eXvTpfzprI=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Y0RE7NclYgR1twJ9igJUoCzQU/CukImwYE5wODKMU9U=
+			X7I5a/ABB2ndOjyn+8HtuBg/HxbVjEbImfKrfONN0SM=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RrezUujHJaPCsu1oiiK1cT/ElOwzS779JCI2rg5TklI=
+			GNiDMApfh971vxD/rByE0GvHCMR1VVVjgtzsbAS8JpQ=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			L6Ry5mc1/Q8/3CvYTMexdD7JwBnIUR2NPec7TK81kV4=
+			+yZZ3iC/8eguDfESN7OShvqSuY0xIzPWJsag0NYX5/M=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RrezUujHJaPCsu1oiiK1cT/ElOwzS779JCI2rg5TklI=
+			GNiDMApfh971vxD/rByE0GvHCMR1VVVjgtzsbAS8JpQ=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zhyWnzkJ3DgQEu8AICdUfWbowNfLjlGwBi1FeeeyI3Y=
+			XVlpRAlP+5kn6ie/ktS7RC0m037pviZamPMJb9T6MiI=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -998,14 +1270,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			04yfIXtIf0jdHAveDr2KDXNyihQCCLH9CHDofO5b2uc=
+			iJ4v2Oyoobf3CTAmzHFaKIGCjOVmZkoI9bl28hXWuWc=
 			</data>
 		</dict>
 		<key>ShowWebviewContentLandscape.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			X7SJ7i2lx44jG9maGr7LfSLqUWaZv9/GCcoXeDjW0fo=
+			lyS0uJu37hIqJuDkY7pwYo7TRvH5uJq4A08uROsC+CI=
 			</data>
 		</dict>
 		<key>SignUpView.nib/objects-13.0+.nib</key>
@@ -1034,6 +1306,27 @@
 			<key>hash2</key>
 			<data>
 			pAuox7Hu1eWKnlMp2Xlz2gs3COi3/URo+2jbdw60wjk=
+			</data>
+		</dict>
+		<key>V2LoginView.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			AkGA8Pd7RV4Xu7SACH5xbRIh7HW/xf3rlKgQb/dTsSU=
+			</data>
+		</dict>
+		<key>V2LoginViewLandscape.nib/objects-13.0+.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+I3s6ftCl3K1Bh2gYZcUx9dxzZtSo0aT6HBsBvbAQcU=
+			</data>
+		</dict>
+		<key>V2LoginViewLandscape.nib/runtime.nib</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			TnMhomQvihGuQjvuu5WOYkvBFVCAEWtW0fU1INqrwDE=
 			</data>
 		</dict>
 		<key>VerifyImageCaptchaView.nib/objects-13.0+.nib</key>
@@ -1068,21 +1361,30 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			cJTCibB4Y/FO/d96QAjEHQ2yRRkd6SJyIjSpyZwbmGs=
+			G0Vbhwk06KD6YXl1pXeYX+LDPQYafoWk4860ABARNok=
 			</data>
 		</dict>
 		<key>VerifyOTPNumberViewLandscape.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BDjbf1EH52Nyf7ZwqHw7REQv9z9QhcWGn6xPh72PqoA=
+			SrdZUbZxGLaG2BLWM1DKZzpN4/+WIrNJ7MBYHeweKnE=
 			</data>
 		</dict>
 		<key>en.lproj/Localizable.strings</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			gVW8r/xkZseUwxxVyxI2+C5/05usz97l/BnTz6BKe2g=
+			w+VjExrBIXwCRzyBYsYXtPXVOxXyT9kTi+JUuX6ksHE=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>en.lproj/QALocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			QkoePpsv9nRRQyHi+jLpekjpGNNhbXR+ELdpFOeu8VA=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -1175,7 +1477,16 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Tbr5x1wbdNiWggle+T/+K5J7ekbQfLsjKj36ml9ko68=
+			r2TEPVK/iGmmYrkYF1icKOppP0AzcjWSysdBs84bpNM=
+			</data>
+			<key>optional</key>
+			<true/>
+		</dict>
+		<key>vi.lproj/QALocalizable.strings</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			LiFEof5l+1JDh/oRqK2hO7CNyw3KDFohZDlhwfFf8cY=
 			</data>
 			<key>optional</key>
 			<true/>
