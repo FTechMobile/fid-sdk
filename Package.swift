@@ -11,7 +11,7 @@ let package = Package(
     ],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
-        .library(name: "FID", targets: ["FTSDK", "FTSDKCoreKit", "GT3Captcha"])
+        .library(name: "FID", targets: ["FTSDK", "FTSDKCoreKit"])
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
@@ -26,11 +26,10 @@ let package = Package(
         // Targets are the basic building blocks of a package. A target can define a module or a test suite.
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .binaryTarget(name: "FTSDKCoreKit", path: "Sources/FTSDKCoreKit.xcframework"),
-        .binaryTarget(name: "GT3Captcha", path: "Sources/GT3Captcha.xcframework"),
+//        .binaryTarget(name: "GT3Captcha", path: "Sources/GT3Captcha.xcframework"),
         .target(
             name: "FTSDK",
             dependencies: ["FTSDKCoreKit",
-                           "GT3Captcha",
                            "SwiftMessages",
                            .product(name: "FirebaseAuth", package: "firebase-ios-sdk"),
                            .product(name: "GoogleSignIn", package: "googlesignin-ios"),
