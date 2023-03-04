@@ -94,6 +94,10 @@ extension Swift.String : FTSDKCoreKit.FTSDKTrackerValueProtocol {
     get
   }
 }
+public enum HoverColor {
+  case color(UIKit.UIColor)
+  case gradient(top: UIKit.UIColor, bottom: UIKit.UIColor)
+}
 @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FTSDKPresenter<V> : FTSDKCoreKit.MVPComponentPresenter<V>, FTSDKCoreKit.RequestBagCompatible, FTSDKCoreKit.FTSDKUseCaseBagCompatible where V : FTSDKCoreKit.FTSDKViewProtocol {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open var title: Swift.String? {
     @objc get
@@ -247,6 +251,19 @@ extension UIKit.UICollectionView {
   @objc public func getAmount() -> Foundation.NSNumber
   @objc public static func listJSON(_ list: [FTSDKCoreKit.FTSDKPackageData]) -> Swift.String?
   @objc deinit
+}
+@objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class QAViewController : UIKit.UIViewController {
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override dynamic open func viewDidLoad()
+  @objc deinit
+}
+extension FTSDKCoreKit.QAViewController : WebKit.WKScriptMessageHandler {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func userContentController(_ userContentController: WebKit.WKUserContentController, didReceive message: WebKit.WKScriptMessage)
+}
+extension FTSDKCoreKit.QAViewController : WebKit.WKNavigationDelegate {
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFinish navigation: WebKit.WKNavigation!)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFail navigation: WebKit.WKNavigation!, withError error: Swift.Error)
+  @_Concurrency.MainActor(unsafe) @objc dynamic public func webView(_ webView: WebKit.WKWebView, didFailProvisionalNavigation navigation: WebKit.WKNavigation!, withError error: Swift.Error)
 }
 public struct MultipartFormDataChars {
 }
@@ -613,6 +630,28 @@ extension UIKit.UISlider : FTSDKCoreKit.ValidatableInterfaceElement {
   }
   @_Concurrency.MainActor(unsafe) public func validateOnInputChange(enabled: Swift.Bool)
   public typealias InputType = Swift.Float
+}
+public enum HoverPosition {
+  case topLeft
+  case topRight
+  case bottomLeft
+  case bottomRight
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+extension Swift.Set where Element == FTSDKCoreKit.HoverPosition {
+  public static let all: Swift.Set<FTSDKCoreKit.HoverPosition>
+}
+extension FTSDKCoreKit.HoverPosition : Swift.CaseIterable {
+  public typealias AllCases = [FTSDKCoreKit.HoverPosition]
+  public static var allCases: [FTSDKCoreKit.HoverPosition] {
+    get
+  }
+}
+extension FTSDKCoreKit.HoverPosition : Swift.Equatable {
+  public static func == (a: FTSDKCoreKit.HoverPosition, b: FTSDKCoreKit.HoverPosition) -> Swift.Bool
 }
 open class HTTPClient {
   public init(session: Foundation.URLSession)
@@ -2130,6 +2169,25 @@ public struct FTSDKDevicePermission {
   public static func requestPhotoPermission(_ onAuthorized: @escaping () -> Swift.Void)
   public static func requestPhotoPermission(onAuthorized: @escaping () -> Swift.Void, onNoPermisson: @escaping () -> Swift.Void)
 }
+public struct HoverConfiguration {
+  public var tintColor: UIKit.UIColor
+  public var backgroundColor: FTSDKCoreKit.HoverColor
+  public var itemsTextColor: UIKit.UIColor
+  public var image: UIKit.UIImage?
+  public var imageExpandAnimation: FTSDKCoreKit.ImageExpandAnimation
+  public var size: CoreFoundation.CGFloat
+  public var imageSizeRatio: CoreFoundation.CGFloat
+  public var padding: UIKit.UIEdgeInsets
+  public var font: UIKit.UIFont?
+  public var dimColor: UIKit.UIColor
+  public var initialPosition: FTSDKCoreKit.HoverPosition
+  public var allowedPositions: Swift.Set<FTSDKCoreKit.HoverPosition>
+  public init(image: UIKit.UIImage? = nil, imageExpandAnimation: FTSDKCoreKit.ImageExpandAnimation = .none, tintColor: UIKit.UIColor = .white, backgroundColor: FTSDKCoreKit.HoverColor = .color(.blue), itemsTextColor: UIKit.UIColor = .white, size: CoreFoundation.CGFloat = 60.0, imageSizeRatio: CoreFoundation.CGFloat = 0.4, padding: UIKit.UIEdgeInsets = .init(top: 12, left: 12, bottom: 12, right: 12), font: UIKit.UIFont? = nil, dimColor: UIKit.UIColor = UIColor.black.withAlphaComponent(0.75), initialPosition: FTSDKCoreKit.HoverPosition = .bottomRight, allowedPositions: Swift.Set<FTSDKCoreKit.HoverPosition> = .all)
+}
+public enum ImageExpandAnimation {
+  case none
+  case rotate(_: CoreFoundation.CGFloat)
+}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FTSDKBaseTableViewCell : UIKit.UITableViewCell {
   @_Concurrency.MainActor(unsafe) public var isEnableHighlight: Swift.Bool
   @_Concurrency.MainActor(unsafe) public static var reuseIdentifier: Swift.String {
@@ -2347,6 +2405,14 @@ extension FTSDKCoreKit.FTSDKUseCaseable {
 extension FTSDKCoreKit.FTSDKUseCaseBagCompatible {
   public func cancelUseCaseBag()
   public func cancelUseCase<T>(_ type: T.Type) where T : FTSDKCoreKit.FTSDKUseCaseable
+}
+@_hasMissingDesignatedInitializers public class UIBubbleButton {
+  public static let instance: FTSDKCoreKit.UIBubbleButton
+  public var onTap: (() -> Swift.Void)?
+  public func embedOnTopView()
+  public func show()
+  public func hide()
+  @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class NoSelectionTextField : FTSDKCoreKit.CustomTextField {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func canPerformAction(_ action: ObjectiveC.Selector, withSender sender: Any?) -> Swift.Bool
@@ -3067,6 +3133,9 @@ extension FTSDKCoreKit.FTSDKFormField {
   }
   @objc deinit
 }
+public struct HoverItem {
+  public init(title: Swift.String? = nil, image: UIKit.UIImage?, tintColor: UIKit.UIColor = .blue, backgroundColor: FTSDKCoreKit.HoverColor = .color(.white), onTap: @escaping () -> ())
+}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class CustomTextField : FTSDKCoreKit.FTSDKTextField {
   @IBInspectable @_Concurrency.MainActor(unsafe) @objc override dynamic open var placeholder: Swift.String? {
     @objc get
@@ -3326,6 +3395,7 @@ public struct FTSDKAuthData : Swift.Decodable {
   @objc public static var appName: Swift.String
   @objc public static var domain: Swift.String
   @objc public static var domainGame: Swift.String
+  @objc public static var domainWidget: Swift.String
   @objc public static var configFileName: Swift.String
   @objc public static var releaseVersionNumber: Swift.String?
   @objc public static var projectFirebase: Swift.String
@@ -3335,6 +3405,8 @@ public struct FTSDKAuthData : Swift.Decodable {
   @objc public static var themeConfigs: FTSDKCoreKit.ThemeConfigs?
   @objc public static var promotions: [FTSDKCoreKit.SDKPromotion]?
   public static var supportOrientation: UIKit.UIInterfaceOrientationMask?
+  @objc public static var disableAllDialogLoading: Swift.Bool
+  @objc public static var disableAllHeaderMessage: Swift.Bool
   @objc public static var env: FTSDKCoreKit.FTSDKEnvironment
   @objc public static func setSDKLicense(license: Swift.String)
   @objc public static func setFPaySecretKey(_ secret: Swift.String)
@@ -3589,6 +3661,7 @@ extension FTSDKCoreKit.HTTPStatusCode : Swift.Hashable {}
 extension FTSDKCoreKit.HTTPStatusCode : Swift.RawRepresentable {}
 extension FTSDKCoreKit.FTSDKEmailValidationPattern : Swift.Equatable {}
 extension FTSDKCoreKit.FTSDKEmailValidationPattern : Swift.Hashable {}
+extension FTSDKCoreKit.HoverPosition : Swift.Hashable {}
 extension FTSDKCoreKit.URLEncodedBuilder.ArrayEncoding : Swift.Equatable {}
 extension FTSDKCoreKit.URLEncodedBuilder.ArrayEncoding : Swift.Hashable {}
 extension FTSDKCoreKit.URLEncodedBuilder.BoolEncoding : Swift.Equatable {}

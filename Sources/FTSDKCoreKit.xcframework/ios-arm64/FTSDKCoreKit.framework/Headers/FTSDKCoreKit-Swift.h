@@ -236,6 +236,7 @@ using UInt = size_t;
 @import ObjectiveC;
 @import StoreKit;
 @import UIKit;
+@import WebKit;
 #endif
 
 #endif
@@ -262,6 +263,7 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit16AnalyticsConfigs")
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
+
 
 
 
@@ -511,6 +513,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull doma
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull domainGame;)
 + (NSString * _Nonnull)domainGame SWIFT_WARN_UNUSED_RESULT;
 + (void)setDomainGame:(NSString * _Nonnull)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull domainWidget;)
++ (NSString * _Nonnull)domainWidget SWIFT_WARN_UNUSED_RESULT;
++ (void)setDomainWidget:(NSString * _Nonnull)value;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull configFileName;)
 + (NSString * _Nonnull)configFileName SWIFT_WARN_UNUSED_RESULT;
 + (void)setConfigFileName:(NSString * _Nonnull)value;
@@ -535,6 +540,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) ThemeConfigs * _Nullab
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSArray<SDKPromotion *> * _Nullable promotions;)
 + (NSArray<SDKPromotion *> * _Nullable)promotions SWIFT_WARN_UNUSED_RESULT;
 + (void)setPromotions:(NSArray<SDKPromotion *> * _Nullable)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL disableAllDialogLoading;)
++ (BOOL)disableAllDialogLoading SWIFT_WARN_UNUSED_RESULT;
++ (void)setDisableAllDialogLoading:(BOOL)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL disableAllHeaderMessage;)
++ (BOOL)disableAllHeaderMessage SWIFT_WARN_UNUSED_RESULT;
++ (void)setDisableAllHeaderMessage:(BOOL)value;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) enum FTSDKEnvironment env;)
 + (enum FTSDKEnvironment)env SWIFT_WARN_UNUSED_RESULT;
 + (void)setEnv:(enum FTSDKEnvironment)value;
@@ -1268,6 +1279,7 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit12ModuleConfig")
 
 
 
+
 SWIFT_CLASS("_TtC12FTSDKCoreKit20NoSelectionTextField")
 @interface NoSelectionTextField : CustomTextField
 - (BOOL)canPerformAction:(SEL _Nonnull)action withSender:(id _Nullable)sender SWIFT_WARN_UNUSED_RESULT;
@@ -1294,6 +1306,32 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit20PhoneNumberTextField")
 - (BOOL)textFieldShouldReturn:(UITextField * _Nonnull)textField SWIFT_WARN_UNUSED_RESULT;
 - (void)textFieldDidBeginEditing:(UITextField * _Nonnull)textField;
 - (BOOL)textField:(UITextField * _Nonnull)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString * _Nonnull)string SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+SWIFT_CLASS("_TtC12FTSDKCoreKit16QAViewController")
+@interface QAViewController : UIViewController
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
+- (void)viewDidLoad;
+- (nonnull instancetype)initWithNibName:(NSString * _Nullable)nibNameOrNil bundle:(NSBundle * _Nullable)nibBundleOrNil SWIFT_UNAVAILABLE;
+@end
+
+@class WKUserContentController;
+@class WKScriptMessage;
+
+@interface QAViewController (SWIFT_EXTENSION(FTSDKCoreKit)) <WKScriptMessageHandler>
+- (void)userContentController:(WKUserContentController * _Nonnull)userContentController didReceiveScriptMessage:(WKScriptMessage * _Nonnull)message;
+@end
+
+@class WKWebView;
+@class WKNavigation;
+
+@interface QAViewController (SWIFT_EXTENSION(FTSDKCoreKit)) <WKNavigationDelegate>
+- (void)webView:(WKWebView * _Nonnull)webView didFinishNavigation:(WKNavigation * _Null_unspecified)navigation;
+- (void)webView:(WKWebView * _Nonnull)webView didFailNavigation:(WKNavigation * _Null_unspecified)navigation withError:(NSError * _Nonnull)error;
+- (void)webView:(WKWebView * _Nonnull)webView didFailProvisionalNavigation:(WKNavigation * _Null_unspecified)navigation withError:(NSError * _Nonnull)error;
 @end
 
 
@@ -1351,6 +1389,11 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit11ThemeImages")
 
 @interface UIScrollView (SWIFT_EXTENSION(FTSDKCoreKit)) <UIGestureRecognizerDelegate>
 @end
+
+
+
+
+
 
 
 
