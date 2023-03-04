@@ -2406,12 +2406,12 @@ extension FTSDKCoreKit.FTSDKUseCaseBagCompatible {
   public func cancelUseCaseBag()
   public func cancelUseCase<T>(_ type: T.Type) where T : FTSDKCoreKit.FTSDKUseCaseable
 }
-@_hasMissingDesignatedInitializers public class UIBubbleButton {
+@_hasMissingDesignatedInitializers @objcMembers public class UIBubbleButton {
   public static let instance: FTSDKCoreKit.UIBubbleButton
-  public var onTap: (() -> Swift.Void)?
-  public func embedOnTopView()
-  public func show()
-  public func hide()
+  @objc public var onTap: (() -> Swift.Void)?
+  @objc public func embedOnTopView()
+  @objc public func show()
+  @objc public func hide()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class NoSelectionTextField : FTSDKCoreKit.CustomTextField {
