@@ -282,7 +282,7 @@
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		kStyaPLRn5B/9KM8ayJNdnDHF2g=
+		ZEKap5e4/uvmXjhanWfaz2+srx4=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -298,11 +298,11 @@
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		a5J9+T9Y77nlBitLvzNnOfBoALs=
+		m983Q2me6UC0J06dRuHZUd7d6So=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		dqEMgwHU9Zaf8/8dWaSDt56W8Ys=
+		BgHnBJ7jArsyIaB0nutRIwJBvd8=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
@@ -318,7 +318,7 @@
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		EEhe6JqwviPLnjpoKkFzkmJuzuo=
+		PxRjQs3NEZvoPy2GfVvh2PFSBT4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -1039,7 +1039,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			AzF7376nOnFMHapx2NllGC/64aKIdHGEAywq/iMGAKo=
+			EgEpQ0LcoepgeB7lqwc8UWu88jwBTGweA/OL7XUqLF0=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
@@ -1067,14 +1067,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			MtWHwzqorvFHzQiyBIYlnXTo6r+dSkAw/P+RqT0ZPL8=
+			WNAcJImi7Dr054h7/JtTjfSpMiHE/MXwPsst0ouQDmo=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Jx8ffnXMh4Z2YeHmabXzhVY4L0syfpEgHiqRFqYfmLo=
+			2CUDQMsF3+srRnper+4niZWMOhAPQNSkKogUTQ2BSMA=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
@@ -1102,7 +1102,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			gGHelc/a6IdbVTDEcF1lABI35ggqud0ed7CN/PD/QAo=
+			om9SvzPv+geA5j9Df1z2MMwt8D4O5ximXVFxKCh/5pA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
