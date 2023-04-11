@@ -19,6 +19,13 @@ public class FTSDK: NSObject {
         config()
     }
     
+    @objc public static func showQAButton() {
+        FTSDKBubbleButton.instance.embedOnTopView()
+        FTSDKBubbleButton.instance.onTap = {
+            FTSDKQA.startShowQA()
+        }
+    }
+    
     @discardableResult
     @objc public static func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]?) -> Bool {
         let handleFT = FTSDKAppDelegate.instance().application(app, open: url, options: options)
@@ -95,7 +102,7 @@ public class FTSDK: NSObject {
         FTSDKConfig.invoke(header: FTSDKHeaderDialogPresenter.self)
         FTSDKConfig.invoke(dialog: FTSDKCenterDialogPresenter.self)
         FTSDKConfig.invoke(imageLoader: FTSDKImageLoaderImpl.self)
-//        FTSDKConfig.invoke(captchaProvider: FTSDKCaptchaProvider.self)
+        FTSDKConfig.invoke(captchaProvider: FTSDKCaptchaProvider.self)
     }
 }
 

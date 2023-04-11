@@ -238,7 +238,7 @@
 		</data>
 		<key>Headers/FTSDKCoreKit-Swift.h</key>
 		<data>
-		4r2YRO7qKFBQkPRsUrMLvqXLhnY=
+		qXB9WREVNet/TBRe/jGDxRudSgY=
 		</data>
 		<key>Headers/FTSDKCoreKit.h</key>
 		<data>
@@ -282,11 +282,11 @@
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		0xIHP38M5I2B+zaDIpY41YjIJsc=
+		kStyaPLRn5B/9KM8ayJNdnDHF2g=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		KzeAqSltV44PnPQN1m16TLZZ500=
+		vtxl5MWFmMLy9M77Md5RGPe1Va4=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -294,19 +294,19 @@
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		KzeAqSltV44PnPQN1m16TLZZ500=
+		vtxl5MWFmMLy9M77Md5RGPe1Va4=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		gIOUlMH55U6vKJ3v9uxUPkhMBqo=
+		a5J9+T9Y77nlBitLvzNnOfBoALs=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		cnSOwm0xTEVru6DmwAlhGHvSW6w=
+		dqEMgwHU9Zaf8/8dWaSDt56W8Ys=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		a98jf3aGxjgI1zeio8YKhnampu8=
+		hZ+QQcOMVPKJfTbk+YqAHzIKXok=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
@@ -314,11 +314,11 @@
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		a98jf3aGxjgI1zeio8YKhnampu8=
+		hZ+QQcOMVPKJfTbk+YqAHzIKXok=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		H6oRrgHVWxS9KQVYdG3KtStK67w=
+		EEhe6JqwviPLnjpoKkFzkmJuzuo=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -969,7 +969,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			c0ONMdXhHLnmlBfuvwhQubhM2sbo27z6+LOGh6MfB1I=
+			Z9rVjcvUiFhZNXvVfSl4db7jXWpZBcJZYR8wRACh6lo=
 			</data>
 		</dict>
 		<key>Headers/FTSDKCoreKit.h</key>
@@ -1039,14 +1039,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			SIfk3ngy9ZuRcCgQiQClDVvCb+3QqIIyGP5RXmZ24WA=
+			AzF7376nOnFMHapx2NllGC/64aKIdHGEAywq/iMGAKo=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Pgj+FvuS6sDBc+s7sdMhjLisVtc84h0Wn53UqMVmlE0=
+			ci/dKp9OSakGBPrJmkZtuY4RianF0Z0B73ktgtgXgbI=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
@@ -1060,28 +1060,28 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			Pgj+FvuS6sDBc+s7sdMhjLisVtc84h0Wn53UqMVmlE0=
+			ci/dKp9OSakGBPrJmkZtuY4RianF0Z0B73ktgtgXgbI=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			CzzTwGLNJJNK+lt+D4qQKC+B67tC0rVd+grt2KV3lDM=
+			MtWHwzqorvFHzQiyBIYlnXTo6r+dSkAw/P+RqT0ZPL8=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Q2rF+Ii9MBT52LCnpVguSw0c/NxEUd5h8GUxzoUwsCE=
+			Jx8ffnXMh4Z2YeHmabXzhVY4L0syfpEgHiqRFqYfmLo=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9aTA5scHXh27XTzwRpbN0WhHZrx0wVkb+bcToPk6x34=
+			fZan0PxUERfSmt2RV16ZB0+u7L0PYZrkTjqmfHYF89M=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
@@ -1095,14 +1095,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9aTA5scHXh27XTzwRpbN0WhHZrx0wVkb+bcToPk6x34=
+			fZan0PxUERfSmt2RV16ZB0+u7L0PYZrkTjqmfHYF89M=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nycxs7ouIO0leGcVFsc+y7sTLyWjXcnl84urFS4GUCs=
+			gGHelc/a6IdbVTDEcF1lABI35ggqud0ed7CN/PD/QAo=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>

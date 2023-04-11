@@ -1254,6 +1254,25 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit19GradientColorButton")
 
 
 
+SWIFT_CLASS("_TtC12FTSDKCoreKit9HoverView")
+@interface HoverView : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)layoutSubviews;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+@class UIEvent;
+
+@interface HoverView (SWIFT_EXTENSION(FTSDKCoreKit))
+- (UIView * _Nullable)hitTest:(CGPoint)point withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+
+
+
+
 SWIFT_CLASS("_TtC12FTSDKCoreKit10IapConfigs")
 @interface IapConfigs : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -2679,6 +2698,25 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit19GradientColorButton")
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)coder OBJC_DESIGNATED_INITIALIZER;
 @end
+
+
+
+SWIFT_CLASS("_TtC12FTSDKCoreKit9HoverView")
+@interface HoverView : UIView
+- (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+- (void)layoutSubviews;
+- (nonnull instancetype)initWithFrame:(CGRect)frame SWIFT_UNAVAILABLE;
+@end
+
+
+@class UIEvent;
+
+@interface HoverView (SWIFT_EXTENSION(FTSDKCoreKit))
+- (UIView * _Nullable)hitTest:(CGPoint)point withEvent:(UIEvent * _Nullable)event SWIFT_WARN_UNUSED_RESULT;
+@end
+
+
+
 
 
 

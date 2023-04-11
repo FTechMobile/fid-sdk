@@ -624,6 +624,25 @@ public class FTSDKAttributedStringBuilder {
   @objc override dynamic public init()
   @objc deinit
 }
+@objc @_Concurrency.MainActor(unsafe) final public class HoverView : UIKit.UIView {
+  @_Concurrency.MainActor(unsafe) final public var items: [FTSDKCoreKit.HoverItem] {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var isEnabled: Swift.Bool {
+    get
+    set
+  }
+  @_Concurrency.MainActor(unsafe) final public var onPositionChange: ((FTSDKCoreKit.HoverPosition) -> ())?
+  @_Concurrency.MainActor(unsafe) final public var onButtonTap: (() -> ())?
+  @_Concurrency.MainActor(unsafe) public init(with configuration: FTSDKCoreKit.HoverConfiguration = HoverConfiguration(), items: [FTSDKCoreKit.HoverItem] = [])
+  @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
+  @_Concurrency.MainActor(unsafe) @objc override final public func layoutSubviews()
+  @objc deinit
+}
+extension FTSDKCoreKit.HoverView {
+  @_Concurrency.MainActor(unsafe) @objc override final public func hitTest(_ point: CoreFoundation.CGPoint, with event: UIKit.UIEvent?) -> UIKit.UIView?
+}
 extension UIKit.UISlider : FTSDKCoreKit.ValidatableInterfaceElement {
   @_Concurrency.MainActor(unsafe) public var inputValue: Swift.Float? {
     get
@@ -2414,12 +2433,12 @@ extension FTSDKCoreKit.FTSDKUseCaseBagCompatible {
   public func cancelUseCaseBag()
   public func cancelUseCase<T>(_ type: T.Type) where T : FTSDKCoreKit.FTSDKUseCaseable
 }
-@_hasMissingDesignatedInitializers @objcMembers public class UIBubbleButton {
-  public static let instance: FTSDKCoreKit.UIBubbleButton
-  @objc public var onTap: (() -> Swift.Void)?
-  @objc public func embedOnTopView()
-  @objc public func show()
-  @objc public func hide()
+@_hasMissingDesignatedInitializers @objcMembers final public class FTSDKBubbleButton {
+  public static let instance: FTSDKCoreKit.FTSDKBubbleButton
+  @objc final public var onTap: (() -> Swift.Void)?
+  @objc final public func embedOnTopView()
+  @objc final public func show()
+  @objc final public func hide()
   @objc deinit
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class NoSelectionTextField : FTSDKCoreKit.CustomTextField {
