@@ -1,6 +1,13 @@
+////
+////  FTSDKCaptchaProvider.swift
+////  
+////
+////  Created by Nguyen Cuong on 31/10/2022.
+////
 //
-//  FTSDKCaptchaProvider.swift
-//  
+//import Foundation
+//import GT3Captcha
+//import FTSDKCoreKit
 //
 //  Created by Nguyen Cuong on 23/03/2023.
 //

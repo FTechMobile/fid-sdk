@@ -95,7 +95,7 @@ public class FTSDK: NSObject {
         FTSDKConfig.invoke(header: FTSDKHeaderDialogPresenter.self)
         FTSDKConfig.invoke(dialog: FTSDKCenterDialogPresenter.self)
         FTSDKConfig.invoke(imageLoader: FTSDKImageLoaderImpl.self)
-        FTSDKConfig.invoke(captchaProvider: FTSDKCaptchaProvider.self)
+//        FTSDKConfig.invoke(captchaProvider: FTSDKCaptchaProvider.self)
     }
 }
 
