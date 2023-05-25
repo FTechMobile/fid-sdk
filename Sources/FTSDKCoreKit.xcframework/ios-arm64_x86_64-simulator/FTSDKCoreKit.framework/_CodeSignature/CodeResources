@@ -6,7 +6,7 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		2Pi3GqiVgu1e7TMjzhFLPU99uoA=
+		pS2fkzMRkuiC6lLuUgD64J9mSH8=
 		</data>
 		<key>ChangePasswordView.nib/objects-13.0+.nib</key>
 		<data>
@@ -54,7 +54,7 @@
 		</data>
 		<key>FTSDKDatabase.momd/FTSDKDatabase.mom</key>
 		<data>
-		H1YUf/fAqWd0IHRxW+McUFl10is=
+		OVyS4d8xWcYmMFI1HOnm//Zhovo=
 		</data>
 		<key>FTSDKDatabase.momd/VersionInfo.plist</key>
 		<data>
@@ -66,7 +66,7 @@
 		</data>
 		<key>FTSDKHeaderMessageView.nib</key>
 		<data>
-		swKXGS0tX3Cr/VZLaXd1YwFf/AY=
+		Cfh7rp59qwmLCyOnv1q/IIaa7P0=
 		</data>
 		<key>FTSDKHeaderView.nib</key>
 		<data>
@@ -74,7 +74,7 @@
 		</data>
 		<key>FTSDKListSelectionView.nib</key>
 		<data>
-		1SeXybk4uGIHtcdbGGoWooyHS5w=
+		w0A8OMHyVDOaaEaY7oGEW87poJ4=
 		</data>
 		<key>FTSDKLoadingView.nib</key>
 		<data>
@@ -194,11 +194,11 @@
 		</data>
 		<key>FullScreenLoginView.nib</key>
 		<data>
-		cRPuOcQKk6fwtx0o3fiMumiWMXo=
+		nlcafcDMlAj8aeOvj0mLinJdCyU=
 		</data>
 		<key>FullScreenShowWebviewContent.nib</key>
 		<data>
-		jMcstJNcckzoOOFBZEOXnLOUxAg=
+		R2qnC4/msU0KA/jf7MF4xaJRgd0=
 		</data>
 		<key>FullScreenSignUpView.nib/objects-13.0+.nib</key>
 		<data>
@@ -218,7 +218,7 @@
 		</data>
 		<key>FullScreenVerifyOTPNumberView.nib</key>
 		<data>
-		gzjQJJQWmOISG9pR1nk1MGhrLQA=
+		CfKfN8OMtpCM534yDef6sEY3lIk=
 		</data>
 		<key>FunzyPhotoInfoView.nib</key>
 		<data>
@@ -238,7 +238,7 @@
 		</data>
 		<key>Headers/FTSDKCoreKit-Swift.h</key>
 		<data>
-		Obp9MF49bR46gs3jRiqiHEgnWhU=
+		NcQNrimHGkG0gxEk1d3/8TRBi7Q=
 		</data>
 		<key>Headers/FTSDKCoreKit.h</key>
 		<data>
@@ -246,7 +246,7 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		HdLhDrgWZssH4JRJXJIJAw8bQXA=
+		VMrNWTGbvVr3l2CwSMZZ+JUpOzc=
 		</data>
 		<key>LinkAccountPlaynowView.nib/objects-13.0+.nib</key>
 		<data>
@@ -282,43 +282,43 @@
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		R3qdTlSEYp8yhZdoK7j9/ty3Swg=
+		qfQXMLOrIDfIgAO9nYk9Gj5AU8s=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		EnlcIJvvlU4DWHCb80D7HySK7cA=
+		kX9GWEwdRSzoa70ffxKwhGEeMGg=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		CWvjolno1hYXfLLNFnqEv4x3E9Q=
+		5plI9u/5sGRAJMiFzfheD0T9aUE=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		EnlcIJvvlU4DWHCb80D7HySK7cA=
+		kX9GWEwdRSzoa70ffxKwhGEeMGg=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		mRMk8ab2KZ6BsDkyFjL9mB8X1BE=
+		zLY9eFNaCZkq4td+DWpnCgKIROg=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		R3qdTlSEYp8yhZdoK7j9/ty3Swg=
+		w6kcJjyJzRjWVVukcZH60xjQuqs=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		dIjb/TgnIqSzto8F0p2D/It5epE=
+		qpm5KLoCRjKHu/CcHFQT0MskD88=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		nSj29mY5Ub4VV/qE6GKjpFts300=
+		LuOvKV0aJ2mWj8H8KslL3WIGp/8=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		dIjb/TgnIqSzto8F0p2D/It5epE=
+		qpm5KLoCRjKHu/CcHFQT0MskD88=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		FYzBAEzrMsY4piKRsSwrPucUhm4=
+		/rM+JtJbUIPR+Jz4DGQlJQtZwBE=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
@@ -414,11 +414,11 @@
 		</data>
 		<key>ShowWebviewContent.nib</key>
 		<data>
-		sJMbfQmqRz4YpdwG+c5jfvbLmm4=
+		KYZmybNc0gTgEPYRwrHnk9tP7NQ=
 		</data>
 		<key>ShowWebviewContentLandscape.nib</key>
 		<data>
-		oasTDfi9FKOZdREIIqr6/Ju8S58=
+		SR3ypJKx/vZ8jioqJhTmOJU739Y=
 		</data>
 		<key>SignUpView.nib/objects-13.0+.nib</key>
 		<data>
@@ -466,11 +466,11 @@
 		</data>
 		<key>VerifyOTPNumberView.nib</key>
 		<data>
-		qEFiVl7ZmrMNDHxuThu1HB5NdKs=
+		phdy3C+OBlQGIdm3GlLyofzyAkY=
 		</data>
 		<key>VerifyOTPNumberViewLandscape.nib</key>
 		<data>
-		bM1lY39kWi9RpiFk+LTlUjsTLtM=
+		wfNHCO/PX1ucwLErHpNF97U2z4I=
 		</data>
 		<key>en.lproj/Localizable.strings</key>
 		<dict>
@@ -542,7 +542,7 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			3YyJz2zQi7oSkNOSY+YgegdcOII=
+			rFMqk0R2honkf2kv1pNbRk2GrPg=
 			</data>
 			<key>optional</key>
 			<true/>
@@ -563,7 +563,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dH3zvoB/CyYNW9xxWL/w0TxiLWvC64njohmVshQr/gQ=
+			s6MO+h7NLouJIEYuFCQfPKusThfKZr1hUqp37UuCpVA=
 			</data>
 		</dict>
 		<key>ChangePasswordView.nib/objects-13.0+.nib</key>
@@ -647,7 +647,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			WM4YI1xBBsaX1JZtalMky0ZoB2uFzfNmCWrhg8/0B1U=
+			tdsIR5ji+HWQxm1qwvx/rUS6ORwF0ghwWtYgURy80DA=
 			</data>
 		</dict>
 		<key>FTSDKDatabase.momd/VersionInfo.plist</key>
@@ -668,7 +668,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dLxtXUYpiWJv/j+F98nRbdKJXqpX24moMlvK80jSnfI=
+			q/942ZVJCXN6dFhzX1BxzndoV45nS/ykow3uBzNT2co=
 			</data>
 		</dict>
 		<key>FTSDKHeaderView.nib</key>
@@ -682,7 +682,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			1rz72wfjXOzjt43qPOogDxvWJHulQe9IOYhyYF7wlf4=
+			9msFkwlulYV2VqdU9XoeqTIty/NOMY27DO6L+Cj6KaE=
 			</data>
 		</dict>
 		<key>FTSDKLoadingView.nib</key>
@@ -892,14 +892,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			YEpNgGY38YxISzhztC7v2s9ER0fiZbV2TYn2M87lHco=
+			V9W6PgQuO7988I5YJp7E/XsE5XD1jBY3J5vveiXucJw=
 			</data>
 		</dict>
 		<key>FullScreenShowWebviewContent.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EV4GR+RzdVVc+WMoexep1/Y5hVlDV56M0JqdjTxVGUY=
+			L3Ne28CM0ufVgw5koNuNNkOMR3EmksXTIo5rMQ9R8iM=
 			</data>
 		</dict>
 		<key>FullScreenSignUpView.nib/objects-13.0+.nib</key>
@@ -934,7 +934,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			H+h7KjiErbV++AuLhCh1qIopTtBzTb4y1klF+IgUGYA=
+			6Mm8JwzjHTrS8/lhT8yn8jaIBb6zTRnZXiEYjCk16QY=
 			</data>
 		</dict>
 		<key>FunzyPhotoInfoView.nib</key>
@@ -969,7 +969,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			FLfohl/i1puqHvZqKLF/CIuTp0JcbhR5YB/9gdQIXVk=
+			ciAiMWmqpkBdrplpQhosJKoRZD90py7MaqkeZDMMEpE=
 			</data>
 		</dict>
 		<key>Headers/FTSDKCoreKit.h</key>
@@ -1039,70 +1039,70 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			y1Z7PAbFgKo8GGOe6b10YnB76G4OQOkfjWP3MR1fBgE=
+			0Et8htPsr1nVtG0on/oPvKiexzez8Sjj+3R7VyHcL7I=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			n6y0fDwxTb2m68jgS26KuD7gAdZsp3j7hWIc3BIWBUk=
+			5Kw932/nXHbMUNdrRMm6IMogMfGhN9iTlOKSAexGr3w=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			le7trHJ/tbf/N78IirEk0Msy4AYfIyF9O0TvarzMpic=
+			bY9MKJl2ah4JaQP0K/dvYF2f1jbyc2RcmLsPjCkmCxs=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			n6y0fDwxTb2m68jgS26KuD7gAdZsp3j7hWIc3BIWBUk=
+			5Kw932/nXHbMUNdrRMm6IMogMfGhN9iTlOKSAexGr3w=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			bvjo1iP6nJswoFSTjh5giFtWgJCoHMBZ+ZiWM5k5E30=
+			lt5VIEKO3e609HnL1hOzpqF69OHrsAB09fN2hVIPbXs=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			y1Z7PAbFgKo8GGOe6b10YnB76G4OQOkfjWP3MR1fBgE=
+			MZSMnPuCZc8w4CeGkSSg0MlIeo6biTzfTPuff2Wp+4k=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			M57dqAXWfBmrHxKPps4GLH8gKgPcKjhJTvx43g63Ns4=
+			a/geqtfVcnCTjU4jmE6eEiwH4Xvz9k+AUBD0r0UKHvI=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			au2tPJpUOQbubnHwO62f31lb1ufIJH/XANhldpeJArk=
+			RIxkfLXmCnCyhKU6kXOWp8DQ73PiAJVtqIveUb0KagQ=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			M57dqAXWfBmrHxKPps4GLH8gKgPcKjhJTvx43g63Ns4=
+			a/geqtfVcnCTjU4jmE6eEiwH4Xvz9k+AUBD0r0UKHvI=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			G1CPhVqvjVPy0aWR8N3uwuAfwIccRP6CsY4ABCxKYcs=
+			JYvSTbr0zwW0yG8RWeKlqGlonYm8SX5ycMexRsednwM=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
@@ -1270,14 +1270,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			iJ4v2Oyoobf3CTAmzHFaKIGCjOVmZkoI9bl28hXWuWc=
+			6SekRF86ThMk6AXu/nZnZfd01rryUfFMK2e87wrrz78=
 			</data>
 		</dict>
 		<key>ShowWebviewContentLandscape.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lyS0uJu37hIqJuDkY7pwYo7TRvH5uJq4A08uROsC+CI=
+			hox3vMBjsd3htekqyRkt6GxV8uXg1aAzuQs7r8UDDx0=
 			</data>
 		</dict>
 		<key>SignUpView.nib/objects-13.0+.nib</key>
@@ -1361,14 +1361,14 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			NvE4EJbWgc2lDWwGzYbB5nMKV9rYC6cUCzIbDVoKQ1I=
+			1xRmYF2OmzF+h6e1j615sN1b2yoZ/dp7aHCz+BwXpng=
 			</data>
 		</dict>
 		<key>VerifyOTPNumberViewLandscape.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			G0+Vvyilm6wPxfrEuPQewkV3GsxySS2m2NyXic2TVII=
+			9HiDmPPYCYWnFYEJGb03cnlL9wgRbEjaUPZ5Z4hqmws=
 			</data>
 		</dict>
 		<key>en.lproj/Localizable.strings</key>
@@ -1477,7 +1477,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			r2TEPVK/iGmmYrkYF1icKOppP0AzcjWSysdBs84bpNM=
+			oZM265L84OZctYOKl7Z6jaS+GbOgTgqWiFz9XlIv3gs=
 			</data>
 			<key>optional</key>
 			<true/>

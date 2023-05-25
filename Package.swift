@@ -20,6 +20,7 @@ let package = Package(
          .package(url: "https://github.com/facebook/facebook-ios-sdk.git", exact: "15.0.0"),
          .package(url: "https://github.com/google/GoogleSignIn-iOS.git", exact: "6.2.4"),
          .package(url: "https://github.com/SDWebImage/SDWebImage.git", exact: "5.1.0"),
+         .package(url: "https://github.com/AppsFlyerSDK/AppsFlyerFramework.git", exact: "6.11.0"),
          
     ],
     targets: [
@@ -35,6 +36,9 @@ let package = Package(
                            .product(name: "GoogleSignIn", package: "googlesignin-ios"),
                            .product(name: "FacebookLogin", package: "facebook-ios-sdk"),
                            .product(name: "SDWebImage", package: "SDWebImage"),
+                           .product(name: "AppsFlyerLib", package: "AppsFlyerFramework"),
+                           .product(name: "FirebaseAnalytics", package: "firebase-ios-sdk"),
+                           .product(name: "FirebaseCrashlytics", package: "firebase-ios-sdk"),
                            ])
 
     ]

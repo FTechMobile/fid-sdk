@@ -19,6 +19,19 @@ public class FTSDK: NSObject {
         config()
     }
     
+    @objc public static func showQAButton() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            FTSDKBubbleButton.instance.embedOnTopView()
+            FTSDKBubbleButton.instance.onTap = {
+                FTSDKQA.startShowQA()
+            }
+        }
+    }
+    
+    @objc public static func hideQAButton() {
+        FTSDKBubbleButton.instance.hide()
+    }
+    
     @discardableResult
     @objc public static func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]?) -> Bool {
         let handleFT = FTSDKAppDelegate.instance().application(app, open: url, options: options)
@@ -70,15 +83,17 @@ public class FTSDK: NSObject {
         FTSDKAppDelegate.instance().loadConfig {
             // login with google config
             if let googleConfig = FTSDKConfig.googleServiceInfo {
-                let firOptions = FirebaseOptions(googleAppID: googleConfig.GOOGLE_APP_ID,
-                                                 gcmSenderID: googleConfig.GCM_SENDER_ID)
-                firOptions.apiKey = googleConfig.API_KEY
-                firOptions.bundleID = googleConfig.BUNDLE_ID
-                firOptions.clientID = googleConfig.CLIENT_ID
-                firOptions.androidClientID = googleConfig.ANDROID_CLIENT_ID
-                firOptions.projectID = googleConfig.PROJECT_ID
-                firOptions.storageBucket = googleConfig.STORAGE_BUCKET
-                FirebaseApp.configure(options: firOptions)
+//                let firOptions = FirebaseOptions(googleAppID: googleConfig.GOOGLE_APP_ID,
+//                                                 gcmSenderID: googleConfig.GCM_SENDER_ID)
+//                firOptions.apiKey = googleConfig.API_KEY
+//                firOptions.bundleID = googleConfig.BUNDLE_ID
+//                firOptions.clientID = googleConfig.CLIENT_ID
+//                firOptions.androidClientID = googleConfig.ANDROID_CLIENT_ID
+//                firOptions.projectID = googleConfig.PROJECT_ID
+//                firOptions.storageBucket = googleConfig.STORAGE_BUCKET
+//                FirebaseApp.configure(options: firOptions)
+                FirebaseApp.configure()
+                FTSDKConfig.projectFirebase = googleConfig.PROJECT_ID
             }
             
             // login with facebook config
@@ -87,6 +102,13 @@ public class FTSDK: NSObject {
                 Settings.shared.clientToken = clientID
                 Settings.shared.displayName = "FID SDK"
             }
+            
+            // Add Firebase tracking
+            FTSDKTracking.instance().addTracker(FirebaseAnalyticsTracker())
+            // Add AppsFlyer tracking
+            FTSDKTracking.instance().addTracker(AppsFlyerAnalyticsTracker())
+            // Run setup for tracking
+            FTSDKTracking.configure()
         }
         FTSDKConfig.invoke(provider3rd: FTSDKAppleAuthenProvider.self, type: .apple)
         FTSDKConfig.invoke(provider3rd: FTSDKFacebookAuthenProvider.self, type: .facebook)
@@ -95,7 +117,7 @@ public class FTSDK: NSObject {
         FTSDKConfig.invoke(header: FTSDKHeaderDialogPresenter.self)
         FTSDKConfig.invoke(dialog: FTSDKCenterDialogPresenter.self)
         FTSDKConfig.invoke(imageLoader: FTSDKImageLoaderImpl.self)
-//        FTSDKConfig.invoke(captchaProvider: FTSDKCaptchaProvider.self)
+        FTSDKConfig.invoke(captchaProvider: FTSDKCaptchaProvider.self)
     }
 }
 
