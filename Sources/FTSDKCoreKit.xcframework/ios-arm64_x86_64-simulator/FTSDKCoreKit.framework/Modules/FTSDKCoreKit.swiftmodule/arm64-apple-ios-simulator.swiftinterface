@@ -3318,6 +3318,7 @@ public protocol FTSDKCaptchaParams : AnyObject {
   }
   final public var useCaseBag: [(any FTSDKCoreKit.FTSDKUseCaseable)?]
   final public var requestBag: [(any FTSDKCoreKit.CancellableRequest)?]
+  final public var useCaseCheckReg: FTSDKCoreKit.FTSDKCheckIsRegUseCase
   @objc public static func instance() -> FTSDKCoreKit.FTSDKSignIn
   @objc final public func signIn()
   @objc final public func linkAccount()
@@ -3661,6 +3662,11 @@ extension FTSDKCoreKit.FTSDKLog {
   public func i(category: FTSDKCoreKit.FTSDKLog.Category = .default, _ items: Any...)
   public func w(category: FTSDKCoreKit.FTSDKLog.Category = .default, _ items: Any...)
   public func e(category: FTSDKCoreKit.FTSDKLog.Category = .default, _ items: Any...)
+}
+@_inheritsConvenienceInitializers public class FTSDKCheckIsRegUseCase : FTSDKCoreKit.FTSDKUseCase<FTSDKCoreKit.FTSDKVoidUseCaseInput, Swift.Bool> {
+  override public func onExecute(_ input: FTSDKCoreKit.FTSDKVoidUseCaseInput)
+  @objc override dynamic public init()
+  @objc deinit
 }
 public struct FTSDKDialogConfig {
   public var isDismissWhenTouchOutSide: Swift.Bool

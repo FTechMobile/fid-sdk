@@ -83,15 +83,15 @@ public class FTSDK: NSObject {
         FTSDKAppDelegate.instance().loadConfig {
             // login with google config
             if let googleConfig = FTSDKConfig.googleServiceInfo {
-//                let firOptions = FirebaseOptions(googleAppID: googleConfig.GOOGLE_APP_ID,
-//                                                 gcmSenderID: googleConfig.GCM_SENDER_ID)
-//                firOptions.apiKey = googleConfig.API_KEY
-//                firOptions.bundleID = googleConfig.BUNDLE_ID
-//                firOptions.clientID = googleConfig.CLIENT_ID
-//                firOptions.androidClientID = googleConfig.ANDROID_CLIENT_ID
-//                firOptions.projectID = googleConfig.PROJECT_ID
-//                firOptions.storageBucket = googleConfig.STORAGE_BUCKET
-//                FirebaseApp.configure(options: firOptions)
+                // App use dynamic link required use local Google Service plist file, can not use FirebaseOptions
+                // let firOptions = FirebaseOptions(googleAppID: googleConfig.GOOGLE_APP_ID, gcmSenderID: googleConfig.GCM_SENDER_ID)
+                // firOptions.apiKey = googleConfig.API_KEY
+                // firOptions.bundleID = googleConfig.BUNDLE_ID
+                // firOptions.clientID = googleConfig.CLIENT_ID
+                // firOptions.androidClientID = googleConfig.ANDROID_CLIENT_ID
+                // firOptions.projectID = googleConfig.PROJECT_ID
+                // firOptions.storageBucket = googleConfig.STORAGE_BUCKET
+                // FirebaseApp.configure(options: firOptions)
                 FirebaseApp.configure()
                 FTSDKConfig.projectFirebase = googleConfig.PROJECT_ID
             }

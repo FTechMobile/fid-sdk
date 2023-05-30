@@ -41,5 +41,6 @@ class AppsFlyerAnalyticsTracker: FTSDKTrackerProtocol {
             AppsFlyerLib.shared().customerUserID = userId
         }
         AppsFlyerLib.shared().logEvent(eventName, withValues: trackParams)
+//        print("👌 👉trackEvent", eventName, trackParams)
     }
 }
