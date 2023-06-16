@@ -264,6 +264,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreFoundation;
 @import Foundation;
 @import ObjectiveC;
+@import SafariServices;
 @import StoreKit;
 @import UIKit;
 @import WebKit;
@@ -379,6 +380,7 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit16FTSDKAppDelegate")
 - (void)invokeTracker:(id <FTSDKTrackerProtocol> _Nonnull)tracker;
 - (FTSDKAppData * _Nonnull)getAppData SWIFT_WARN_UNUSED_RESULT;
 - (void)setLanguage:(enum FTSDKLanguage)language;
+- (BOOL)isSDKReady SWIFT_WARN_UNUSED_RESULT;
 - (void)loadConfigWithCompleted:(void (^ _Nullable)(void))completed;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -890,6 +892,16 @@ SWIFT_PROTOCOL("_TtP12FTSDKCoreKit27FTSDKGalleryServiceProtocol_")
 @end
 
 
+SWIFT_CLASS("_TtC12FTSDKCoreKit13FTSDKGiftCode")
+@interface FTSDKGiftCode : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull code;
+@property (nonatomic, readonly, copy) NSString * _Nonnull content;
+- (nonnull instancetype)initWithCode:(NSString * _Nonnull)code content:(NSString * _Nonnull)content OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 SWIFT_CLASS("_TtC12FTSDKCoreKit27FTSDKHeaderDialogController")
 @interface FTSDKHeaderDialogController : NSObject
 + (void)showMessageWithMessage:(NSString * _Nullable)message duration:(NSTimeInterval)duration color:(UIColor * _Nullable)color textColor:(UIColor * _Nonnull)textColor iconImage:(UIImage * _Nullable)iconImage;
@@ -1303,6 +1315,13 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit9HoverView")
 
 
 
+/// You could choose to open using an external browser, a safari controller, an internal webkit view controller, etc…
+SWIFT_PROTOCOL("_TtP12FTSDKCoreKit16IOAuthURLHandler_")
+@protocol IOAuthURLHandler
+- (void)handle:(NSURL * _Nonnull)url;
+@end
+
+
 SWIFT_CLASS("_TtC12FTSDKCoreKit10IapConfigs")
 @interface IapConfigs : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -1334,6 +1353,21 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit20NoSelectionTextField")
 - (BOOL)canPerformAction:(SEL _Nonnull)action withSender:(id _Nullable)sender SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC12FTSDKCoreKit5OAuth")
+@interface OAuth : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+
+SWIFT_CLASS("_TtC12FTSDKCoreKit6OAuth2")
+@interface OAuth2 : OAuth
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
@@ -1399,6 +1433,20 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit11SDKSettings")
 @end
 
 
+@class SFSafariViewController;
+@class UIActivity;
+
+SWIFT_CLASS("_TtC12FTSDKCoreKit16SafariURLHandler")
+@interface SafariURLHandler : NSObject <IOAuthURLHandler, SFSafariViewControllerDelegate>
+- (void)handle:(NSURL * _Nonnull)url;
+/// SFSafariViewControllerDelegate
+- (NSArray<UIActivity *> * _Nonnull)safariViewController:(SFSafariViewController * _Nonnull)controller activityItemsForURL:(NSURL * _Nonnull)URL title:(NSString * _Nullable)title SWIFT_WARN_UNUSED_RESULT;
+- (void)safariViewControllerDidFinish:(SFSafariViewController * _Nonnull)controller;
+- (void)safariViewController:(SFSafariViewController * _Nonnull)controller didCompleteInitialLoad:(BOOL)didLoadSuccessfully;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 
 SWIFT_CLASS("_TtC12FTSDKCoreKit10ThemeColor")
 @interface ThemeColor : NSObject
@@ -1436,8 +1484,10 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit11ThemeImages")
 
 
 
+
 @interface UIScrollView (SWIFT_EXTENSION(FTSDKCoreKit)) <UIGestureRecognizerDelegate>
 @end
+
 
 
 
@@ -1741,6 +1791,7 @@ typedef unsigned int swift_uint4  __attribute__((__ext_vector_type__(4)));
 @import CoreFoundation;
 @import Foundation;
 @import ObjectiveC;
+@import SafariServices;
 @import StoreKit;
 @import UIKit;
 @import WebKit;
@@ -1856,6 +1907,7 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit16FTSDKAppDelegate")
 - (void)invokeTracker:(id <FTSDKTrackerProtocol> _Nonnull)tracker;
 - (FTSDKAppData * _Nonnull)getAppData SWIFT_WARN_UNUSED_RESULT;
 - (void)setLanguage:(enum FTSDKLanguage)language;
+- (BOOL)isSDKReady SWIFT_WARN_UNUSED_RESULT;
 - (void)loadConfigWithCompleted:(void (^ _Nullable)(void))completed;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
@@ -2367,6 +2419,16 @@ SWIFT_PROTOCOL("_TtP12FTSDKCoreKit27FTSDKGalleryServiceProtocol_")
 @end
 
 
+SWIFT_CLASS("_TtC12FTSDKCoreKit13FTSDKGiftCode")
+@interface FTSDKGiftCode : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nonnull code;
+@property (nonatomic, readonly, copy) NSString * _Nonnull content;
+- (nonnull instancetype)initWithCode:(NSString * _Nonnull)code content:(NSString * _Nonnull)content OBJC_DESIGNATED_INITIALIZER;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 SWIFT_CLASS("_TtC12FTSDKCoreKit27FTSDKHeaderDialogController")
 @interface FTSDKHeaderDialogController : NSObject
 + (void)showMessageWithMessage:(NSString * _Nullable)message duration:(NSTimeInterval)duration color:(UIColor * _Nullable)color textColor:(UIColor * _Nonnull)textColor iconImage:(UIImage * _Nullable)iconImage;
@@ -2780,6 +2842,13 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit9HoverView")
 
 
 
+/// You could choose to open using an external browser, a safari controller, an internal webkit view controller, etc…
+SWIFT_PROTOCOL("_TtP12FTSDKCoreKit16IOAuthURLHandler_")
+@protocol IOAuthURLHandler
+- (void)handle:(NSURL * _Nonnull)url;
+@end
+
+
 SWIFT_CLASS("_TtC12FTSDKCoreKit10IapConfigs")
 @interface IapConfigs : NSObject
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
@@ -2811,6 +2880,21 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit20NoSelectionTextField")
 - (BOOL)canPerformAction:(SEL _Nonnull)action withSender:(id _Nullable)sender SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)initWithFrame:(CGRect)frame OBJC_DESIGNATED_INITIALIZER;
 - (nullable instancetype)initWithCoder:(NSCoder * _Nonnull)aDecoder OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+SWIFT_CLASS("_TtC12FTSDKCoreKit5OAuth")
+@interface OAuth : NSObject
+- (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
+@end
+
+
+
+
+SWIFT_CLASS("_TtC12FTSDKCoreKit6OAuth2")
+@interface OAuth2 : OAuth
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
 
 
@@ -2876,6 +2960,20 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit11SDKSettings")
 @end
 
 
+@class SFSafariViewController;
+@class UIActivity;
+
+SWIFT_CLASS("_TtC12FTSDKCoreKit16SafariURLHandler")
+@interface SafariURLHandler : NSObject <IOAuthURLHandler, SFSafariViewControllerDelegate>
+- (void)handle:(NSURL * _Nonnull)url;
+/// SFSafariViewControllerDelegate
+- (NSArray<UIActivity *> * _Nonnull)safariViewController:(SFSafariViewController * _Nonnull)controller activityItemsForURL:(NSURL * _Nonnull)URL title:(NSString * _Nullable)title SWIFT_WARN_UNUSED_RESULT;
+- (void)safariViewControllerDidFinish:(SFSafariViewController * _Nonnull)controller;
+- (void)safariViewController:(SFSafariViewController * _Nonnull)controller didCompleteInitialLoad:(BOOL)didLoadSuccessfully;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
 
 SWIFT_CLASS("_TtC12FTSDKCoreKit10ThemeColor")
 @interface ThemeColor : NSObject
@@ -2913,8 +3011,10 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit11ThemeImages")
 
 
 
+
 @interface UIScrollView (SWIFT_EXTENSION(FTSDKCoreKit)) <UIGestureRecognizerDelegate>
 @end
+
 
 
 

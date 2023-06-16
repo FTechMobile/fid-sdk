@@ -34,48 +34,54 @@ public class FTSDK: NSObject {
     
     @discardableResult
     @objc public static func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]?) -> Bool {
-        let handleFT = FTSDKAppDelegate.instance().application(app, open: url, options: options)
-        if handleFT {
-            return handleFT
+        // Gift code and apple sign in webview use same deeplink, hanlde gift code first
+        if FTSDKGiftCodeHandle.instance().handle(url) {
+            return true
         }
+        if FTSDKAppDelegate.instance().application(app, open: url, options: options) {
+            return true
+        }
+        
         let source = options?[UIApplication.OpenURLOptionsKey.sourceApplication] as? String
         let annotation = options?[UIApplication.OpenURLOptionsKey.annotation]
-        let handleFB = ApplicationDelegate.shared.application(app,open: url, sourceApplication: source, annotation: annotation)
-        if handleFB {
-            return handleFB
+        if ApplicationDelegate.shared.application(app, open: url, sourceApplication: source, annotation: annotation) {
+            return true
         }
-        let handleGG = GIDSignIn.sharedInstance.handle(url)
-        if handleGG {
-            return handleGG
+        if GIDSignIn.sharedInstance.handle(url) {
+            return true
         }
         return false
     }
     
     @discardableResult
     @objc public static func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
-        let handleFT = FTSDKAppDelegate.instance().application(application,
-                                                               open: url,
-                                                               sourceApplication: sourceApplication,
-                                                               annotation: annotation)
-        if handleFT {
-            return handleFT
+        // Gift code and apple sign in webview use same deeplink, hanlde gift code first
+        if FTSDKGiftCodeHandle.instance().handle(url) {
+            return true
         }
-        let handleFB = ApplicationDelegate.shared.application(application,open: url,
-                                                              sourceApplication: sourceApplication,
-                                                              annotation: annotation)
-        if handleFB {
-            return handleFB
+        
+        if FTSDKAppDelegate.instance().application(application,
+                                                   open: url,
+                                                   sourceApplication: sourceApplication,
+                                                   annotation: annotation) {
+            return true
         }
-        let handleGG = GIDSignIn.sharedInstance.handle(url)
-        if handleGG {
-            return handleGG
+        
+        if ApplicationDelegate.shared.application(application,open: url,
+                                                  sourceApplication: sourceApplication,
+                                                  annotation: annotation) {
+            return true
+        }
+        
+        if GIDSignIn.sharedInstance.handle(url) {
+            return true
         }
         return false
     }
     
     @discardableResult
     @objc public static func `continue`(_ userActivity: NSUserActivity?,
-                                 restorationHandler: (([UIUserActivityRestoring]?) -> Void)?) -> Bool {
+                                        restorationHandler: (([UIUserActivityRestoring]?) -> Void)?) -> Bool {
         return FTSDKAppDelegate.instance().continue(userActivity, restorationHandler: restorationHandler)
     }
     
@@ -118,6 +124,10 @@ public class FTSDK: NSObject {
         FTSDKConfig.invoke(dialog: FTSDKCenterDialogPresenter.self)
         FTSDKConfig.invoke(imageLoader: FTSDKImageLoaderImpl.self)
         FTSDKConfig.invoke(captchaProvider: FTSDKCaptchaProvider.self)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            FTSDKGiftCodeHandle.instance().tryFallbackGiftCode()
+        }
     }
 }
 
@@ -142,9 +152,9 @@ final class FTSDKHeaderDialogPresenter: FTSDKDialogPresenter {
                     config: FTSDKCoreKit.FTSDKDialogConfig,
                     completion: (() -> Void)?) {
         
-//        let messageView = BaseView(frame: .zero)
-//        messageView.installContentView(contentView)
-//
+        //        let messageView = BaseView(frame: .zero)
+        //        messageView.installContentView(contentView)
+        //
         var _config = SwiftMessages.defaultConfig
         _config.presentationContext = .window(windowLevel: UIWindow.Level.statusBar)
         _config.duration = config.duration == 0 ? .forever : .seconds(seconds: config.duration)
@@ -209,7 +219,7 @@ final class FTSDKLoadingDialogPresenter: FTSDKDialogPresenter {
         var _config = SwiftMessages.defaultConfig
         _config.duration = .forever
         _config.dimMode = .color(color: UIColor(white: 0, alpha: 0.7),
-                                interactive: false)
+                                 interactive: false)
         _config.presentationContext  = .window(windowLevel: .statusBar)
         _config.interactiveHide = false
         _config.shouldAutorotate = true
@@ -262,7 +272,7 @@ final class FTSDKBottomSheetDialogPresenter: FTSDKDialogPresenter {
         bottomSheetView.installContentView(contentView)
         var _config = SwiftMessages.defaultConfig
         _config.dimMode = .color(color: UIColor(white: 0, alpha: 0.55),
-                                interactive: config.isDismissWhenTouchOutSide)
+                                 interactive: config.isDismissWhenTouchOutSide)
         
         _config.presentationStyle = .bottom
         
@@ -275,14 +285,14 @@ final class FTSDKBottomSheetDialogPresenter: FTSDKDialogPresenter {
         }
         let completionListener = { (event: SwiftMessages.Event) in
             switch event {
-            case .willShow:
-                break
-            case .didShow:
-                completion?()
-            case .willHide:
-                break
-            case .didHide:
-                break
+                case .willShow:
+                    break
+                case .didShow:
+                    completion?()
+                case .willHide:
+                    break
+                case .didHide:
+                    break
             }
         }
         _config.eventListeners = [completionListener]
@@ -342,7 +352,7 @@ final class FTSDKCenterDialogPresenter: FTSDKDialogPresenter {
         _config.keyboardTrackingView = KeyboardTrackingView()
         _config.keyboardTrackingView?.topMargin = 12
         _config.dimMode = .color(color: UIColor(white: 0, alpha: 0.55),
-                                interactive: config.isDismissWhenTouchOutSide)
+                                 interactive: config.isDismissWhenTouchOutSide)
         
         let animator = DefaultDialogAnimation()
         animator.showCompletion = completion
@@ -352,7 +362,7 @@ final class FTSDKCenterDialogPresenter: FTSDKDialogPresenter {
         _config.duration = .forever
         _config.interactiveHide = false
         _config.presentationContext = .window(windowLevel: .statusBar)
-    
+        
         self.presenter.show(config: _config, view: messageView)
     }
     
@@ -410,9 +420,9 @@ final class FTSDKCenterDialogPresenter: FTSDKDialogPresenter {
                            delay: 0,
                            options: [.curveEaseInOut, .beginFromCurrentState],
                            animations: {
-                            view.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
-                            view.alpha = 0
-                           },
+                view.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+                view.alpha = 0
+            },
                            completion: nil)
             CATransaction.commit()
         }
@@ -461,9 +471,9 @@ final class FTSDKCenterDialogPresenter: FTSDKDialogPresenter {
                            initialSpringVelocity: 0,
                            options: .beginFromCurrentState,
                            animations: {
-                            view.transform = CGAffineTransform.identity
-                            view.alpha = 1
-                           },
+                view.transform = CGAffineTransform.identity
+                view.alpha = 1
+            },
                            completion: nil)
             CATransaction.commit()
         }

@@ -87,6 +87,17 @@ extension FTSDKCoreKit.FTSDKLocalizationService {
 extension Foundation.NSNotification.Name {
   public static let localizationServiceDidChangeCurrentLanguage: Foundation.Notification.Name
 }
+public enum Auth3rdType : Swift.String {
+  case google
+  case zalo
+  case facebook
+  case apple
+  public init?(rawValue: Swift.String)
+  public typealias RawValue = Swift.String
+  public var rawValue: Swift.String {
+    get
+  }
+}
 public protocol FTSDKTrackerValueProtocol {
   var rawValue: Swift.String { get }
 }
@@ -139,6 +150,14 @@ public struct ValidationRuleOTPCode : FTSDKCoreKit.ValidationRule {
   public init(error: any FTSDKCoreKit.ValidationError = ValidationRuleOTPCodeError())
   public func validate(input: Swift.String?) -> Swift.Bool
   public typealias InputType = Swift.String
+}
+@objc @objcMembers public class FTSDKGiftCode : ObjectiveC.NSObject, Swift.Codable {
+  @objc final public let code: Swift.String
+  @objc final public let content: Swift.String
+  @objc public init(code: Swift.String, content: Swift.String)
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FTSDKBaseCollectionReusableView : UIKit.UICollectionReusableView {
   @_Concurrency.MainActor(unsafe) public static var reuseIdentifier: Swift.String {
@@ -221,6 +240,19 @@ public struct ValidationRulePhoneNumber : FTSDKCoreKit.ValidationRule {
   public func validate(input: Swift.String?) -> Swift.Bool
   public typealias InputType = Swift.String
 }
+extension UIKit.UIApplication {
+  @available(iOS 13.0, tvOS 13.0, *)
+  @_Concurrency.MainActor(unsafe) public var connectedWindowScenes: [UIKit.UIWindowScene] {
+    get
+  }
+  @available(iOS 13.0, tvOS 13.0, *)
+  @_Concurrency.MainActor(unsafe) public var topWindowScene: UIKit.UIWindowScene? {
+    get
+  }
+  @_Concurrency.MainActor(unsafe) public var topWindow: UIKit.UIWindow? {
+    get
+  }
+}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FTSDKBaseCollectionView : UIKit.UICollectionView {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect, collectionViewLayout layout: UIKit.UICollectionViewLayout)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
@@ -252,6 +284,11 @@ extension UIKit.UICollectionView {
   @objc public func getAmount() -> Foundation.NSNumber
   @objc public static func listJSON(_ list: [FTSDKCoreKit.FTSDKPackageData]) -> Swift.String?
   @objc deinit
+}
+extension Swift.String {
+  public var headerDictionary: FTSDKCoreKit.OAuth.Headers {
+    get
+  }
 }
 @objc @_hasMissingDesignatedInitializers @_Concurrency.MainActor(unsafe) open class QAViewController : UIKit.UIViewController {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
@@ -369,6 +406,7 @@ public enum FTSDKAuthType : Swift.String {
   case facebook
   case apple
   case accessToken
+  public static func from(thirdPartyType: FTSDKCoreKit.Auth3rdType) -> FTSDKCoreKit.FTSDKAuthType
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
@@ -453,6 +491,11 @@ public struct ValidationRuleCondition<T> : FTSDKCoreKit.ValidationRule {
   @objc @_Concurrency.MainActor(unsafe) open func configViews()
   @objc @_Concurrency.MainActor(unsafe) open func loadViews()
   @objc @_Concurrency.MainActor(unsafe) open func bundleView() -> Foundation.Bundle
+  @objc deinit
+}
+@_hasMissingDesignatedInitializers open class OAuthOpenURLExternally : FTSDKCoreKit.IOAuthURLHandler {
+  public static var instance: FTSDKCoreKit.OAuthOpenURLExternally
+  @objc open func handle(_ url: Foundation.URL)
   @objc deinit
 }
 extension UIKit.UITextView : FTSDKCoreKit.ValidatableInterfaceElement {
@@ -552,6 +595,98 @@ public enum HTTPStatusCode : Swift.Int, Swift.Error {
   @objc optional func didSignInFail(_ signIn: FTSDKCoreKit.FTSDKSignIn, with error: FTSDKCoreKit.FTSDKError)
   @objc optional func didSignUpSuccess(_ signIn: FTSDKCoreKit.FTSDKSignIn, didSignInFor user: FTSDKCoreKit.FTSDKUser, withMethod authType: Swift.String)
   @objc optional func didSignUpFail(_ signIn: FTSDKCoreKit.FTSDKSignIn, with error: FTSDKCoreKit.FTSDKError)
+}
+@objc @_inheritsConvenienceInitializers open class OAuth : ObjectiveC.NSObject, FTSDKCoreKit.CancellableRequest {
+  open class var notificationCenter: Foundation.NotificationCenter {
+    get
+  }
+  open class var notificationQueue: Foundation.OperationQueue {
+    get
+  }
+  open var authorizeURLHandler: any FTSDKCoreKit.IOAuthURLHandler
+  public func removeCallbackNotificationObserver()
+  public func cancel()
+  open class func handle(url: Foundation.URL)
+  @objc override dynamic public init()
+  @objc deinit
+}
+extension FTSDKCoreKit.OAuth {
+  public typealias Parameters = [Swift.String : Swift.String?]
+  public typealias Headers = [Swift.String : Swift.String]
+  public typealias ConfigParameters = [Swift.String : Swift.String]
+  public typealias CompletionHandler = (Swift.Result<FTSDKCoreKit.FTSDKUser, FTSDKCoreKit.OAuthException>) -> Swift.Void
+}
+extension FTSDKCoreKit.OAuth {
+  public static var log: (any FTSDKCoreKit.IOAuthLog)?
+  public static func setLogLevel(_ level: FTSDKCoreKit.OAuthLogLevel)
+}
+public enum OAuthException : Swift.Error {
+  case configurationError(message: Swift.String)
+  case missingState
+  case stateNotEqual(state: Swift.String, responseState: Swift.String)
+  case serverError(code: Swift.Int, message: Swift.String)
+  case encodingError(urlString: Swift.String)
+  case requestCreation(message: Swift.String)
+  case missingToken
+  case retain
+  case cancelled
+  case requestError(error: any Swift.Error, request: Foundation.URLRequest)
+  case tokenExpired(error: (any Swift.Error)?)
+  case authorizationPending(error: any Swift.Error, request: Foundation.URLRequest)
+  case slowDown(error: any Swift.Error, request: Foundation.URLRequest)
+  case accessDenied(error: any Swift.Error, request: Foundation.URLRequest)
+  public static let Domain: Swift.String
+  public static let ResponseDataKey: Swift.String
+  public static let ResponseKey: Swift.String
+  public var underlyingError: (any Swift.Error)? {
+    get
+  }
+  public var underlyingMessage: Swift.String? {
+    get
+  }
+}
+extension FTSDKCoreKit.OAuthException : Swift.CustomStringConvertible {
+  public var description: Swift.String {
+    get
+  }
+}
+extension FTSDKCoreKit.OAuthException : Foundation.CustomNSError {
+  public static var errorDomain: Swift.String {
+    get
+  }
+  public var errorCode: Swift.Int {
+    get
+  }
+  public var errorUserInfo: [Swift.String : Any] {
+    get
+  }
+  public var _code: Swift.Int {
+    get
+  }
+  public var _domain: Swift.String {
+    get
+  }
+}
+@objc open class SafariURLHandler : ObjectiveC.NSObject, FTSDKCoreKit.IOAuthURLHandler, SafariServices.SFSafariViewControllerDelegate {
+  public typealias UITransion = (_ controller: SafariServices.SFSafariViewController, _ handler: FTSDKCoreKit.SafariURLHandler) -> Swift.Void
+  weak open var oauth: FTSDKCoreKit.OAuth?
+  open var present: FTSDKCoreKit.SafariURLHandler.UITransion
+  open var dismiss: FTSDKCoreKit.SafariURLHandler.UITransion
+  open var factory: (_ URL: Foundation.URL) -> SafariServices.SFSafariViewController
+  weak open var delegate: (any SafariServices.SFSafariViewControllerDelegate)?
+  open var animated: Swift.Bool
+  open var presentCompletion: (() -> Swift.Void)?
+  open var dismissCompletion: (() -> Swift.Void)?
+  open var delay: Swift.UInt32?
+  public init(viewController: UIKit.UIViewController, oauth: FTSDKCoreKit.OAuth?)
+  public init(present: @escaping FTSDKCoreKit.SafariURLHandler.UITransion, dismiss: @escaping FTSDKCoreKit.SafariURLHandler.UITransion, oauth: FTSDKCoreKit.OAuth?)
+  @objc open func handle(_ url: Foundation.URL)
+  open func clearObservers()
+  open func clearLocalObservers()
+  @objc public func safariViewController(_ controller: SafariServices.SFSafariViewController, activityItemsFor URL: Foundation.URL, title: Swift.String?) -> [UIKit.UIActivity]
+  @objc public func safariViewControllerDidFinish(_ controller: SafariServices.SFSafariViewController)
+  @objc public func safariViewController(_ controller: SafariServices.SFSafariViewController, didCompleteInitialLoad didLoadSuccessfully: Swift.Bool)
+  @objc deinit
 }
 public struct ValidationLengthCharacterError : FTSDKCoreKit.ValidationError {
   public init()
@@ -1698,6 +1833,20 @@ extension FTSDKCoreKit.CancellableRequest {
 extension FTSDKCoreKit.RequestBagCompatible {
   public func cancelRequestBag()
 }
+public class URLEncodedStringBuilder {
+  public init()
+  @discardableResult
+  public func scheme(_ scheme: Swift.String) -> FTSDKCoreKit.URLEncodedStringBuilder
+  @discardableResult
+  public func host(_ host: Swift.String) -> FTSDKCoreKit.URLEncodedStringBuilder
+  @discardableResult
+  public func path(_ path: Swift.String) -> FTSDKCoreKit.URLEncodedStringBuilder
+  @discardableResult
+  public func append(name: Swift.String, value: Swift.String?) -> FTSDKCoreKit.URLEncodedStringBuilder
+  public func build() -> Swift.String?
+  public func buildUrl() -> Foundation.URL?
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FTSDKTextView : UIKit.UITextView, FTSDKCoreKit.IFTSDKTextInput {
   @_Concurrency.MainActor(unsafe) public var onclickedDoneListener: ((any FTSDKCoreKit.IFTSDKTextInput) -> Swift.Void)?
   @_Concurrency.MainActor(unsafe) public var onclickedPreviousListener: ((any FTSDKCoreKit.IFTSDKTextInput) -> Swift.Void)?
@@ -2168,6 +2317,7 @@ public struct ValidationRuleDiff : FTSDKCoreKit.ValidationRule {
   @objc final public func invokeTracker(_ tracker: any FTSDKCoreKit.FTSDKTrackerProtocol)
   @objc final public func getAppData() -> FTSDKCoreKit.FTSDKAppData
   @objc final public func setLanguage(_ language: FTSDKCoreKit.FTSDKLanguage)
+  @objc final public func isSDKReady() -> Swift.Bool
   @objc final public func loadConfig(completed: (() -> Swift.Void)?)
   @objc override dynamic public init()
   @objc deinit
@@ -2230,6 +2380,10 @@ public enum ImageExpandAnimation {
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder aDecoder: Foundation.NSCoder)
   @_Concurrency.MainActor(unsafe) @objc override dynamic public func setSelected(_ selected: Swift.Bool, animated: Swift.Bool)
   @objc deinit
+}
+extension Swift.Dictionary {
+  @available(swift, introduced: 3.2, obsoleted: 4.0)
+  public func filter(_ isIncluded: (Key, Value) throws -> Swift.Bool) rethrows -> [Key : Value]
 }
 @objc @_inheritsConvenienceInitializers @objcMembers public class FTSDKAppData : ObjectiveC.NSObject {
   @objc public var profile: FTSDKCoreKit.FTSDKProfileData?
@@ -2463,6 +2617,11 @@ final public class FTSDKTranslationService {
   @objc override dynamic public init(entity: CoreData.NSEntityDescription, insertInto context: CoreData.NSManagedObjectContext?)
   @objc deinit
 }
+extension Foundation.URL {
+  public var queryParameters: [Swift.String : Swift.String]? {
+    get
+  }
+}
 public protocol VerifyImageCaptchaDelegate : AnyObject {
   func verifyImageCaptcha(didVerifySuccess presenter: FTSDKCoreKit.VerifyImageCaptchaPresenter?)
 }
@@ -2489,6 +2648,43 @@ public protocol FTSDKImageLoaderProtocol : AnyObject {
   func loadImage(_ view: UIKit.UIView?, url: Swift.String?)
   func loadImageBackground(_ view: UIKit.UIView?, url: Swift.String?)
   func loadImage(_ view: UIKit.UIView?, url: Swift.String?, sizeImage: CoreFoundation.CGSize, edgeInserts: UIKit.UIEdgeInsets)
+}
+@objc open class OAuth2 : FTSDKCoreKit.OAuth {
+  open var allowMissingStateCheck: Swift.Bool
+  open var encodeCallbackURL: Swift.Bool
+  open var encodeCallbackURLQuery: Swift.Bool
+  public init(consumerKey: Swift.String, consumerSecret: Swift.String, authorizeUrl: any FTSDKCoreKit.URLConvertible, accessTokenUrl: (any FTSDKCoreKit.URLConvertible)? = nil, responseType: Swift.String, contentType: Swift.String? = nil)
+  convenience public init?(parameters: FTSDKCoreKit.OAuth2.ConfigParameters)
+  @discardableResult
+  open func authorize(withCallbackURL callbackURL: (any FTSDKCoreKit.URLConvertible)?, scope: Swift.String, state: Swift.String, parameters: FTSDKCoreKit.OAuth.Parameters = [:], headers: FTSDKCoreKit.OAuth.Headers? = nil, completionHandler completion: @escaping FTSDKCoreKit.OAuth2.CompletionHandler) -> (any FTSDKCoreKit.CancellableRequest)?
+  open func unauthorize(withCallbackURL callbackURL: any FTSDKCoreKit.URLConvertible, completion: @escaping (Swift.Result<Swift.Bool, FTSDKCoreKit.OAuthException>) -> Swift.Void)
+  public static func parseIdToken(cer: FTSDKCoreKit.FTSDKAuthentication?) -> FTSDKCoreKit.FTSDKProfileData?
+  public static func parseAccessToken(cer: FTSDKCoreKit.FTSDKAuthentication?) -> Swift.Int64?
+  @objc deinit
+}
+public enum OAuthLogLevel : Swift.Int {
+  case trace
+  case warn
+  case error
+  public init?(rawValue: Swift.Int)
+  public typealias RawValue = Swift.Int
+  public var rawValue: Swift.Int {
+    get
+  }
+}
+public protocol IOAuthLog {
+  var level: FTSDKCoreKit.OAuthLogLevel { get }
+  func trace<T>(_ message: @autoclosure () -> T, filename: Swift.String, line: Swift.Int, function: Swift.String)
+  func warn<T>(_ message: @autoclosure () -> T, filename: Swift.String, line: Swift.Int, function: Swift.String)
+  func error<T>(_ message: @autoclosure () -> T, filename: Swift.String, line: Swift.Int, function: Swift.String)
+}
+extension FTSDKCoreKit.IOAuthLog {
+  public func trace<T>(_ message: @autoclosure () -> T, filename: Swift.String = #file, line: Swift.Int = #line, function: Swift.String = #function)
+  public func warn<T>(_ message: @autoclosure () -> T, filename: Swift.String = #file, line: Swift.Int = #line, function: Swift.String = #function)
+  public func error<T>(_ message: @autoclosure () -> T, filename: Swift.String = #file, line: Swift.Int = #line, function: Swift.String = #function)
+}
+public struct OAuthDebugLogger : FTSDKCoreKit.IOAuthLog {
+  public let level: FTSDKCoreKit.OAuthLogLevel
 }
 public enum HttpResponseError : Swift.Int, Swift.Error {
   case badRequest
@@ -3185,6 +3381,10 @@ extension FTSDKCoreKit.FTSDKFormField {
 public struct HoverItem {
   public init(title: Swift.String? = nil, image: UIKit.UIImage?, tintColor: UIKit.UIColor = .blue, backgroundColor: FTSDKCoreKit.HoverColor = .color(.white), onTap: @escaping () -> ())
 }
+precedencegroup ForwardApplication {
+  associativity: left
+}
+infix operator |> : ForwardApplication
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class CustomTextField : FTSDKCoreKit.FTSDKTextField {
   @IBInspectable @_Concurrency.MainActor(unsafe) @objc override dynamic open var placeholder: Swift.String? {
     @objc get
@@ -3431,6 +3631,11 @@ public struct FTSDKAuthData : Swift.Decodable {
   @_Concurrency.MainActor(unsafe) @objc override dynamic public init(frame: CoreFoundation.CGRect)
   @_Concurrency.MainActor(unsafe) @objc required dynamic public init?(coder: Foundation.NSCoder)
 }
+@objc public protocol IOAuthURLHandler {
+  @objc func handle(_ url: Foundation.URL)
+}
+public struct OAuthURLHandlerFactory {
+}
 @objc @_inheritsConvenienceInitializers @objcMembers final public class FTSDKConfig : ObjectiveC.NSObject {
   @objc public static var clientId: Swift.String
   @objc public static var gameCode: Swift.String?
@@ -3668,6 +3873,37 @@ extension FTSDKCoreKit.FTSDKLog {
   @objc override dynamic public init()
   @objc deinit
 }
+@available(iOS, introduced: 11.0, deprecated: 12.0)
+open class FTSDKSFAuthenURLHandler : FTSDKCoreKit.IOAuthURLHandler {
+  public init(callbackUrlScheme: Swift.String)
+  @objc public func handle(_ url: Foundation.URL)
+  @objc deinit
+}
+public protocol URLConvertible {
+  var string: Swift.String { get }
+  var url: Foundation.URL? { get }
+}
+extension Swift.String : FTSDKCoreKit.URLConvertible {
+  public var string: Swift.String {
+    get
+  }
+  public var url: Foundation.URL? {
+    get
+  }
+}
+extension Foundation.URL : FTSDKCoreKit.URLConvertible {
+  public var string: Swift.String {
+    get
+  }
+  public var url: Foundation.URL? {
+    get
+  }
+}
+extension FTSDKCoreKit.URLConvertible {
+  public var encodedURL: Foundation.URL {
+    get
+  }
+}
 public struct FTSDKDialogConfig {
   public var isDismissWhenTouchOutSide: Swift.Bool
   public var duration: Swift.Double
@@ -3697,12 +3933,21 @@ public struct ListConverter<C> : FTSDKCoreKit.IConverter where C : FTSDKCoreKit.
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
 }
+@available(iOS 13.0, *)
+open class ASWebAuthenticationURLHandler : FTSDKCoreKit.IOAuthURLHandler {
+  public init(callbackUrlScheme: Swift.String, presentationContextProvider: (any AuthenticationServices.ASWebAuthenticationPresentationContextProviding)?, prefersEphemeralWebBrowserSession: Swift.Bool = false)
+  @objc public func handle(_ url: Foundation.URL)
+  @objc deinit
+}
 @objc @_inheritsConvenienceInitializers @objcMembers final public class FTSDKQA : ObjectiveC.NSObject, FTSDKCoreKit.FTSDKUseCaseBagCompatible {
   final public var useCaseBag: [(any FTSDKCoreKit.FTSDKUseCaseable)?]
   @objc public static func startShowQA()
   @objc override dynamic public init()
   @objc deinit
 }
+extension FTSDKCoreKit.Auth3rdType : Swift.Equatable {}
+extension FTSDKCoreKit.Auth3rdType : Swift.Hashable {}
+extension FTSDKCoreKit.Auth3rdType : Swift.RawRepresentable {}
 extension FTSDKCoreKit.Reachability.Connection : Swift.Equatable {}
 extension FTSDKCoreKit.Reachability.Connection : Swift.Hashable {}
 extension FTSDKCoreKit.FTSDKAuthType : Swift.Equatable {}
@@ -3747,6 +3992,9 @@ extension FTSDKCoreKit.FTSDKEnvironment : Swift.Equatable {}
 extension FTSDKCoreKit.FTSDKEnvironment : Swift.Hashable {}
 extension FTSDKCoreKit.FTSDKEnvironment : Swift.RawRepresentable {}
 extension FTSDKCoreKit.FTSDKLanguage : Swift.Hashable {}
+extension FTSDKCoreKit.OAuthLogLevel : Swift.Equatable {}
+extension FTSDKCoreKit.OAuthLogLevel : Swift.Hashable {}
+extension FTSDKCoreKit.OAuthLogLevel : Swift.RawRepresentable {}
 extension FTSDKCoreKit.HttpResponseError : Swift.Equatable {}
 extension FTSDKCoreKit.HttpResponseError : Swift.Hashable {}
 extension FTSDKCoreKit.HttpResponseError : Swift.RawRepresentable {}

@@ -18,10 +18,10 @@ class FirebaseAnalyticsTracker: FTSDKTrackerProtocol {
     }
     
     func trackEvent(_ event: String, _ params: [String : Any]) {
-        let eventName = FTSDKTracking.buildName(event, from: "fire", to: "af")
+        let eventName = FTSDKTracking.buildName(event, from: "fire", to: "fire")
         var trackParams: [String: Any] = [:]
         for (key, value) in params {
-            let keyName = FTSDKTracking.buildName(key, from: "fire", to: "af")
+            let keyName = FTSDKTracking.buildName(key, from: "af", to: "fire")
             trackParams[keyName] = value
         }
         for (key, value) in FTSDKTracking.getDefaultParams() {
@@ -33,5 +33,8 @@ class FirebaseAnalyticsTracker: FTSDKTrackerProtocol {
             Analytics.setUserID(userId)
         }
         Analytics.logEvent(eventName, parameters: trackParams)
+        
+        let user_pseudo_id = Analytics.appInstanceID()
+        print("user_pseudo_id = \(user_pseudo_id)")
     }
 }
