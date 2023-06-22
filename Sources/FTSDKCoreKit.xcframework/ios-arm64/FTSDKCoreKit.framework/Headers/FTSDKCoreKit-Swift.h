@@ -382,6 +382,7 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit16FTSDKAppDelegate")
 - (void)setLanguage:(enum FTSDKLanguage)language;
 - (BOOL)isSDKReady SWIFT_WARN_UNUSED_RESULT;
 - (void)loadConfigWithCompleted:(void (^ _Nullable)(void))completed;
+- (void)requestAutoLoginOnUnauthorized:(void (^ _Nonnull)(void))onUnauthorized;
 - (nonnull instancetype)init OBJC_DESIGNATED_INITIALIZER;
 @end
 
@@ -578,6 +579,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL disableAllDialogLoading;)
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL disableAllHeaderMessage;)
 + (BOOL)disableAllHeaderMessage SWIFT_WARN_UNUSED_RESULT;
 + (void)setDisableAllHeaderMessage:(BOOL)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL autoLogin;)
++ (BOOL)autoLogin SWIFT_WARN_UNUSED_RESULT;
++ (void)setAutoLogin:(BOOL)value;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) enum FTSDKEnvironment env;)
 + (enum FTSDKEnvironment)env SWIFT_WARN_UNUSED_RESULT;
 + (void)setEnv:(enum FTSDKEnvironment)value;

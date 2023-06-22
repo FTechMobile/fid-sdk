@@ -32,6 +32,10 @@ public class FTSDK: NSObject {
         FTSDKBubbleButton.instance.hide()
     }
     
+    @objc public static func requestAutoLogin(onUnauthorized: @escaping () -> Void) {
+        FTSDKAppDelegate.instance().requestAutoLogin(onUnauthorized: onUnauthorized)
+    }
+    
     @discardableResult
     @objc public static func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any]?) -> Bool {
         // Gift code and apple sign in webview use same deeplink, hanlde gift code first
