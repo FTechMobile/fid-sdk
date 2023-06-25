@@ -1129,6 +1129,7 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit11FTSDKSignIn")
 @property (nonatomic, weak) id <FTSDKAuthDelegate> _Nullable delegate;
 @property (nonatomic, weak) id <FTSDKLinkAccountDelegate> _Nullable linkAccountDelegate;
 @property (nonatomic, readonly) BOOL isLoginFID;
+@property (nonatomic, readonly) BOOL isPlaynowAccountNotLinked;
 + (FTSDKSignIn * _Nonnull)instance SWIFT_WARN_UNUSED_RESULT;
 - (void)signIn;
 - (void)linkAccount;

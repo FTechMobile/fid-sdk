@@ -3517,6 +3517,9 @@ public protocol FTSDKCaptchaParams : AnyObject {
   @objc final public var isLoginFID: Swift.Bool {
     @objc get
   }
+  @objc final public var isPlaynowAccountNotLinked: Swift.Bool {
+    @objc get
+  }
   final public var useCaseBag: [(any FTSDKCoreKit.FTSDKUseCaseable)?]
   final public var requestBag: [(any FTSDKCoreKit.CancellableRequest)?]
   final public var useCaseCheckReg: FTSDKCoreKit.FTSDKCheckIsRegUseCase
