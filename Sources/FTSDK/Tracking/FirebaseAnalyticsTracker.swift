@@ -34,7 +34,7 @@ class FirebaseAnalyticsTracker: FTSDKTrackerProtocol {
         }
         Analytics.logEvent(eventName, parameters: trackParams)
         
-        let user_pseudo_id = Analytics.appInstanceID()
-        print("user_pseudo_id = \(user_pseudo_id)")
+//        let user_pseudo_id = Analytics.appInstanceID()
+//        print("user_pseudo_id = \(user_pseudo_id)")
     }
 }

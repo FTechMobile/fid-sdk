@@ -11,6 +11,7 @@ import FBSDKCoreKit
 import Firebase
 import SwiftMessages
 import GoogleSignIn
+import FirebaseMessaging
 
 public class FTSDK: NSObject {
     @objc public static func didFinishLaunching(_ application: UIApplication, with launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
