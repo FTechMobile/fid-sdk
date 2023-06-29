@@ -103,7 +103,7 @@ public class FTSDK: NSObject {
                 // firOptions.projectID = googleConfig.PROJECT_ID
                 // firOptions.storageBucket = googleConfig.STORAGE_BUCKET
                 // FirebaseApp.configure(options: firOptions)
-                FirebaseApp.configure()
+                // FirebaseApp.configure()
                 FTSDKConfig.projectFirebase = googleConfig.PROJECT_ID
             }
             
