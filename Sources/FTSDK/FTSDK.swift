@@ -118,6 +118,10 @@ public class FTSDK: NSObject {
             FTSDKTracking.instance().addTracker(FirebaseAnalyticsTracker())
             // Add AppsFlyer tracking
             FTSDKTracking.instance().addTracker(AppsFlyerAnalyticsTracker())
+            
+            // Setting for DynamicLinks
+            FTSDKDynamicLinks.instance().addDynamicLink(FirebaseDynamicLink())
+            
             // Run setup for tracking
             FTSDKTracking.configure()
         }
@@ -132,6 +136,10 @@ public class FTSDK: NSObject {
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             FTSDKGiftCodeHandle.instance().tryFallbackGiftCode()
+            
+            FTSDKPurchase.instance().reVerifyPendingTransacions { _ in
+                
+            }
         }
     }
 }

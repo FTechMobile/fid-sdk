@@ -1,5 +1,5 @@
 // swift-interface-format-version: 1.0
-// swift-compiler-version: Apple Swift version 5.8 (swiftlang-5.8.0.124.2 clang-1403.0.22.11.100)
+// swift-compiler-version: Apple Swift version 5.8.1 (swiftlang-5.8.0.124.5 clang-1403.0.22.11.100)
 // swift-module-flags: -target arm64-apple-ios11.0 -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -O -module-name FTSDKCoreKit
 // swift-module-flags-ignorable: -enable-bare-slash-regex
 import AVFoundation
@@ -752,6 +752,7 @@ public class FTSDKAttributedStringBuilder {
   @_Concurrency.MainActor(unsafe) public func addToolbarIfNeed(_ siblings: [UIKit.UIView])
   @objc deinit
 }
+public func randomString(length: Swift.Int) -> Swift.String
 @objc @_inheritsConvenienceInitializers @objcMembers final public class FTSDKHeaderDialogController : ObjectiveC.NSObject {
   @objc public static func showMessage(message: Swift.String?, duration: Foundation.TimeInterval = 0, color: UIKit.UIColor? = nil, textColor: UIKit.UIColor = .white, iconImage: UIKit.UIImage? = nil)
   @objc public static func hideMessage(animation: Swift.Bool = true)
@@ -1890,10 +1891,12 @@ public class URLEncodedStringBuilder {
   }
   @objc deinit
 }
-@objc @objcMembers public class FTSDKTransaction : ObjectiveC.NSObject {
+@objc @objcMembers public class FTSDKTransaction : ObjectiveC.NSObject, Swift.Codable {
   @objc public var transId: Swift.String
   @objc public init(transId: Swift.String)
   @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+  required public init(from decoder: any Swift.Decoder) throws
 }
 public struct NormalValidationError : FTSDKCoreKit.ValidationError {
   public var message: Swift.String
@@ -2408,7 +2411,9 @@ open class FTSDKException : Swift.Error {
     get
   }
   open var message: Swift.String?
+  open var errorCode: Swift.Int?
   public init(_ message: Swift.String?)
+  public init(_ message: Swift.String?, errorCode: Swift.Int?)
   public init(e: (any Swift.Error)?)
   @objc deinit
 }
@@ -2868,7 +2873,7 @@ public enum SDKModule : Swift.String, Swift.Codable {
   public func encode(to encoder: any Swift.Encoder) throws
   required public init(from decoder: any Swift.Decoder) throws
 }
-@_inheritsConvenienceInitializers public class FTSDKAPIException : FTSDKCoreKit.FTSDKException {
+public class FTSDKAPIException : FTSDKCoreKit.FTSDKException {
   public static let unkownError: Swift.Int
   public static let networkError: Swift.Int
   public var code: Swift.Int?
@@ -3641,6 +3646,7 @@ public struct FTSDKAuthData : Swift.Decodable {
 public struct OAuthURLHandlerFactory {
 }
 @objc @_inheritsConvenienceInitializers @objcMembers final public class FTSDKConfig : ObjectiveC.NSObject {
+  @objc public static var sessionId: Swift.String
   @objc public static var clientId: Swift.String
   @objc public static var gameCode: Swift.String?
   @objc public static var partnerCode: Swift.String
@@ -3835,6 +3841,7 @@ public struct FTSDKCreateOrderData : Swift.Decodable {
   public var code: Swift.Int
   public var status: Swift.String?
   public init(from decoder: any Swift.Decoder) throws
+  public func toDictionary() -> [Swift.String : Swift.String]
 }
 @_hasMissingDesignatedInitializers public class FTSDKLog {
   public enum Level : Swift.String {
