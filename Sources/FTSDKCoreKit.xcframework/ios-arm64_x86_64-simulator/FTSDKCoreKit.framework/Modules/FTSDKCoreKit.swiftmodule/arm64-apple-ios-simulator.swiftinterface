@@ -388,6 +388,30 @@ extension FTSDKCoreKit.Reachability {
     get
   }
 }
+public func decode(jwt: Swift.String) throws -> any FTSDKCoreKit.JWT
+public struct Claim {
+  public var rawValue: Any? {
+    get
+  }
+  public var string: Swift.String? {
+    get
+  }
+  public var boolean: Swift.Bool? {
+    get
+  }
+  public var double: Swift.Double? {
+    get
+  }
+  public var integer: Swift.Int? {
+    get
+  }
+  public var date: Foundation.Date? {
+    get
+  }
+  public var array: [Swift.String]? {
+    get
+  }
+}
 public protocol FTSDKPresenterProtocol : AnyObject {
   func presenterDidReady()
   func presenterDidRelease()
@@ -1834,6 +1858,26 @@ extension FTSDKCoreKit.CancellableRequest {
 extension FTSDKCoreKit.RequestBagCompatible {
   public func cancelRequestBag()
 }
+public protocol JWT {
+  var header: [Swift.String : Any] { get }
+  var body: [Swift.String : Any] { get }
+  var signature: Swift.String? { get }
+  var string: Swift.String { get }
+  var expiresAt: Foundation.Date? { get }
+  var issuer: Swift.String? { get }
+  var subject: Swift.String? { get }
+  var audience: [Swift.String]? { get }
+  var issuedAt: Foundation.Date? { get }
+  var notBefore: Foundation.Date? { get }
+  var identifier: Swift.String? { get }
+  var expired: Swift.Bool { get }
+}
+extension FTSDKCoreKit.JWT {
+  public func claim(name: Swift.String) -> FTSDKCoreKit.Claim
+  public subscript(claim: Swift.String) -> FTSDKCoreKit.Claim {
+    get
+  }
+}
 public class URLEncodedStringBuilder {
   public init()
   @discardableResult
@@ -2985,6 +3029,20 @@ extension UIKit.UIScrollView : UIKit.UIGestureRecognizerDelegate {
   public class func loadDeviceId() -> Swift.String?
   @objc override dynamic public init()
   @objc deinit
+}
+public enum JWTDecodeError : Foundation.LocalizedError, Swift.CustomDebugStringConvertible {
+  case invalidBase64URL(Swift.String)
+  case invalidJSON(Swift.String)
+  case invalidPartCount(Swift.String, Swift.Int)
+  public var localizedDescription: Swift.String {
+    get
+  }
+  public var errorDescription: Swift.String? {
+    get
+  }
+  public var debugDescription: Swift.String {
+    get
+  }
 }
 extension UIKit.UIColor {
   public static var mainColor: UIKit.UIColor
