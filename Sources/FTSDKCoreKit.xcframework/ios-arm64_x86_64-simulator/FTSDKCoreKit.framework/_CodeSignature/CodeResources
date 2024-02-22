@@ -6,35 +6,35 @@
 	<dict>
 		<key>Assets.car</key>
 		<data>
-		2Pi3GqiVgu1e7TMjzhFLPU99uoA=
+		4ClM4IUXCvkEqmF7zH27/ycPQ78=
 		</data>
 		<key>ChangePasswordView.nib/objects-13.0+.nib</key>
 		<data>
-		+b7icpv3BIw+9kXem1NxFz5+hGg=
+		05D4zbQz3kKlV0RoNyp5YnPV5FQ=
 		</data>
 		<key>ChangePasswordView.nib/runtime.nib</key>
 		<data>
-		3BmriHQHCqgr9YQvC43l/ygQYj4=
+		jgkOqkXyKLmEDpZQEJpRXyOiEtY=
 		</data>
 		<key>ChangePasswordViewLandscape.nib/objects-13.0+.nib</key>
 		<data>
-		hPxCvVUxkIyGMHh3S0htOKm4vUM=
+		btKUxmulPROP8M8cHy+isXRzLPk=
 		</data>
 		<key>ChangePasswordViewLandscape.nib/runtime.nib</key>
 		<data>
-		ubGAwi+9yubvH3bO1XqIen8Ae1s=
+		Cp3VVTwOromkECSLITKpHq+V+tA=
 		</data>
 		<key>CountriesTableViewCell.nib</key>
 		<data>
-		ZjH5slvv2Jqd5PEviDkFote/Oho=
+		v0Ka0Q1YT3Bs56JcGzBjBYL6eCs=
 		</data>
 		<key>CountryCodeView.nib</key>
 		<data>
-		6opD5BxosJBjtMytqK5rruYGuJ0=
+		liDxOZMWqZqYGUQfIW2qK6pBcmA=
 		</data>
 		<key>CountryCodeViewLandscape.nib</key>
 		<data>
-		uG7dZUxnaxEp7rvNNrktm0kpYHc=
+		pxgqdVUw8YhZ4IX2EGX+5QZox7Q=
 		</data>
 		<key>CountryCodes.json</key>
 		<data>
@@ -42,203 +42,203 @@
 		</data>
 		<key>EnterPasswordView.nib</key>
 		<data>
-		Z0KqUxjV2kpbphNF6Y4YIvMpu4E=
+		urtKRpln7txID9gSC40yGykInMs=
 		</data>
 		<key>EnterPasswordViewLandscape.nib</key>
 		<data>
-		ocYG4QhDTWlhggc5Uy2YRZHul20=
+		W4A1hDpjMpspAJRomt0QCh8bubI=
 		</data>
 		<key>FTSDKBottomSheetBaseView.nib</key>
 		<data>
-		NJIDwotX6c1n9VzKrVqGvG9nYnU=
+		/WTGJomdaotSwP2wztP6BXdQUfw=
 		</data>
 		<key>FTSDKDatabase.momd/FTSDKDatabase.mom</key>
 		<data>
-		H1YUf/fAqWd0IHRxW+McUFl10is=
+		cEeB/7g/w51MXFqzeGo+oAUVJhc=
 		</data>
 		<key>FTSDKDatabase.momd/VersionInfo.plist</key>
 		<data>
-		QhAPhqZp6FjwJwEhH/t6kFxjdAw=
+		3UFNO/V5z8VMODmXpH67w+HiQpM=
 		</data>
 		<key>FTSDKDialogView.nib</key>
 		<data>
-		C3A/Lz1CKkOquDjQj+AJ58dHSYc=
+		CnS1rRx/9YItnJF+rRtg9EeeZL8=
 		</data>
 		<key>FTSDKHeaderMessageView.nib</key>
 		<data>
-		swKXGS0tX3Cr/VZLaXd1YwFf/AY=
+		dOloyVSGCit7N/E9xhyI7uqoxQg=
 		</data>
 		<key>FTSDKHeaderView.nib</key>
 		<data>
-		CVCjJHlJnmqxguKmEQPkCZEj08M=
+		YLJa+uzeqGoR1eKjqiJtb7gdAhQ=
 		</data>
 		<key>FTSDKListSelectionView.nib</key>
 		<data>
-		1SeXybk4uGIHtcdbGGoWooyHS5w=
+		n7JetCa8HjkSFjm11Ic2Ysh5bxo=
 		</data>
 		<key>FTSDKLoadingView.nib</key>
 		<data>
-		ZfHOSo2+u5H5WWRX6Trs8Obll48=
+		iT7S7JBZ3faktCEdmsabv2njgPE=
 		</data>
 		<key>FTSDKNavigationBarView.nib</key>
 		<data>
-		mhrdO78IVgzLat8/XtqRYvbB1PE=
+		VLz278mkxiJaVAxjlqfIZmoY8fA=
 		</data>
 		<key>FTSDKQAAccountItemCell.nib</key>
 		<data>
-		IIYrm7/VcYJ/fTb6jFq0dGUem9M=
+		/cGDnd7cfQ2OP9D6vHAhWtNepWE=
 		</data>
 		<key>FTSDKQAAccountView.nib</key>
 		<data>
-		FqtL+tWOAiDZnrSotFUGX3d3q+Q=
+		e5P9kBs84q8utBHY3WWxk6AJw5I=
 		</data>
 		<key>FTSDKQAAccountViewLandscape.nib</key>
 		<data>
-		ioprFbDQk3xPOS9afNG/I4PqD1A=
+		qzjT6NQJsc/3yphumgHTfSDkplg=
 		</data>
 		<key>FTSDKQACreateCommentView.nib</key>
 		<data>
-		qouJBlueWz4jWg2lQv6/A+m9Org=
+		Uk4yWCc5Nh8WzIuiv+NSriGyNCk=
 		</data>
 		<key>FTSDKQACreateCommentViewLandscape.nib</key>
 		<data>
-		x6W2fXjherAB2RIqJMM0V/MZlAk=
+		KXAQhlcyFNC3KmS+5SBSgdaL1kc=
 		</data>
 		<key>FTSDKQACreateTicketView.nib</key>
 		<data>
-		n4i7eWlgPAUUIkXBgNC5/7Getv0=
+		gXHJjgNytJfoxMZjA0JXHc2fTmQ=
 		</data>
 		<key>FTSDKQACreateTicketViewLandscape.nib</key>
 		<data>
-		p5TI+IA52bKwph1iym+zAhNF/RQ=
+		sYgkxBOQNlFdy0pqb7lwpuGdl8I=
 		</data>
 		<key>FTSDKQAMenuItemCell.nib/objects-12.3+.nib</key>
 		<data>
-		sGFi69AifjzniGsBRMpbONylfR0=
+		cpOjXEkjvyx8N6YnPgRkfSodNdI=
 		</data>
 		<key>FTSDKQAMenuItemCell.nib/runtime.nib</key>
 		<data>
-		eQK6x+Z/8q7RhLDKIWuvW6q0F0E=
+		W5l2bVbjztyWs1pJGJV6GBMfcdU=
 		</data>
 		<key>FTSDKQAMenuView.nib</key>
 		<data>
-		PCZ1e5nUWLGkNSzh0DNTPoTNfXY=
+		Ssris0CUu5ElrTiWHccqGv4iJ1g=
 		</data>
 		<key>FTSDKQAMenuViewLandscape.nib</key>
 		<data>
-		EAs6X3eJT8wMnCREApRa67qo20U=
+		UDncBjTruB3XwsmYWpQ+N/tl3E0=
 		</data>
 		<key>FTSDKQATicketCommentItemCell.nib</key>
 		<data>
-		yIOz/0Skvexhfm2i8b2RttOZE6I=
+		G541yrDKVUoSeQVt1gZnnaqw6VI=
 		</data>
 		<key>FTSDKQATicketDetailItemCell.nib</key>
 		<data>
-		TO0osabKa2TGGOZbfEVkec7Bv/I=
+		/SclfZa7kquCq8IQuB0SZ0jdgr4=
 		</data>
 		<key>FTSDKQATicketDetailView.nib</key>
 		<data>
-		j1uQ0aghv1ywIMvnv3kZnZ9y5MM=
+		W3+gRWR3jibz4u3gtqCD8BHnSvs=
 		</data>
 		<key>FTSDKQATicketDetailViewLandscape.nib</key>
 		<data>
-		ld+2GEo81vUQpuoTrItzkiuZLhA=
+		JZKh4YRnXj2aRoTIcK7H12ycNyQ=
 		</data>
 		<key>FTSDKQATicketItemCell.nib</key>
 		<data>
-		fsq3b856IIu8rA3eAHkLo8XgQhY=
+		vbRVawsD+h21Ik8SvC6sE/tbFYE=
 		</data>
 		<key>FTSDKQATicketListView.nib</key>
 		<data>
-		hYmPEyvbrmkoLLxepuqo9V1sCGE=
+		pPdb/UH8SQL1az6mG9NvI6APNTw=
 		</data>
 		<key>FTSDKQATicketListViewLandscape.nib</key>
 		<data>
-		U8B+uHvOnUHYl32GtP5HKNEUlm4=
+		T92XX633Zd0qQFJJx4TElt538Ug=
 		</data>
 		<key>FTSDKSelectionTableViewCell.nib</key>
 		<data>
-		NgF+y3A6SyS962KcgUCHkaWS27c=
+		UMQeG9HZV/OcPGmtEiWTU2kK4LM=
 		</data>
 		<key>ForgotPasswordView.nib</key>
 		<data>
-		AVdIf7JiE32SfzvsKeRGHO3wsuY=
+		NGPXX63e1mTaIm2X5ZxUbKmtrkc=
 		</data>
 		<key>ForgotPasswordViewLandscape.nib</key>
 		<data>
-		Qxxu3C7l6cBmLn3s+gW2tFduodE=
+		qrq+JF+iRGl96m8mm4W7C6qv6qU=
 		</data>
 		<key>FullScreenChangePasswordView.nib</key>
 		<data>
-		L/1xkOhXcxGM3g0HtQLIjLJCfN4=
+		gdVJiRT1wS1dlUO4/ySidW1yaPE=
 		</data>
 		<key>FullScreenCountryCodeView.nib</key>
 		<data>
-		8ua4Ij9iuTAZsw/Bi466g4OFjI0=
+		LXRaKidtXVSHgWmuUj69Ps/UEZw=
 		</data>
 		<key>FullScreenEnterPasswordView.nib</key>
 		<data>
-		4sidZvxoM8PhxT+mC3k2mm0wFro=
+		Zvse9djCUarViXsHqQmur7uzD5c=
 		</data>
 		<key>FullScreenForgotPasswordView.nib</key>
 		<data>
-		ymHquyARRGKmoV9zpqX3nyIZwLc=
+		qshicyWJNncAnzEZxDs0D1G0UY4=
 		</data>
 		<key>FullScreenLinkAccountPlaynowView.nib/objects-13.0+.nib</key>
 		<data>
-		J0JeDPHOrFUNa3qNNyLESAfXCCY=
+		jqdkfhMrHhPT9EwMlZRMml0psCQ=
 		</data>
 		<key>FullScreenLinkAccountPlaynowView.nib/runtime.nib</key>
 		<data>
-		EVqmy5H+W3B0oHdN4OkNeB+uvv8=
+		b1iM37HmN1hnQLaclMqIj6dpPTo=
 		</data>
 		<key>FullScreenLoginView.nib</key>
 		<data>
-		cRPuOcQKk6fwtx0o3fiMumiWMXo=
+		9p2fkbjtE7LJLqiSOsCYeF929QU=
 		</data>
 		<key>FullScreenShowWebviewContent.nib</key>
 		<data>
-		jMcstJNcckzoOOFBZEOXnLOUxAg=
+		prHWnV/BBiK3DdCaoO8xLR3RPuU=
 		</data>
 		<key>FullScreenSignUpView.nib/objects-13.0+.nib</key>
 		<data>
-		lExrVYNed1NQp9fjmkadV3ss7U8=
+		NjMpz84mxpHRGvdhsGbLZsq3akI=
 		</data>
 		<key>FullScreenSignUpView.nib/runtime.nib</key>
 		<data>
-		afRE6GobZjazOl1E9z9vtLsqzLg=
+		SIbDWYZdpl0Pk4RP20RdD5txNOw=
 		</data>
 		<key>FullScreenVerifyImageCaptchaView.nib/objects-13.0+.nib</key>
 		<data>
-		uHdNV3c7Y0bz+niiiILEUbSN99I=
+		IlxDgimmqbaoa3M51KeDzKqBORw=
 		</data>
 		<key>FullScreenVerifyImageCaptchaView.nib/runtime.nib</key>
 		<data>
-		+i/bStATfn0uEtJvd7zyRW+Q/8I=
+		S2SbrUGl0fSpM+luurUrOiiViSU=
 		</data>
 		<key>FullScreenVerifyOTPNumberView.nib</key>
 		<data>
-		gzjQJJQWmOISG9pR1nk1MGhrLQA=
+		IE+LHAnIj40seJhjqlNZmL50inM=
 		</data>
 		<key>FunzyPhotoInfoView.nib</key>
 		<data>
-		UHMTmqQv1yyTatdlnJHSHSpGcAU=
+		Qw7Keercn04J1rce4pIA+OOR5M8=
 		</data>
 		<key>FunzyPickPhotosView.nib</key>
 		<data>
-		xbdMAAiFB0u/F6VprBr2X779RGk=
+		uKu5Kr0Qc/f02PWb/bjXJFwKJUE=
 		</data>
 		<key>FunzyShowPhotoPreview.nib</key>
 		<data>
-		0dGhB+ACx/QWbcyBx7pVxZbmjMI=
+		tgNUu9aFZEOATKf2uNyNVaLvB3Q=
 		</data>
 		<key>FunzyShowPhotoPreviewLandscape.nib</key>
 		<data>
-		ZutUGJHCMtdgSAmyYkzH3A54Gt8=
+		mjbHkTikjyiY8qR2BFKrrIXUtv4=
 		</data>
 		<key>Headers/FTSDKCoreKit-Swift.h</key>
 		<data>
-		qXB9WREVNet/TBRe/jGDxRudSgY=
+		gkvIkWFKqGGXLLisfFdJ35EzZCA=
 		</data>
 		<key>Headers/FTSDKCoreKit.h</key>
 		<data>
@@ -246,83 +246,83 @@
 		</data>
 		<key>Info.plist</key>
 		<data>
-		v30MeX6LJzr5jkL882v2hYPpafA=
+		Q/pBQvJz4MqXR2MqYbB+b6VH3uU=
 		</data>
 		<key>LinkAccountPlaynowView.nib/objects-13.0+.nib</key>
 		<data>
-		2ZTLF8PoWNUXVpa+w9LVOUaf794=
+		8LStDdAWlFhWUfrT+bnLitp+kyg=
 		</data>
 		<key>LinkAccountPlaynowView.nib/runtime.nib</key>
 		<data>
-		73TeA7nDM3pDsXYCFAj+LnVZ+Xg=
+		hPQWmHDUP0gROK3hCB3JieTVHKk=
 		</data>
 		<key>LinkAccountPlaynowViewLandscape.nib/objects-13.0+.nib</key>
 		<data>
-		rCSMgG3Dux7yN1BnG6bSCxBU0xc=
+		1zH3B+tJxN0+X3S9Kw9/yZ6KT3A=
 		</data>
 		<key>LinkAccountPlaynowViewLandscape.nib/runtime.nib</key>
 		<data>
-		zuCp8lGBXRrosr9S/et0ZMzFMx4=
+		S2AM8tPZ1BmBEqi7JxBxQ+OfaGo=
 		</data>
 		<key>LoginView.nib</key>
 		<data>
-		gHFInp3reSrCbgZQ9rsJRJkYHsk=
+		sBZ+EKEq2JGSI2dPVkeaBN3rZvc=
 		</data>
 		<key>LoginViewLandscape.nib/objects-13.0+.nib</key>
 		<data>
-		M1yHqdrDubernlugQBBPhdW6sUg=
+		iaVrReVTjdDDhBI3byO2ZDDzE5k=
 		</data>
 		<key>LoginViewLandscape.nib/runtime.nib</key>
 		<data>
-		tGotfh9w1pRfgJ1sW6aSRDp5dZk=
+		is/R1tVo+GV3Q1KdI9b8ZTvCcCs=
 		</data>
 		<key>MVPBackgroundView.nib</key>
 		<data>
-		M+fmDHopX7KGQT1ZXk5T5yQTJvw=
+		GeWG//Xr9cfhaxabjAbFbhKrWYc=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<data>
-		ZEKap5e4/uvmXjhanWfaz2+srx4=
+		NhhmqwsHbHKR76LosFIfZDQOfrE=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		vtxl5MWFmMLy9M77Md5RGPe1Va4=
+		yVkeHyqvGRLyAzJaRuYYBgwTEEM=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		CWvjolno1hYXfLLNFnqEv4x3E9Q=
+		EN4pM6TW+YOXro0QT8Jocpy6aMs=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		vtxl5MWFmMLy9M77Md5RGPe1Va4=
+		yVkeHyqvGRLyAzJaRuYYBgwTEEM=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		m983Q2me6UC0J06dRuHZUd7d6So=
+		qcNpWBDF15d3zjzp1G8WHC3ivI0=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<data>
-		BgHnBJ7jArsyIaB0nutRIwJBvd8=
+		hCc3TuwYpLpgzIYB+X9Y1FtzL2U=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<data>
-		hZ+QQcOMVPKJfTbk+YqAHzIKXok=
+		YT3joEK1JJ7nWFksSAqhogmspww=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<data>
-		nSj29mY5Ub4VV/qE6GKjpFts300=
+		n9W1d00UJC7VThCffWoLF7zf0bc=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<data>
-		hZ+QQcOMVPKJfTbk+YqAHzIKXok=
+		YT3joEK1JJ7nWFksSAqhogmspww=
 		</data>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<data>
-		PxRjQs3NEZvoPy2GfVvh2PFSBT4=
+		W1mHcnwOG/Eo9wUe9vXCtr0jqD4=
 		</data>
 		<key>Modules/module.modulemap</key>
 		<data>
-		fWhfw5N2AGgPfJxtetTwWp5MWk0=
+		t7cZ1igVt4+QcucoJqIbdXA9WbU=
 		</data>
 		<key>Montserrat-Black.ttf</key>
 		<data>
@@ -398,79 +398,79 @@
 		</data>
 		<key>PaymentViewCell.nib</key>
 		<data>
-		O7dkLPUspNqMrXwdiIKn9iUFmSc=
+		ZsC+005RSVxc0BcIjlvkJ2AEElU=
 		</data>
 		<key>PaymentViewController.nib</key>
 		<data>
-		iQn05rGWRBgNSN3SBzj2S39L5eQ=
+		1SkfZ7H+/m4CiEjWj2NJIGJtM+4=
 		</data>
 		<key>QAViewController.nib</key>
 		<data>
-		Rc8azX8NVsaE7CGrMtzkd4YtTv0=
+		iO6FhGbm7YVpaWc2NBA/7vQahXU=
 		</data>
 		<key>RacingLoginViewLandscape.nib</key>
 		<data>
-		T6IJa0Ptd8RJjlYs5sLQqtsWvZM=
+		TV0vhX1bStwSmZnKuRII9OSpkjQ=
 		</data>
 		<key>ShowWebviewContent.nib</key>
 		<data>
-		sJMbfQmqRz4YpdwG+c5jfvbLmm4=
+		1y/LvRHUBcN/u6mT1a3sDsTJCXg=
 		</data>
 		<key>ShowWebviewContentLandscape.nib</key>
 		<data>
-		oasTDfi9FKOZdREIIqr6/Ju8S58=
+		XzKFyKxLYvvVhpatfZy60JTuHV8=
 		</data>
 		<key>SignUpView.nib/objects-13.0+.nib</key>
 		<data>
-		BtnKVBaBrywyCuuXeVEFpBaC36Q=
+		K1q1n1aIMAbjF2wFh2yxeVdJrCo=
 		</data>
 		<key>SignUpView.nib/runtime.nib</key>
 		<data>
-		OwFudzZK4LPGY29ZvcOE6cgkBik=
+		dNwJBNKK3For7XkMowlaR+CZ7CE=
 		</data>
 		<key>SignUpViewLandscape.nib/objects-13.0+.nib</key>
 		<data>
-		YV+kysA+i4+qWGmEnH/STqueryc=
+		6yTtU5e9FbbO/FpDG7uYT9yF7PU=
 		</data>
 		<key>SignUpViewLandscape.nib/runtime.nib</key>
 		<data>
-		0m+mC9fv1TKhmafbcPnvGS7mdGA=
+		NfSnRCA8p2VLyX+W742dnclwd18=
 		</data>
 		<key>V2LoginView.nib</key>
 		<data>
-		X9fpPjHIibozZ1KqsLlfpeXn3kI=
+		DO8bfC+/bEj4zyKDGwAJdglFDsk=
 		</data>
 		<key>V2LoginViewLandscape.nib/objects-13.0+.nib</key>
 		<data>
-		PNRa8Mm05nBz4bHq2p0Mr69aZAo=
+		isx3O22sIq2CP6IHDLCc/k+HC0c=
 		</data>
 		<key>V2LoginViewLandscape.nib/runtime.nib</key>
 		<data>
-		nNnawjL124IKHZgtVMTMuVXfTRM=
+		RP+cc47E5vXVhK4Y1h8piFFct+4=
 		</data>
 		<key>VerifyImageCaptchaView.nib/objects-13.0+.nib</key>
 		<data>
-		CmxjoCOeoMtVT1kt1ZTMsCGr/4g=
+		uI1gosrrwVzA3g5v6HjorcteNxA=
 		</data>
 		<key>VerifyImageCaptchaView.nib/runtime.nib</key>
 		<data>
-		RxD8Mu77THXuDD6aPdxTDj2DOWA=
+		2Fr9ofXV90maQ/D6NUf9cc+vC48=
 		</data>
 		<key>VerifyImageCaptchaViewLandscape.nib/objects-13.0+.nib</key>
 		<data>
-		rYCh3fLmOpYIdiEQq59V0joSgFU=
+		Ju0noNEQhmqWWHwmYzx2oikzUqg=
 		</data>
 		<key>VerifyImageCaptchaViewLandscape.nib/runtime.nib</key>
 		<data>
-		igt1lYqPskIZ+thHHw0B2P6QnJ0=
+		Ah3YxczbIBVfR2lfFEuIWohuyZU=
 		</data>
 		<key>VerifyOTPNumberView.nib</key>
 		<data>
-		qEFiVl7ZmrMNDHxuThu1HB5NdKs=
+		tW54E6m+Jz4HHyJ5GcP8eU4FBE4=
 		</data>
 		<key>VerifyOTPNumberViewLandscape.nib</key>
 		<data>
-		bM1lY39kWi9RpiFk+LTlUjsTLtM=
+		PF2IZQcKWosJ7S+6OkLIuOq97kA=
 		</data>
 		<key>en.lproj/Localizable.strings</key>
 		<dict>
@@ -563,56 +563,56 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			dH3zvoB/CyYNW9xxWL/w0TxiLWvC64njohmVshQr/gQ=
+			mCQuKNgtRq/FfAwnFzFw+/PbCjtYRH7LnB/9hOFVNyw=
 			</data>
 		</dict>
 		<key>ChangePasswordView.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Ng7TpwnRIoENuFGKv/ENEdzcBn9/GyiqgOLGHKk0eOk=
+			KjVptcLyTnofKzPfm7gag4CIswOonXWfFMz0oUPy5+A=
 			</data>
 		</dict>
 		<key>ChangePasswordView.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nyefh5DS+ik5ZLPy65OIR0H5WjQBz5jxHmq7tsYcGrg=
+			LCDLDovC4NcKSvUtS39MqC8fXwEy2bf3ywzN83K7yPg=
 			</data>
 		</dict>
 		<key>ChangePasswordViewLandscape.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZXTqlXzJBPynVM+hIKE5WBR1VqREKWob+BFMK+uwbxE=
+			QtVIBG3klHKqyPRQLbWvqFPsdl5wSNMRKsHZQA3PIhw=
 			</data>
 		</dict>
 		<key>ChangePasswordViewLandscape.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			uM7COJlPV+A+DTbijO/f+sV+P3KBQipMsHNQNu6HhXA=
+			Hs3qfUn3/KwrGZBJfwII+jrKDs7/ZAJkJe1wuYxn0xA=
 			</data>
 		</dict>
 		<key>CountriesTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			oYKyXRrC1V5Gt/QJQQXwNdEhYvV+IWySn5HlGUQ2rWw=
+			Vdk1mBVhOyQgF66eA1ZlHxBTQtahIivp6Ccz+19cMHI=
 			</data>
 		</dict>
 		<key>CountryCodeView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8O5IDFN8NxBKpnQVeqDKwY7S8xMl4IBo6yHI+8ZiCZc=
+			ttGTZgupwpODcOytdOPG1xYeyBRsfC0agIPpSqgoreM=
 			</data>
 		</dict>
 		<key>CountryCodeViewLandscape.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ISGFzDqdZz8P3psfSwaHLZ8Llaia/Jw3SEV6RB0OeQY=
+			XQ6tJSWUg7ndX4GV8E+N8uciTrS9ofqMfZ0AzS1tTHM=
 			</data>
 		</dict>
 		<key>CountryCodes.json</key>
@@ -626,350 +626,350 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			KmurDmSkHpDAqAkvah3LrNicotD7VAn5bVykkYuKLnc=
+			LJ1mf32fdvMxeTWr05G1kjzCqyl5ke4y7cnoV2wK5Zw=
 			</data>
 		</dict>
 		<key>EnterPasswordViewLandscape.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Yrl/zvh4LQ9mQkc3ckKoIiYN+8o9BkBpgJyqczhECTg=
+			MSj4OoLj9ujCkOvqwC46f+YsT+VAsMj/fJBdL/yZ4ts=
 			</data>
 		</dict>
 		<key>FTSDKBottomSheetBaseView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hkSj19EEu6HRLoKk6lS+HMfQqtUjYab/pig3tBUasxQ=
+			VC/bAnJgYU3rFSNzQ8c7a7pymfIbUmCOb8e0XbZerSw=
 			</data>
 		</dict>
 		<key>FTSDKDatabase.momd/FTSDKDatabase.mom</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WM4YI1xBBsaX1JZtalMky0ZoB2uFzfNmCWrhg8/0B1U=
+			y61TpL3J6SzgrPkS9ukzHkuZOiXQ5HICkE8VDPJbNik=
 			</data>
 		</dict>
 		<key>FTSDKDatabase.momd/VersionInfo.plist</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			egUe3pQmJqcdmKyD2CuQAc8V8ypfUGnqpqjUkGDgHxA=
+			Hw+HvuaukD3dq8OZycEeqhinM1IrnfoKnj0kWLLea08=
 			</data>
 		</dict>
 		<key>FTSDKDialogView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			H9WJ1iZHGPHebFMd7RGTSPJDQfmV9KH0HHvFgBYqG+U=
+			jJJkSGX8wEg/NbXIclQYDnxHv4vGJbZ2JNp53SX9dXA=
 			</data>
 		</dict>
 		<key>FTSDKHeaderMessageView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			dLxtXUYpiWJv/j+F98nRbdKJXqpX24moMlvK80jSnfI=
+			GOlDuAAzVgOAgBVp3mG+o91vcjWU5EUEWai0ezht4Fw=
 			</data>
 		</dict>
 		<key>FTSDKHeaderView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			rPTy6EIETwC/WLY8B5uk5rLBHhq5VPrYyo5Ja/A+MA0=
+			VnLMTC/vtCST4vwh/wEbjggEm9/OGbnFNpfzHBE2dUY=
 			</data>
 		</dict>
 		<key>FTSDKListSelectionView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1rz72wfjXOzjt43qPOogDxvWJHulQe9IOYhyYF7wlf4=
+			7ZPWTuJBC8saqq+C9GgAwIa+BwgFCq+jKaM/TPk1fac=
 			</data>
 		</dict>
 		<key>FTSDKLoadingView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			BgkMDXmt556mkJhwIPHAGpyf/890eKJoKAmJ0VvjEAk=
+			KQiZMJquvCu3pZHenSa/JBujnebM5a8FToVAVX7LPjw=
 			</data>
 		</dict>
 		<key>FTSDKNavigationBarView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			OUu53x9KRsPRoAwbpFeyJ56y37nb3wndHaDGfZwgiVI=
+			8mvM9W5M5eHZcF4edVPUnNhwWhAGdvPkeAMgdXf0buM=
 			</data>
 		</dict>
 		<key>FTSDKQAAccountItemCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WWoeXJFrI4nw8Wdv4eL/IX0WmgevcvwmxcAYN+HMFUU=
+			9KIOnQhjJXgw5yjunt9rFYJm/GUNbW6TJSe1e8+LTmw=
 			</data>
 		</dict>
 		<key>FTSDKQAAccountView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			x87mOzKgX7j+spO6N4kasULj7H6zicEGpFR0yF1MulU=
+			fCam2pBWimSEKN64nIkzH66wXWjuqZKKG78O1+3UMPk=
 			</data>
 		</dict>
 		<key>FTSDKQAAccountViewLandscape.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Mwb5HyjFLCljbGRozWq3K9jsmimSSQbEUd/Mj/Y0aXU=
+			1VatZicoqRqzBrYI2F+9jjh1UVL/SDkXWicsaRyYMrs=
 			</data>
 		</dict>
 		<key>FTSDKQACreateCommentView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			RPNL7BAjLrjUf3tMCYxW0L5SDlRL0ZsEcFbj2mMs4dE=
+			b54cFHg8Au3Xrcd86nq/XCmiO7x1NzyOCBZTT3/9Jhs=
 			</data>
 		</dict>
 		<key>FTSDKQACreateCommentViewLandscape.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XUTzAydBHZjeulX+aT+Nw6H4NVxZh6k+ZEI0VY/vqtM=
+			fZcYMcle2R2rHx2dMFHYsy1L35jAn0zh+GDyvLhkLpQ=
 			</data>
 		</dict>
 		<key>FTSDKQACreateTicketView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			VW6zuiI9Ehu36eVk4jdV94a22xHsLJiU8dCapdkfWSE=
+			+GRcpe5+f0WKxqLShh/3gwbQfb+MCutnZyNzhCKTG0Y=
 			</data>
 		</dict>
 		<key>FTSDKQACreateTicketViewLandscape.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			T0vrMaV1Lb6GoxQ902B1/IU68qMtKa1Qcg/yE9MCx4g=
+			EcKC4lQDV9TSw869YKlyDZHZF1G19L23mYtaMCFGWt4=
 			</data>
 		</dict>
 		<key>FTSDKQAMenuItemCell.nib/objects-12.3+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			vnUS4lCn1tyVAd5PY0VtT0feMxb+QBlNFW1kwBGggec=
+			2LXScvLAL8v3isSR2FbyzpQNU9bJ3D8tQDpQodmgXAg=
 			</data>
 		</dict>
 		<key>FTSDKQAMenuItemCell.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8Per8lUudWDbdrW6aokd8TqJq2xubt16oGC31FDGzO8=
+			zs9HUbYwQX5XQp9XsYFfpOBUxUfnkfJ4uxXkqYKGdNI=
 			</data>
 		</dict>
 		<key>FTSDKQAMenuView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			caxea1wRccHrSM6dnjJUfm2CRzrtJ97U64bpTblvzNo=
+			RRqabFGN8PfDu+jybYgro4YT1UqDEPpkRWcMTZfPhMs=
 			</data>
 		</dict>
 		<key>FTSDKQAMenuViewLandscape.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			zJ6GrdLJed6tcuXH41wT+xgvJCKoEoKA3J6hHJlwIo0=
+			5B2c1eIXyLsLwVOvf3tyELINvDV6F5BIRDYHSwxmQac=
 			</data>
 		</dict>
 		<key>FTSDKQATicketCommentItemCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6/gvnQr4gCo2qkOtWvEwke2JWo1dWl+HoOZgr7ue1IQ=
+			69pQmpKvaLKh9uCv7M5cvTiRCmZzQEkYCkT3rv8T/iU=
 			</data>
 		</dict>
 		<key>FTSDKQATicketDetailItemCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			PQ+lgee+3c2hQfNQqZGjObwHLYn09ravz84C62nDAzA=
+			FGRYZIvFsA88cjMLGFxTLPyEDPFtu4g2T/gq+Wg+e6U=
 			</data>
 		</dict>
 		<key>FTSDKQATicketDetailView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EUGX5cphrK+4m3UkPMaL/PA6EhHOj0k/3De3F0yNveQ=
+			47XGFGjx8cvnnfUqJRqyRn6CefMoDyF76ZMScei/9s4=
 			</data>
 		</dict>
 		<key>FTSDKQATicketDetailViewLandscape.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			21BbzCLUCze1znoTluHr0tWaJI0DzUciUHqQ0Wco70A=
+			26PmWgnppaRzE3BRp4HivcHzUqmj1bc7+ZHf0ZR9q/M=
 			</data>
 		</dict>
 		<key>FTSDKQATicketItemCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			nXRL9yCuKcdnJ5GtPE7eLV2KDRJsYz9aWYiksSwaCCk=
+			DgJGeCct/7Bv5cE5cmg4Ks+zQDrwabdmy/BJIAvEElE=
 			</data>
 		</dict>
 		<key>FTSDKQATicketListView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XCpbYhMqSGlYR0JfPbg073/1OUjMp23nHrs0jV9FK1U=
+			7xRZ6zYquP2KfcpHcEEagfLhjKK36DL6y+vmXmf4S+E=
 			</data>
 		</dict>
 		<key>FTSDKQATicketListViewLandscape.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WtcpNa4zmNFlolHVFp+KBI3IrQ4ASHWxSv9lTVRtbHU=
+			TZWiesvohdUpLkfw2dmSSTd8xvBUGrSJJJpG9lvFX0s=
 			</data>
 		</dict>
 		<key>FTSDKSelectionTableViewCell.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			FprRa3DX3hmXB1UitiTpfuT7Wg1AIZxtSgUtxgES/is=
+			hq6SjBCPEgyZPg7nYUGT7xUDa03SSx5sOYdghlhlMRc=
 			</data>
 		</dict>
 		<key>ForgotPasswordView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			8c1nqCGJO2k0vclQUnTfuSePiTSLVND/07exJ6+5yX0=
+			ytrYJ6PItQgKP7Sl8Y5vLjIeH44n6zRt3F5aDKtx4/o=
 			</data>
 		</dict>
 		<key>ForgotPasswordViewLandscape.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			4oZ8gwiNkf38ozZEVPpPNGN4+/elsyAzNUtjsBGZjL4=
+			aNJW6EFg40t4E8/71ZSe8UwuK4zDXBqc6uAk5EvnnhU=
 			</data>
 		</dict>
 		<key>FullScreenChangePasswordView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Hpt7C9kVvJPcQImbyuvbd4yhHF7sN8IqdlnCJ3jHxTg=
+			lFZJywpFSPmVpUEo1NyGFV5nRMSs5igZO7787A6GIn4=
 			</data>
 		</dict>
 		<key>FullScreenCountryCodeView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			T1zpmHILBOnK85vYrU4kHOTyTboz2i6o+CT0f1lZ6JE=
+			NWt5z79TTGb2jriYM1hLrI2QYlp95SaGoVamWtQSDkY=
 			</data>
 		</dict>
 		<key>FullScreenEnterPasswordView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+FjLbgW9YS8uFlBiSnFhKfTsz3VPrXupArRG7+9V5TM=
+			XmHA/+e8ZcvAvHb5+9bYo2Re/dYToWcjTGFzrR1jnKU=
 			</data>
 		</dict>
 		<key>FullScreenForgotPasswordView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			XfEdIBAgcqm7lkGwMW7jVlcdymjczVZs4NEueTAYG9M=
+			agFcXR02hCxOvPKY6kJWZLxPuJi+EkrXjS252FoiTO0=
 			</data>
 		</dict>
 		<key>FullScreenLinkAccountPlaynowView.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			LHRf1+aqalrNh2LT/EVU5F77t2H/kKpbNC2CYv4A/jI=
+			/necAl6ZBOSgVQ6A6qzRotxMK+80t2LRsvhLx2Pslzo=
 			</data>
 		</dict>
 		<key>FullScreenLinkAccountPlaynowView.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			kr0XUUD+SjjNKEoSaRAZLjmip5bAE41JYINOTiGOvc8=
+			HUPp7ZduYG+RCWX+PErGmVpOBTtG1zc8aPuGDOorEP0=
 			</data>
 		</dict>
 		<key>FullScreenLoginView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YEpNgGY38YxISzhztC7v2s9ER0fiZbV2TYn2M87lHco=
+			U9mEtn8w4VzegkJpV2cYiW3okoh6PQBDsWBMj5iEgBs=
 			</data>
 		</dict>
 		<key>FullScreenShowWebviewContent.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EV4GR+RzdVVc+WMoexep1/Y5hVlDV56M0JqdjTxVGUY=
+			+4Y8ruABRSlHX8xaX66xBac6xPj//zCsQuMOnvQ0ezg=
 			</data>
 		</dict>
 		<key>FullScreenSignUpView.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			1ROImHZJx362kkEF+e8WrBC+UtjyfjtN0q3DnMLPIaQ=
+			w7UnQxkdA1TJHInm+PUTY/00SF/WaYELo9785Hffamk=
 			</data>
 		</dict>
 		<key>FullScreenSignUpView.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			cMv1G7cOoYG1Bxf1E1kobVGGlYnW5rM+wcn1cjC3BlA=
+			kXjsoTy/pB6Rl+ILilxkW/9DRYLh3bhTL79dJ7zKT2U=
 			</data>
 		</dict>
 		<key>FullScreenVerifyImageCaptchaView.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			7pct2whWQdE73PUtXFzSQ3f0F616lZ1TwCpOkepK6eo=
+			matB1eCA11GrttFee1Nn0u6bcF48UYZ4mtVCPdLBN8M=
 			</data>
 		</dict>
 		<key>FullScreenVerifyImageCaptchaView.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			sOJZqCsk6MgbANfXfIR2ENyNW/HTPmppY2as+wKUMiE=
+			abysZzkK3Y3KFh3pNe6SUUSUql7KjXmTw1evYhdbhHo=
 			</data>
 		</dict>
 		<key>FullScreenVerifyOTPNumberView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			H+h7KjiErbV++AuLhCh1qIopTtBzTb4y1klF+IgUGYA=
+			t18jbU4vUwEjE5LlFbWKGJ8NqmO8DrcZVTCq63TECYI=
 			</data>
 		</dict>
 		<key>FunzyPhotoInfoView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ODTqh7292QBxtB2r4m18baKsMiZebzW0qntBRdM/gbw=
+			0o6T8H7DJY+UwqIMsK64iJK/5fzmbyhQf3NQrKXsvd0=
 			</data>
 		</dict>
 		<key>FunzyPickPhotosView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+KPWOpsmqzgpAOhsE/OSYY+6qse59/iXXVSDxqW/EWE=
+			EK3K5I4EcVbOGBn1vrDN81ms4jf5QOJiJbl5qSwOF1A=
 			</data>
 		</dict>
 		<key>FunzyShowPhotoPreview.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			GMujr+EQm0ztJHMwu1Xugh8osQ+PO2zfbXMG1P3Gpuo=
+			sOfoFIfBzWEsBW1rb7JSiJuaHi/w4H8jBho7SmrG9PQ=
 			</data>
 		</dict>
 		<key>FunzyShowPhotoPreviewLandscape.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			goZdo7q7DDc7OUS6CjglNLlfCFccb9zv+0Bbf/Aw5lE=
+			9ZNl0CI3WNemmCwj+HHp2B9b87uhur8eSNdcezjOCM0=
 			</data>
 		</dict>
 		<key>Headers/FTSDKCoreKit-Swift.h</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Z9rVjcvUiFhZNXvVfSl4db7jXWpZBcJZYR8wRACh6lo=
+			5qs1qUP4QePcFd+7FVcnnLhMd95iKHWYpm9gPwATc5o=
 			</data>
 		</dict>
 		<key>Headers/FTSDKCoreKit.h</key>
@@ -983,133 +983,133 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			hZZpMeRlgXfodgQcekoYjFZ1NBe1L1vqYJSp070acyA=
+			B/lERmKCF0/7u2c9wVb6w6Xj/iKY93bv2Bdcc5w2SBs=
 			</data>
 		</dict>
 		<key>LinkAccountPlaynowView.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			Z4j6jtyZvx23QM3Qx9B+2sqJ4qtqIuBeR9cePqW1R7Q=
+			5z9317cWIAbQHBC8yUUSNBUfQ7zkN7W0+92URBJcVJw=
 			</data>
 		</dict>
 		<key>LinkAccountPlaynowViewLandscape.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ZhmFSRy4QSiInstPFtBquPvqNSzGNlvT07k+rPooK0w=
+			fDzZY2HQXH/omCSy9xVG4z8RXzqUfL7G9YjqVF/+vSM=
 			</data>
 		</dict>
 		<key>LinkAccountPlaynowViewLandscape.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NqNhoatqh7bclN8tGwbeuyDTNfx7i7G59PfW+GLz1Fk=
+			F35wOJCgOd9w3wO5wne2xWi6EfMAwcxwi4syWWup3qw=
 			</data>
 		</dict>
 		<key>LoginView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			hL5OsINsDyak1xReKch2CIsP+bepjRQqB4CGK6Bmjuw=
+			WR4HClIdC9Jha64qPc09Ni0whrH6RSwZs4KrJ9be7pY=
 			</data>
 		</dict>
 		<key>LoginViewLandscape.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NrLNxiLFtABvvTH7K3e6ta11zMS7fq/d4xRXej0v25U=
+			tKg5I4yOLevZ00LPdkr2yEcyDg9Y6gwpdgmdgLsCo5k=
 			</data>
 		</dict>
 		<key>LoginViewLandscape.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			YqgT5wM2xwHwK454daRDflkfzCsWZCKELIG9CyX2WO0=
+			zrmCSdAHhUTgns6b5Sw97+agD3JQggSPEEqU1KG31MU=
 			</data>
 		</dict>
 		<key>MVPBackgroundView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6J0mEEnito6RVPX+p8RiYWp7sS88JlOyyTabjCpMlI8=
+			5YbK0PPGSTfiIsVajrYetgrb15C4I+VAWvClve9ds4g=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			EgEpQ0LcoepgeB7lqwc8UWu88jwBTGweA/OL7XUqLF0=
+			XfKhltnL5tiHy1VJU3Uzi6RLKmD6JJwF87NUH1AKVNY=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ci/dKp9OSakGBPrJmkZtuY4RianF0Z0B73ktgtgXgbI=
+			zDGs1mlnhmFOBKpMOVmfbEcqX8tfxK1NAZncDLt7Re0=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			le7trHJ/tbf/N78IirEk0Msy4AYfIyF9O0TvarzMpic=
+			BcdV0fH2WnNC6nCySjroqkbrJQfy4MLEVJaMFLFc5Bs=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ci/dKp9OSakGBPrJmkZtuY4RianF0Z0B73ktgtgXgbI=
+			zDGs1mlnhmFOBKpMOVmfbEcqX8tfxK1NAZncDLt7Re0=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/arm64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			WNAcJImi7Dr054h7/JtTjfSpMiHE/MXwPsst0ouQDmo=
+			FWC8hWdlTIQXi5XUoaJOBPGRlM+OjSfvWyvvOwTunMg=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.abi.json</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			2CUDQMsF3+srRnper+4niZWMOhAPQNSkKogUTQ2BSMA=
+			228ceBZjBQ+PNsu7ZH81v0nCiJNenrpE/y/nSbKJydk=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.private.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fZan0PxUERfSmt2RV16ZB0+u7L0PYZrkTjqmfHYF89M=
+			sgIqgwDNyhMiO0wpktusU6D49nayQz7fbMl7YcKRcAc=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftdoc</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			au2tPJpUOQbubnHwO62f31lb1ufIJH/XANhldpeJArk=
+			NCXVRwe9tnAt5k/Jptnzb0IbRnLY87+uqKExlNLSHys=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftinterface</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			fZan0PxUERfSmt2RV16ZB0+u7L0PYZrkTjqmfHYF89M=
+			sgIqgwDNyhMiO0wpktusU6D49nayQz7fbMl7YcKRcAc=
 			</data>
 		</dict>
 		<key>Modules/FTSDKCoreKit.swiftmodule/x86_64-apple-ios-simulator.swiftmodule</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			om9SvzPv+geA5j9Df1z2MMwt8D4O5ximXVFxKCh/5pA=
+			gNQrcBskUYQRpCMq7ggdbFBpxwI6kWN2YO25uAxGSXA=
 			</data>
 		</dict>
 		<key>Modules/module.modulemap</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9Hsul6zjFsYA4usIO0RaGPqsA3EOtmxuFYtjHAsqrD0=
+			fuyHsjcuF23s+F8o3TCTC4W7YnC2N+hlIbKq/gh1L3Y=
 			</data>
 		</dict>
 		<key>Montserrat-Black.ttf</key>
@@ -1242,133 +1242,133 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			rRHJG9oO+LXIvaVjSjkis2oR7LDMclp2apMiuC2lU/I=
+			O0LDaiMfRtI8GdEKHi+kWTyBDaga3wmwPcLsm6XGSB0=
 			</data>
 		</dict>
 		<key>PaymentViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			ix/GjN4JUnmTSxj9QNQOOGkxlKCaxZ/ANlyIg1U9b3o=
+			K4BokByBmKcOUYd99g4V48x68jcSPVKPmLwf2Ps2pJQ=
 			</data>
 		</dict>
 		<key>QAViewController.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			DAcMX+EgFsngCCGn4jnRPc+2bCVqroP1i52mcxG+nng=
+			XNfu/B7sxEWXIpQQkGTvOFPkH0nBkl7G1NsbJuh3EZc=
 			</data>
 		</dict>
 		<key>RacingLoginViewLandscape.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			SXLN3yboWUw/pKJ0BY3Tv0lP+RAYR95h4f6VA7u/hyo=
+			A4ycpnbM6Xugq/q6j4D3E70D22blFS6S5Od/3rBNvKU=
 			</data>
 		</dict>
 		<key>ShowWebviewContent.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			iJ4v2Oyoobf3CTAmzHFaKIGCjOVmZkoI9bl28hXWuWc=
+			YWqjI+bMvSKyEUolaw6hEs//774VLGalYvLsVbhTPPY=
 			</data>
 		</dict>
 		<key>ShowWebviewContentLandscape.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lyS0uJu37hIqJuDkY7pwYo7TRvH5uJq4A08uROsC+CI=
+			LCJpYszkg26O8+J2QMguIb0UvzkIgrl4ClYX2RaJQdg=
 			</data>
 		</dict>
 		<key>SignUpView.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			/fEoGTOEU1ja5MtaRXD/YtK4K1QKNYeWKdZ1ot1b0NA=
+			sHqE2EIOOFr7VNYHFPJXEKUddfiW+Cof5n4RS4vflTM=
 			</data>
 		</dict>
 		<key>SignUpView.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			6BVwdQ8xsu5wqLlL+c2625aUhgI+9TKw9c8hyAiGszM=
+			v0rGFMU/PGyCCgorQ05zHEKVt/cG9giJyl+5Z5lq6cc=
 			</data>
 		</dict>
 		<key>SignUpViewLandscape.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			lZCdxuwBh5yTAOO6nmZzhExpNOkZRsA9IXYACOiJdoA=
+			/sV0rmTLrY4E5KSKT57oscHdX+Ki5rTkIfIUA32npCs=
 			</data>
 		</dict>
 		<key>SignUpViewLandscape.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			pAuox7Hu1eWKnlMp2Xlz2gs3COi3/URo+2jbdw60wjk=
+			wjy8/Ih38gG21g6mT/Y3XPIV/oANiHwK8444maFK/Yg=
 			</data>
 		</dict>
 		<key>V2LoginView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			AkGA8Pd7RV4Xu7SACH5xbRIh7HW/xf3rlKgQb/dTsSU=
+			Hng1zUhG2J8z08KpyD38D8tAURG+JZO/V4XTH6aA4xA=
 			</data>
 		</dict>
 		<key>V2LoginViewLandscape.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			+I3s6ftCl3K1Bh2gYZcUx9dxzZtSo0aT6HBsBvbAQcU=
+			OdS8QbKpUkiNuABdLKqC341KPxd7MQHIpnsmsPlRbXE=
 			</data>
 		</dict>
 		<key>V2LoginViewLandscape.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			TnMhomQvihGuQjvuu5WOYkvBFVCAEWtW0fU1INqrwDE=
+			q5ZImiLlCtp0EwgPayJt+Hbfl9cVWdPHCJUi2h0xqnY=
 			</data>
 		</dict>
 		<key>VerifyImageCaptchaView.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			w2MmfughacYi5DiCDhTybzfLgzkXIpxNdJteHlX8Sc4=
+			nMSPNpcnfxpLYrG7oTcsieoDNoShdG1Hf2bDw0u50x0=
 			</data>
 		</dict>
 		<key>VerifyImageCaptchaView.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			9eUpikF6KrNXZEpOFcUD1EM6/SXUt6guMHqaqwYGfd8=
+			HW++I36wEgNpqhZxdeBMo/swFRTpTNnbdFaV9CdBGRY=
 			</data>
 		</dict>
 		<key>VerifyImageCaptchaViewLandscape.nib/objects-13.0+.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			O1DBYtLRtfNWSUoTgRcwFCE0ocdHvZNLncoklV7xjJg=
+			SZxCSFmKTVSTugObLo2eXBAdu6IIk6av3R0i4D8oU3Q=
 			</data>
 		</dict>
 		<key>VerifyImageCaptchaViewLandscape.nib/runtime.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			QL0yulgLmYSR1iJ5Imc77vpJL3oYmaG8MRwbgown6Jw=
+			hRbpld57jX+1m0VA5Y4Pj9CEEUJls9ZNdAHoGKojbGM=
 			</data>
 		</dict>
 		<key>VerifyOTPNumberView.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			NvE4EJbWgc2lDWwGzYbB5nMKV9rYC6cUCzIbDVoKQ1I=
+			2BUTwJW2lznejPYFQKP9vUthdmkJ44BLbrhlIiHL3Gc=
 			</data>
 		</dict>
 		<key>VerifyOTPNumberViewLandscape.nib</key>
 		<dict>
 			<key>hash2</key>
 			<data>
-			G0+Vvyilm6wPxfrEuPQewkV3GsxySS2m2NyXic2TVII=
+			rpqrdcYDu3xe7pX7c9zVLD2WSy0YLiePocmHsg8fUio=
 			</data>
 		</dict>
 		<key>en.lproj/Localizable.strings</key>

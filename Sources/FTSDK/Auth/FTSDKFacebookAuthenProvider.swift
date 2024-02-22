@@ -22,7 +22,7 @@ class FTSDKFacebookAuthenProvider: FTSDK3rdAuthProvider {
         }
         fbLoginManager?.logOut()
 //        let config = LoginConfiguration(permissions: ["public_profile", "email"])
-        fbLoginManager?.logIn(permissions: ["public_profile", "email"],
+        fbLoginManager?.logIn(permissions: ["public_profile"],
                               from: context, handler: { [weak self] result, error in
             self?.handleFacebookLoginResult(result, error: error)
         })
