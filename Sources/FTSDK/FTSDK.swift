@@ -9,9 +9,10 @@ import UIKit
 import FTSDKCoreKit
 import FBSDKCoreKit
 import Firebase
+import FirebaseMessaging
+import FirebaseAnalytics
 import SwiftMessages
 import GoogleSignIn
-import FirebaseMessaging
 
 public class FTSDK: NSObject {
     @objc public static func didFinishLaunching(_ application: UIApplication, with launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
@@ -133,6 +134,8 @@ public class FTSDK: NSObject {
         FTSDKConfig.invoke(dialog: FTSDKCenterDialogPresenter.self)
         FTSDKConfig.invoke(imageLoader: FTSDKImageLoaderImpl.self)
         FTSDKConfig.invoke(captchaProvider: FTSDKCaptchaProvider.self)
+        
+        FTSDKConfig.firebaseUserPseudoId = Analytics.appInstanceID()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             FTSDKGiftCodeHandle.instance().tryFallbackGiftCode()
