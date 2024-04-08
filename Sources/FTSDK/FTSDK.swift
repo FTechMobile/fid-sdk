@@ -178,6 +178,7 @@ final class FTSDKHeaderDialogPresenter: FTSDKDialogPresenter {
         _config.shouldAutorotate = true
         _config.interactiveHide = true
         _config.presentationStyle = .top
+        
         self.presenter.show(config: _config, view: contentView)
     }
     

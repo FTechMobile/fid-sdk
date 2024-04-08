@@ -622,6 +622,24 @@ extension FTSDKCoreKit.OAuth {
   public static var log: (any FTSDKCoreKit.IOAuthLog)?
   public static func setLogLevel(_ level: FTSDKCoreKit.OAuthLogLevel)
 }
+@objc @_hasMissingDesignatedInitializers @objcMembers public class FTSDKFunzyGameConfig : ObjectiveC.NSObject, Swift.Codable {
+  @objc final public let checkinfoApp: Swift.Bool
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class FTSDKFunzyGameConfigInfo : ObjectiveC.NSObject, Swift.Codable {
+  @objc final public let gameConfig: FTSDKCoreKit.FTSDKFunzyGameConfig?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class FTSDKFunzyGameConfigResponse : ObjectiveC.NSObject, Swift.Codable {
+  @objc final public let lData: [FTSDKCoreKit.FTSDKFunzyGameConfigInfo]
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
 public enum OAuthException : Swift.Error {
   case configurationError(message: Swift.String)
   case missingState
@@ -907,6 +925,11 @@ public typealias ParametersType = [Swift.String : Any]
   @_Concurrency.MainActor(unsafe) @objc public var enableInputClicksWhenVisible: Swift.Bool {
     @objc get
   }
+  @objc deinit
+}
+@_inheritsConvenienceInitializers public class FTSDKFunzyGetGameConfigUserCase : FTSDKCoreKit.FTSDKUseCase<FTSDKCoreKit.FTSDKVoidUseCaseInput, FTSDKCoreKit.FTSDKFunzyGameConfig?> {
+  override public func onExecute(_ input: FTSDKCoreKit.FTSDKVoidUseCaseInput)
+  @objc override dynamic public init()
   @objc deinit
 }
 public protocol FTSDK3rdAuthProtocol : AnyObject {
@@ -1737,6 +1760,11 @@ public struct ValidationRuleComparison<T> : FTSDKCoreKit.ValidationRule where T 
   public init(min: T, max: T, error: any FTSDKCoreKit.ValidationError)
   public func validate(input: T?) -> Swift.Bool
   public typealias InputType = T
+}
+@_inheritsConvenienceInitializers public class FTSDKCheckUserInfoUserCase : FTSDKCoreKit.FTSDKUseCase<FTSDKCoreKit.FTSDKVoidUseCaseInput, FTSDKCoreKit.FTSDKUserCheckingInfoResponse> {
+  override public func onExecute(_ input: FTSDKCoreKit.FTSDKVoidUseCaseInput)
+  @objc override dynamic public init()
+  @objc deinit
 }
 public struct ValidationRuleSet<InputType> {
   public init()
@@ -3521,6 +3549,7 @@ public protocol FTSDKCaptchaParams : AnyObject {
 @objc @_inheritsConvenienceInitializers @objcMembers final public class FTSDKSignIn : ObjectiveC.NSObject, FTSDKCoreKit.RequestBagCompatible, FTSDKCoreKit.FTSDKUseCaseBagCompatible {
   @objc weak final public var delegate: (any FTSDKCoreKit.FTSDKAuthDelegate)?
   @objc weak final public var linkAccountDelegate: (any FTSDKCoreKit.FTSDKLinkAccountDelegate)?
+  @objc weak final public var privateLinkAccountDelegate: (any FTSDKCoreKit.FTSDKLinkAccountDelegate)?
   @objc final public var isLoginFID: Swift.Bool {
     @objc get
   }
@@ -3530,6 +3559,8 @@ public protocol FTSDKCaptchaParams : AnyObject {
   final public var useCaseBag: [(any FTSDKCoreKit.FTSDKUseCaseable)?]
   final public var requestBag: [(any FTSDKCoreKit.CancellableRequest)?]
   final public var useCaseCheckReg: FTSDKCoreKit.FTSDKCheckIsRegUseCase
+  final public var checkUserUpdatedUC: FTSDKCoreKit.FTSDKCheckUserInfoUserCase
+  final public var checkGameConfigUC: FTSDKCoreKit.FTSDKFunzyGetGameConfigUserCase
   @objc public static func instance() -> FTSDKCoreKit.FTSDKSignIn
   @objc final public func signIn()
   @objc final public func linkAccount()
@@ -3636,6 +3667,27 @@ public struct FTSDKAuthData : Swift.Decodable {
   public var isEkycVerified: Swift.Bool
   public init(from decoder: any Swift.Decoder) throws
 }
+@objc @_hasMissingDesignatedInitializers @objcMembers public class FTSDKUserCheckingInfoResponse : ObjectiveC.NSObject, Swift.Codable {
+  @objc final public let data: FTSDKCoreKit.FTSDKUserCheckingInfo?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
+@objc @_hasMissingDesignatedInitializers @objcMembers public class FTSDKUserCheckingInfo : ObjectiveC.NSObject, Swift.Codable {
+  final public let id: Swift.Int64?
+  @objc final public let username: Swift.String?
+  @objc final public let phoneNumber: Swift.String?
+  @objc final public let hasPassword: Swift.Bool
+  @objc final public let email: Swift.String?
+  final public let isEkycVerified: Swift.Bool?
+  @objc final public let createdAt: Swift.String?
+  @objc final public let lastLoginAt: Swift.String?
+  final public let lock: Swift.Bool?
+  final public let isNeedToUpdate: Swift.Bool?
+  required public init(from decoder: any Swift.Decoder) throws
+  @objc deinit
+  public func encode(to encoder: any Swift.Encoder) throws
+}
 @objc @_inheritsConvenienceInitializers @_Concurrency.MainActor(unsafe) open class FTSDKLoadingView : UIKit.UIView {
   @_Concurrency.MainActor(unsafe) @objc override dynamic open func awakeFromNib()
   @objc deinit
@@ -3676,6 +3728,7 @@ public struct OAuthURLHandlerFactory {
   @objc public static var disableAllHeaderMessage: Swift.Bool
   @objc public static var autoLogin: Swift.Bool
   @objc public static var firebaseUserPseudoId: Swift.String?
+  @objc public static var gameRequireUpdateProfile: Swift.Bool
   @objc public static var env: FTSDKCoreKit.FTSDKEnvironment
   @objc public static func setSDKLicense(license: Swift.String)
   @objc public static func setFPaySecretKey(_ secret: Swift.String)
