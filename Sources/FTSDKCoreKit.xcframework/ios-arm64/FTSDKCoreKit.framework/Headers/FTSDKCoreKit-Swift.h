@@ -605,6 +605,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL autoLogin;)
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nullable firebaseUserPseudoId;)
 + (NSString * _Nullable)firebaseUserPseudoId SWIFT_WARN_UNUSED_RESULT;
 + (void)setFirebaseUserPseudoId:(NSString * _Nullable)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL gameRequireUpdateProfile;)
++ (BOOL)gameRequireUpdateProfile SWIFT_WARN_UNUSED_RESULT;
++ (void)setGameRequireUpdateProfile:(BOOL)value;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) enum FTSDKEnvironment env;)
 + (enum FTSDKEnvironment)env SWIFT_WARN_UNUSED_RESULT;
 + (void)setEnv:(enum FTSDKEnvironment)value;
@@ -891,6 +894,30 @@ SWIFT_PROTOCOL("_TtP12FTSDKCoreKit22FTSDKFormFieldDelegate_")
 @end
 
 
+SWIFT_CLASS("_TtC12FTSDKCoreKit20FTSDKFunzyGameConfig")
+@interface FTSDKFunzyGameConfig : NSObject
+@property (nonatomic, readonly) BOOL checkinfoApp;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC12FTSDKCoreKit24FTSDKFunzyGameConfigInfo")
+@interface FTSDKFunzyGameConfigInfo : NSObject
+@property (nonatomic, readonly, strong) FTSDKFunzyGameConfig * _Nullable gameConfig;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC12FTSDKCoreKit28FTSDKFunzyGameConfigResponse")
+@interface FTSDKFunzyGameConfigResponse : NSObject
+@property (nonatomic, readonly, copy) NSArray<FTSDKFunzyGameConfigInfo *> * _Nonnull lData;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
 SWIFT_CLASS("_TtC12FTSDKCoreKit19FTSDKFunzyOrderInfo")
 @interface FTSDKFunzyOrderInfo : NSObject
 @property (nonatomic, copy) NSString * _Nonnull cooOrderSerial;
@@ -1151,6 +1178,7 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit11FTSDKSignIn")
 @interface FTSDKSignIn : NSObject
 @property (nonatomic, weak) id <FTSDKAuthDelegate> _Nullable delegate;
 @property (nonatomic, weak) id <FTSDKLinkAccountDelegate> _Nullable linkAccountDelegate;
+@property (nonatomic, weak) id <FTSDKLinkAccountDelegate> _Nullable privateLinkAccountDelegate;
 @property (nonatomic, readonly) BOOL isLoginFID;
 @property (nonatomic, readonly) BOOL isPlaynowAccountNotLinked;
 + (FTSDKSignIn * _Nonnull)instance SWIFT_WARN_UNUSED_RESULT;
@@ -1288,6 +1316,27 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit9FTSDKUser")
 - (nonnull instancetype)init:(FTSDKProfileData * _Nonnull)profile :(FTSDKAuthentication * _Nonnull)authen OBJC_DESIGNATED_INITIALIZER;
 - (NSString * _Nonnull)jsonDescription SWIFT_WARN_UNUSED_RESULT;
 - (NSString * _Nonnull)base64Description SWIFT_WARN_UNUSED_RESULT;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC12FTSDKCoreKit21FTSDKUserCheckingInfo")
+@interface FTSDKUserCheckingInfo : NSObject
+@property (nonatomic, readonly, copy) NSString * _Nullable username;
+@property (nonatomic, readonly, copy) NSString * _Nullable phoneNumber;
+@property (nonatomic, readonly) BOOL hasPassword;
+@property (nonatomic, readonly, copy) NSString * _Nullable email;
+@property (nonatomic, readonly, copy) NSString * _Nullable createdAt;
+@property (nonatomic, readonly, copy) NSString * _Nullable lastLoginAt;
+- (nonnull instancetype)init SWIFT_UNAVAILABLE;
++ (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
+@end
+
+
+SWIFT_CLASS("_TtC12FTSDKCoreKit29FTSDKUserCheckingInfoResponse")
+@interface FTSDKUserCheckingInfoResponse : NSObject
+@property (nonatomic, readonly, strong) FTSDKUserCheckingInfo * _Nullable data;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
