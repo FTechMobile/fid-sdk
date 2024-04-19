@@ -20,7 +20,8 @@ class FTSDKGoogleAuthenProvider: FTSDK3rdAuthProvider {
         
         let config = GIDConfiguration(clientID: clientID)
         
-        GIDSignIn.sharedInstance.signIn(with: config, presenting: context) { [weak self] user, error in
+        GIDSignIn.sharedInstance.configuration = config
+        GIDSignIn.sharedInstance.signIn(withPresenting: context) { [weak self] result, error in
             if let code = (error as? NSError)?.code, code == GIDSignInError.canceled.rawValue {
                 return
             }
@@ -30,17 +31,38 @@ class FTSDKGoogleAuthenProvider: FTSDK3rdAuthProvider {
             }
             
             guard
-                let authentication = user?.authentication,
+                let authentication = result?.user,
                 let idToken = authentication.idToken
             else {
                 return
             }
             
-            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
-                                                           accessToken: authentication.accessToken)
+            let credential = GoogleAuthProvider.credential(withIDToken: idToken.tokenString,
+                                                           accessToken: authentication.accessToken.tokenString)
             
-            self?.signInWithAppAuth(credential, idToken: idToken)
+            self?.signInWithAppAuth(credential, idToken: idToken.tokenString)
         }
+//        GIDSignIn.sharedInstance.signIn(with: config, presenting: context) { [weak self] user, error in
+//            if let code = (error as? NSError)?.code, code == GIDSignInError.canceled.rawValue {
+//                return
+//            }
+//            if let error = error {
+//                self?.completed?(.failure(FTSDKError(with: error)))
+//                return
+//            }
+//            
+//            guard
+//                let authentication = user?.authentication,
+//                let idToken = authentication.idToken
+//            else {
+//                return
+//            }
+//            
+//            let credential = GoogleAuthProvider.credential(withIDToken: idToken,
+//                                                           accessToken: authentication.accessToken)
+//            
+//            self?.signInWithAppAuth(credential, idToken: idToken)
+//        }
     }
     
     override func signOut() {
