@@ -6,7 +6,7 @@
 //
 
 import UIKit
-import FTSDKCoreKit
+import FBSDKLoginKit
 import FBSDKCoreKit
 import Firebase
 import FirebaseMessaging
