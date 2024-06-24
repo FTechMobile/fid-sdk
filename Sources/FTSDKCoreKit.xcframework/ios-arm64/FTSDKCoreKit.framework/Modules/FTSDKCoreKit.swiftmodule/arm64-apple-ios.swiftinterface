@@ -281,9 +281,11 @@ extension UIKit.UICollectionView {
   @objc public var inGamePackageId: Swift.String?
   @objc public var storePackageId: Swift.String?
   @objc public var displayCurrency: Swift.String?
+  public var status: Swift.Int?
   required public init(from decoder: any Swift.Decoder) throws
   public func encode(to encoder: any Swift.Encoder) throws
   @objc public func getAmount() -> Foundation.NSNumber
+  @objc public func isEnable() -> Swift.Bool
   @objc public static func listJSON(_ list: [FTSDKCoreKit.FTSDKPackageData]) -> Swift.String?
   @objc deinit
 }
@@ -3721,6 +3723,7 @@ public struct OAuthURLHandlerFactory {
   public static var googleServiceInfo: FTSDKCoreKit.GoogleServiceInfo?
   @objc public static var facebookAppID: Swift.String?, facebookClientID: Swift.String?
   @objc public static var modulesConfigs: [FTSDKCoreKit.ModuleConfig]?
+  @objc public static var maintenanceConfigs: FTSDKCoreKit.MaintenanceConfigs?
   @objc public static var themeConfigs: FTSDKCoreKit.ThemeConfigs?
   @objc public static var promotions: [FTSDKCoreKit.SDKPromotion]?
   public static var supportOrientation: UIKit.UIInterfaceOrientationMask?
