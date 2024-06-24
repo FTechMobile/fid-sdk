@@ -587,6 +587,9 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nullable fac
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSArray<ModuleConfig *> * _Nullable modulesConfigs;)
 + (NSArray<ModuleConfig *> * _Nullable)modulesConfigs SWIFT_WARN_UNUSED_RESULT;
 + (void)setModulesConfigs:(NSArray<ModuleConfig *> * _Nullable)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) MaintenanceConfigs * _Nullable maintenanceConfigs;)
++ (MaintenanceConfigs * _Nullable)maintenanceConfigs SWIFT_WARN_UNUSED_RESULT;
++ (void)setMaintenanceConfigs:(MaintenanceConfigs * _Nullable)value;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class, strong) ThemeConfigs * _Nullable themeConfigs;)
 + (ThemeConfigs * _Nullable)themeConfigs SWIFT_WARN_UNUSED_RESULT;
 + (void)setThemeConfigs:(ThemeConfigs * _Nullable)value;
@@ -1097,6 +1100,7 @@ SWIFT_CLASS("_TtC12FTSDKCoreKit16FTSDKPackageData")
 @property (nonatomic, copy) NSString * _Nullable storePackageId;
 @property (nonatomic, copy) NSString * _Nullable displayCurrency;
 - (NSNumber * _Nonnull)getAmount SWIFT_WARN_UNUSED_RESULT;
+- (BOOL)isEnable SWIFT_WARN_UNUSED_RESULT;
 + (NSString * _Nullable)listJSON:(NSArray<FTSDKPackageData *> * _Nonnull)list SWIFT_WARN_UNUSED_RESULT;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
