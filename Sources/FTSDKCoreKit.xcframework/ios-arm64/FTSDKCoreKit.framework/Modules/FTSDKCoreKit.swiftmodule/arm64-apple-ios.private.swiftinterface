@@ -2815,6 +2815,7 @@ public enum ModuleStatus : Swift.String, Swift.Codable {
   case enable
   case helpLinkAccount
   case hidden
+  case enableWithWhitelist
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
