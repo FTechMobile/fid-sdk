@@ -611,6 +611,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nullable fir
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL gameRequireUpdateProfile;)
 + (BOOL)gameRequireUpdateProfile SWIFT_WARN_UNUSED_RESULT;
 + (void)setGameRequireUpdateProfile:(BOOL)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL gameRequireLinkAccountWhenIAP;)
++ (BOOL)gameRequireLinkAccountWhenIAP SWIFT_WARN_UNUSED_RESULT;
++ (void)setGameRequireLinkAccountWhenIAP:(BOOL)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull gameMessageRequireLinkAccountWhenIAP;)
++ (NSString * _Nonnull)gameMessageRequireLinkAccountWhenIAP SWIFT_WARN_UNUSED_RESULT;
++ (void)setGameMessageRequireLinkAccountWhenIAP:(NSString * _Nonnull)value;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) enum FTSDKEnvironment env;)
 + (enum FTSDKEnvironment)env SWIFT_WARN_UNUSED_RESULT;
 + (void)setEnv:(enum FTSDKEnvironment)value;
@@ -900,6 +906,7 @@ SWIFT_PROTOCOL("_TtP12FTSDKCoreKit22FTSDKFormFieldDelegate_")
 SWIFT_CLASS("_TtC12FTSDKCoreKit20FTSDKFunzyGameConfig")
 @interface FTSDKFunzyGameConfig : NSObject
 @property (nonatomic, readonly) BOOL checkinfoApp;
+@property (nonatomic, readonly, copy) NSString * _Nullable messageRequireLinkAccountWhenIAP;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end
@@ -2221,6 +2228,12 @@ SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nullable fir
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL gameRequireUpdateProfile;)
 + (BOOL)gameRequireUpdateProfile SWIFT_WARN_UNUSED_RESULT;
 + (void)setGameRequireUpdateProfile:(BOOL)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class) BOOL gameRequireLinkAccountWhenIAP;)
++ (BOOL)gameRequireLinkAccountWhenIAP SWIFT_WARN_UNUSED_RESULT;
++ (void)setGameRequireLinkAccountWhenIAP:(BOOL)value;
+SWIFT_CLASS_PROPERTY(@property (nonatomic, class, copy) NSString * _Nonnull gameMessageRequireLinkAccountWhenIAP;)
++ (NSString * _Nonnull)gameMessageRequireLinkAccountWhenIAP SWIFT_WARN_UNUSED_RESULT;
++ (void)setGameMessageRequireLinkAccountWhenIAP:(NSString * _Nonnull)value;
 SWIFT_CLASS_PROPERTY(@property (nonatomic, class) enum FTSDKEnvironment env;)
 + (enum FTSDKEnvironment)env SWIFT_WARN_UNUSED_RESULT;
 + (void)setEnv:(enum FTSDKEnvironment)value;
@@ -2510,6 +2523,7 @@ SWIFT_PROTOCOL("_TtP12FTSDKCoreKit22FTSDKFormFieldDelegate_")
 SWIFT_CLASS("_TtC12FTSDKCoreKit20FTSDKFunzyGameConfig")
 @interface FTSDKFunzyGameConfig : NSObject
 @property (nonatomic, readonly) BOOL checkinfoApp;
+@property (nonatomic, readonly, copy) NSString * _Nullable messageRequireLinkAccountWhenIAP;
 - (nonnull instancetype)init SWIFT_UNAVAILABLE;
 + (nonnull instancetype)new SWIFT_UNAVAILABLE_MSG("-init is unavailable");
 @end

@@ -626,6 +626,8 @@ extension FTSDKCoreKit.OAuth {
 }
 @objc @_hasMissingDesignatedInitializers @objcMembers public class FTSDKFunzyGameConfig : ObjectiveC.NSObject, Swift.Codable {
   @objc final public let checkinfoApp: Swift.Bool
+  final public let isRequireLinkAccountWhenIAP: Swift.Bool?
+  @objc final public let messageRequireLinkAccountWhenIAP: Swift.String?
   required public init(from decoder: any Swift.Decoder) throws
   @objc deinit
   public func encode(to encoder: any Swift.Encoder) throws
@@ -3733,6 +3735,8 @@ public struct OAuthURLHandlerFactory {
   @objc public static var autoLogin: Swift.Bool
   @objc public static var firebaseUserPseudoId: Swift.String?
   @objc public static var gameRequireUpdateProfile: Swift.Bool
+  @objc public static var gameRequireLinkAccountWhenIAP: Swift.Bool
+  @objc public static var gameMessageRequireLinkAccountWhenIAP: Swift.String
   @objc public static var env: FTSDKCoreKit.FTSDKEnvironment
   @objc public static func setSDKLicense(license: Swift.String)
   @objc public static func setFPaySecretKey(_ secret: Swift.String)
