@@ -2847,6 +2847,7 @@ public enum SDKModule : Swift.String, Swift.Codable {
   case maintenance
   case registerPromotion
   case supportBubble
+  case other
   public init?(rawValue: Swift.String)
   public typealias RawValue = Swift.String
   public var rawValue: Swift.String {
