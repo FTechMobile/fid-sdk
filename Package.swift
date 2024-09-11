@@ -17,7 +17,7 @@ let package = Package(
         // Dependencies declare other packages that this package depends on.
         .package(url: "https://github.com/SwiftKickMobile/SwiftMessages.git", exact: "9.0.6"),
         .package(url: "https://github.com/firebase/firebase-ios-sdk.git", exact: "10.22.1"),
-        .package(url: "https://github.com/facebook/facebook-ios-sdk.git", exact: "17.0.0"),
+        .package(url: "https://github.com/facebook/facebook-ios-sdk.git", exact: "17.1.0"),
         .package(url: "https://github.com/google/GoogleSignIn-iOS.git", exact: "7.0.0"),
         .package(url: "https://github.com/SDWebImage/SDWebImage.git", exact: "5.1.0"),
         //         .package(url: "https://github.com/AppsFlyerSDK/AppsFlyerFramework.git", exact: "6.14.0"),
